@@ -38,6 +38,8 @@ struct RewardListView: View {
 			
 			.navigationBarTitleDisplayMode(.inline)
 			
+			.interactiveDismissDisabled()
+			
 			.toolbar {
 				ToolbarItem(placement: .principal) {
 					Text("Rewards")
