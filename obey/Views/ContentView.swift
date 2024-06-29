@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
 	@AppStorage("odds") var odds: Int = Constants.startingOdds
 	@State private var isPresenting = false
+	@State private var isShowingRewards = false
 	@State private var alertState = AlertState.empty
 	
 	@State private var isDebug = false
@@ -20,7 +21,15 @@ struct ContentView: View {
 			VStack {
 				Spacer()
 				
-				Button("Good Choice", action: roll)
+				Button("Smart Choice", action: { })
+					.simultaneousGesture(
+						LongPressGesture(minimumDuration: 0.4)
+							.onEnded { value in
+								roll()
+							}
+					)
+					.bold()
+				
 					.buttonStyle(GrowingButton())
 				
 					.alert(
@@ -33,6 +42,10 @@ struct ContentView: View {
 						}
 					} message: { state in
 						Text(state.subtitle)
+					}
+				
+					.sheet(isPresented: $isShowingRewards) {
+						RewardListView()
 					}
 				
 					.sensoryFeedback(.success, trigger: alertState) { _, new in
@@ -51,6 +64,8 @@ struct ContentView: View {
 					isDebug.toggle()
 				}
 			}
+			
+			.fontWidth(.expanded)
 		}
     }
 
@@ -58,7 +73,7 @@ struct ContentView: View {
 		let result = Int.random(in: 1...odds)
 		if result == 1 {
 			alertState = .winner
-			isPresenting = true
+			isShowingRewards = true
 			decreaseOdds()
 		} else {
 			alertState = .unlucky
