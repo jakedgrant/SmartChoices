@@ -24,6 +24,7 @@
 /* Begin PBXFileReference section */
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
+		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		23BF8C992C2D05BB00C40157 /* obey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = obey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = obeyApp.swift; sourceTree = "<group>"; };
 		23BF8C9E2C2D05BB00C40157 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		23BF8C9B2C2D05BB00C40157 /* obey */ = {
 			isa = PBXGroup;
 			children = (
+				23B80C272C2FBE490031B115 /* Info.plist */,
 				23BF8CB72C2D186C00C40157 /* Views */,
 				23BF8CB82C2D187E00C40157 /* Model */,
 				23BF8CB92C2D188C00C40157 /* Helpers */,
@@ -334,6 +336,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = obey/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -373,6 +376,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = obey/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
