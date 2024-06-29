@@ -14,48 +14,65 @@ struct ContentView: View {
 	@State private var isShowingRewards = false
 	@State private var alertState = AlertState.empty
 	
-	@State private var isDebug = false
+	@State private var startPoint = -1
+	@State private var endPoint = 2
+	
+	let colors: [Color] = [.red, .orange, .yellow, .green]
+	
+	@State private var isDebug = true
 	
     var body: some View {
 		NavigationStack {
-			VStack {
-				Spacer()
+			ZStack {
 				
-				Button("Smart Choice", action: { })
-					.simultaneousGesture(
-						LongPressGesture(minimumDuration: 0.4)
-							.onEnded { value in
-								roll()
+//				LinearGradient(
+//					colors: colors,
+//					startPoint: UnitPoint(x: 0.5, y: CGFloat(startPoint)),
+//					endPoint: UnitPoint(x:0.5, y: CGFloat(endPoint))
+//				)
+//				.animation(.easeIn, value: endPoint)
+//				.ignoresSafeArea()
+				
+				VStack {
+					Spacer()
+					
+					Button("Smart Choice", action: { })
+						.simultaneousGesture(
+							LongPressGesture(minimumDuration: 0.4)
+								.onEnded { value in
+									roll()
+								}
+						)
+						.scaleEffect(1.4)
+						.bold()
+					
+						.buttonStyle(GrowingButton())
+					
+						.alert(
+							alertState.title,
+							isPresented: $isPresenting,
+							presenting: alertState
+						) { state in
+							Button(state.cta) {
+								alertState = .empty
 							}
-					)
-					.bold()
-				
-					.buttonStyle(GrowingButton())
-				
-					.alert(
-						alertState.title,
-						isPresented: $isPresenting,
-						presenting: alertState
-					) { state in
-						Button(state.cta) {
-							alertState = .empty
+						} message: { state in
+							Text(state.subtitle)
 						}
-					} message: { state in
-						Text(state.subtitle)
+					
+						.sheet(isPresented: $isShowingRewards) {
+							RewardListView()
+						}
+					
+						.sensoryFeedback(.success, trigger: alertState) { _, new in
+							new == .winner
+						}
+					
+					Spacer()
+					
+					if isDebug {
+						DebugView()
 					}
-				
-					.sheet(isPresented: $isShowingRewards) {
-						RewardListView()
-					}
-				
-					.sensoryFeedback(.success, trigger: alertState) { _, new in
-						new == .winner
-					}
-			
-				Spacer()
-				
-				if isDebug {
-					DebugView()
 				}
 			}
 			
@@ -72,10 +89,18 @@ struct ContentView: View {
 	private func roll() {
 		let result = Int.random(in: 1...odds)
 		if result == 1 {
+			withAnimation {
+				startPoint = -1
+				endPoint = 1
+			}
 			alertState = .winner
 			isShowingRewards = true
 			decreaseOdds()
 		} else {
+			withAnimation {
+				startPoint = 0
+				endPoint = 3
+			}
 			alertState = .unlucky
 			isPresenting = true
 		}

@@ -12,16 +12,62 @@ struct RewardListView: View {
 	@Environment(\.dismiss) var dismiss
 	
 	@State private var counter = 1
+	@State private var showAllRewards = false
+	
+	let rewards = Reward.allCases.shuffled()
 	
     var body: some View {
+		
+		
 		NavigationStack {
-				
-			List {
-				ForEach(Reward.allCases) { reward in
+			ZStack {
+				List {
+					Section {
+						ForEach(rewards.prefix(3)) { reward in
+							
+							Label(reward.description, systemImage: reward.image)
+								.symbolRenderingMode(.hierarchical)
+								.padding(20)
+								.background(Color(uiColor: UIColor.tertiarySystemBackground))
+								.clipShape(
+									RoundedRectangle(cornerRadius: 25)
+								)
+								.listRowSeparator(.hidden)
+								.listRowBackground(Color.clear)
+						}
+					}
 					
-					Label(reward.description, systemImage: reward.image)
-						.symbolRenderingMode(.hierarchical)
-						.padding(10)
+					if showAllRewards {
+						Section {
+							
+							ForEach(rewards.dropFirst(3)) { reward in
+								
+								Label(reward.description, systemImage: reward.image)
+									.symbolRenderingMode(.hierarchical)
+									.padding(10)
+							}
+						}
+					}
+				}
+				
+				VStack {
+					Spacer()
+					Button {
+						withAnimation {
+							showAllRewards.toggle()
+						}
+					} label: {
+						if showAllRewards {
+							Image(systemName: "xmark.circle.fill")
+								.scaleEffect(2)
+								.symbolRenderingMode(.hierarchical)
+						} else {
+							Text("more rewards")
+								.shadow(radius: showAllRewards ? 5: 0)
+						}
+					}
+					.background(Color.clear)
+					.frame(maxWidth: .infinity)
 				}
 			}
 			
