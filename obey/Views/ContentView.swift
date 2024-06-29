@@ -19,7 +19,7 @@ struct ContentView: View {
 	
 	let colors: [Color] = [.red, .orange, .yellow, .green]
 	
-	@State private var isDebug = true
+	@State private var isDebug = false
 	
     var body: some View {
 		NavigationStack {

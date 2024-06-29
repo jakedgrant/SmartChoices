@@ -29,7 +29,7 @@ enum Reward: CaseIterable, Identifiable {
 		case .book:  "book.pages.fill"
 		case .treat: "birthday.cake.fill"
 		case .tv:    "tv.inset.filled"
-		case .game:  "puzzlepiece.fill"
+		case .game:  "dice.fill"
 		case .parentPlay: "figure.and.child.holdinghands"
 		case .playDoh: "hand.wave.fill"
 		case .swim: "figure.pool.swim"
