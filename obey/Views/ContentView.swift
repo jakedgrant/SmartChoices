@@ -36,17 +36,8 @@ struct ContentView: View {
 				VStack {
 					Spacer()
 					
-					Button("Smart Choice", action: { })
-						.simultaneousGesture(
-							LongPressGesture(minimumDuration: 0.4)
-								.onEnded { value in
-									roll()
-								}
-						)
-						.scaleEffect(1.4)
-						.bold()
-					
-						.buttonStyle(GrowingButton())
+					Button("Smart Choice", action: roll)
+						.buttonStyle(SCButtonStyle())
 					
 						.alert(
 							alertState.title,

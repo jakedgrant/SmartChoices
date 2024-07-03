@@ -14,7 +14,7 @@
 		23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8C9E2C2D05BB00C40157 /* ContentView.swift */; };
 		23BF8CA32C2D05BD00C40157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF8CA22C2D05BD00C40157 /* Assets.xcassets */; };
 		23BF8CA72C2D05BD00C40157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF8CA62C2D05BD00C40157 /* Preview Assets.xcassets */; };
-		23BF8CAE2C2D12D500C40157 /* GrowingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAD2C2D12D500C40157 /* GrowingButtonStyle.swift */; };
+		23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */; };
 		23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */; };
 		23BF8CB22C2D16B800C40157 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* AlertState.swift */; };
 		23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
@@ -31,7 +31,7 @@
 		23BF8CA22C2D05BD00C40157 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23BF8CA42C2D05BD00C40157 /* obey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = obey.entitlements; sourceTree = "<group>"; };
 		23BF8CA62C2D05BD00C40157 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		23BF8CAD2C2D12D500C40157 /* GrowingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle.swift; sourceTree = "<group>"; };
+		23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCButtonStyle.swift; sourceTree = "<group>"; };
 		23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceShakeViewModifier.swift; sourceTree = "<group>"; };
 		23BF8CB12C2D16B800C40157 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		23BF8CB32C2D173400C40157 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
-				23BF8CAD2C2D12D500C40157 /* GrowingButtonStyle.swift */,
+				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */,
 				23BF8CB22C2D16B800C40157 /* AlertState.swift in Sources */,
-				23BF8CAE2C2D12D500C40157 /* GrowingButtonStyle.swift in Sources */,
+				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
