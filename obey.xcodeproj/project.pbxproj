@@ -19,7 +19,41 @@
 		23BF8CB22C2D16B800C40157 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* AlertState.swift */; };
 		23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
+		23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */; };
+		23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDE2C35098D00001637 /* ContentView.swift */; };
+		23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE02C35098F00001637 /* Assets.xcassets */; };
+		23C7ECE42C35098F00001637 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE32C35098F00001637 /* Preview Assets.xcassets */; };
+		23C7ECE72C35098F00001637 /* obeyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		23C7ECED2C35130D00001637 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
+		23C7ECEE2C35131000001637 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
+		23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF12C3CC8E900001637 /* RewardListView.swift */; };
+		23C7ECF32C3CD2DC00001637 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* AlertState.swift */; };
+		23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23C7ECE52C35098F00001637 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23BF8C912C2D05BB00C40157 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23C7ECD92C35098D00001637;
+			remoteInfo = "obeyWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23C7ECE82C35098F00001637 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				23C7ECE72C35098F00001637 /* obeyWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
@@ -36,6 +70,12 @@
 		23BF8CB12C2D16B800C40157 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		23BF8CB32C2D173400C40157 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		23BF8CB52C2D17D800C40157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "obeyWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = obeyWatchApp.swift; sourceTree = "<group>"; };
+		23C7ECDE2C35098D00001637 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		23C7ECE02C35098F00001637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23C7ECE32C35098F00001637 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		23C7ECF12C3CC8E900001637 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +87,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23C7ECD72C35098D00001637 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				23BF8C9B2C2D05BB00C40157 /* obey */,
+				23C7ECDB2C35098D00001637 /* obeyWatch Watch App */,
 				23BF8C9A2C2D05BB00C40157 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				23BF8C992C2D05BB00C40157 /* obey.app */,
+				23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +167,26 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		23C7ECDB2C35098D00001637 /* obeyWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */,
+				23C7ECDE2C35098D00001637 /* ContentView.swift */,
+				23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
+				23C7ECE02C35098F00001637 /* Assets.xcassets */,
+				23C7ECE22C35098F00001637 /* Preview Content */,
+			);
+			path = "obeyWatch Watch App";
+			sourceTree = "<group>";
+		};
+		23C7ECE22C35098F00001637 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				23C7ECE32C35098F00001637 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,10 +197,12 @@
 				23BF8C952C2D05BB00C40157 /* Sources */,
 				23BF8C962C2D05BB00C40157 /* Frameworks */,
 				23BF8C972C2D05BB00C40157 /* Resources */,
+				23C7ECE82C35098F00001637 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				23C7ECE62C35098F00001637 /* PBXTargetDependency */,
 			);
 			name = obey;
 			packageProductDependencies = (
@@ -139,6 +210,23 @@
 			);
 			productName = obey;
 			productReference = 23BF8C992C2D05BB00C40157 /* obey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23C7ECD92C35098D00001637 /* obeyWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23C7ECEB2C35098F00001637 /* Build configuration list for PBXNativeTarget "obeyWatch Watch App" */;
+			buildPhases = (
+				23C7ECD62C35098D00001637 /* Sources */,
+				23C7ECD72C35098D00001637 /* Frameworks */,
+				23C7ECD82C35098D00001637 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "obeyWatch Watch App";
+			productName = "obeyWatch Watch App";
+			productReference = 23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,6 +240,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					23BF8C982C2D05BB00C40157 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					23C7ECD92C35098D00001637 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -173,6 +264,7 @@
 			projectRoot = "";
 			targets = (
 				23BF8C982C2D05BB00C40157 /* obey */,
+				23C7ECD92C35098D00001637 /* obeyWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +276,15 @@
 			files = (
 				23BF8CA72C2D05BD00C40157 /* Preview Assets.xcassets in Resources */,
 				23BF8CA32C2D05BD00C40157 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C7ECD82C35098D00001637 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C7ECE42C35098F00001637 /* Preview Assets.xcassets in Resources */,
+				23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +307,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23C7ECD62C35098D00001637 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
+				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
+				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
+				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
+				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
+				23C7ECF32C3CD2DC00001637 /* AlertState.swift in Sources */,
+				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23C7ECE62C35098F00001637 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23C7ECD92C35098D00001637 /* obeyWatch Watch App */;
+			targetProxy = 23C7ECE52C35098F00001637 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		23BF8CA82C2D05BD00C40157 /* Debug */ = {
@@ -326,6 +449,7 @@
 		23BF8CAB2C2D05BD00C40157 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
@@ -366,6 +490,7 @@
 		23BF8CAC2C2D05BD00C40157 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
@@ -403,6 +528,67 @@
 			};
 			name = Release;
 		};
+		23C7ECE92C35098F00001637 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = PWBLH7P4Y4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = obeyWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		23C7ECEA2C35098F00001637 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = PWBLH7P4Y4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = obeyWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,6 +606,15 @@
 			buildConfigurations = (
 				23BF8CAB2C2D05BD00C40157 /* Debug */,
 				23BF8CAC2C2D05BD00C40157 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23C7ECEB2C35098F00001637 /* Build configuration list for PBXNativeTarget "obeyWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23C7ECE92C35098F00001637 /* Debug */,
+				23C7ECEA2C35098F00001637 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
