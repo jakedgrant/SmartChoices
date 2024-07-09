@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Canvas 2smartChoicesIcon.png",
       "idiom" : "universal",
       "platform" : "watchos",
       "size" : "1024x1024"
