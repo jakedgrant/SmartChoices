@@ -23,7 +23,7 @@
 		23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDE2C35098D00001637 /* ContentView.swift */; };
 		23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE02C35098F00001637 /* Assets.xcassets */; };
 		23C7ECE42C35098F00001637 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE32C35098F00001637 /* Preview Assets.xcassets */; };
-		23C7ECE72C35098F00001637 /* obeyWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		23C7ECE72C35098F00001637 /* obey.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23C7ECDA2C35098D00001637 /* obey.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		23C7ECED2C35130D00001637 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
 		23C7ECEE2C35131000001637 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF12C3CC8E900001637 /* RewardListView.swift */; };
@@ -48,7 +48,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				23C7ECE72C35098F00001637 /* obeyWatch Watch App.app in Embed Watch Content */,
+				23C7ECE72C35098F00001637 /* obey.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +70,7 @@
 		23BF8CB12C2D16B800C40157 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		23BF8CB32C2D173400C40157 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		23BF8CB52C2D17D800C40157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "obeyWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C7ECDA2C35098D00001637 /* obey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = obey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = obeyWatchApp.swift; sourceTree = "<group>"; };
 		23C7ECDE2C35098D00001637 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23C7ECE02C35098F00001637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				23BF8C992C2D05BB00C40157 /* obey.app */,
-				23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */,
+				23C7ECDA2C35098D00001637 /* obey.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 			);
 			name = "obeyWatch Watch App";
 			productName = "obeyWatch Watch App";
-			productReference = 23C7ECDA2C35098D00001637 /* obeyWatch Watch App.app */;
+			productReference = 23C7ECDA2C35098D00001637 /* obey.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -539,7 +539,6 @@
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = obeyWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
@@ -549,7 +548,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = obey;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -570,7 +569,6 @@
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = obeyWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
@@ -580,7 +578,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = obey;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
