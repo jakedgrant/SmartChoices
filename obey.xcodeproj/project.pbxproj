@@ -23,7 +23,6 @@
 		23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDE2C35098D00001637 /* ContentView.swift */; };
 		23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE02C35098F00001637 /* Assets.xcassets */; };
 		23C7ECE42C35098F00001637 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE32C35098F00001637 /* Preview Assets.xcassets */; };
-		23C7ECE72C35098F00001637 /* Smart Choices.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23C7ECDA2C35098D00001637 /* Smart Choices.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		23C7ECED2C35130D00001637 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
 		23C7ECEE2C35131000001637 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF12C3CC8E900001637 /* RewardListView.swift */; };
@@ -31,6 +30,11 @@
 		23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */; };
 		23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */; };
+		23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */; };
+		23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFC2C4045A200001637 /* RewardEntity.swift */; };
+		23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFE2C40463C00001637 /* RewardQuery.swift */; };
+		23C7ED012C40495F00001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
+		23C7ED032C40525000001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,20 +46,6 @@
 			remoteInfo = "obeyWatch Watch App";
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		23C7ECE82C35098F00001637 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				23C7ECE72C35098F00001637 /* Smart Choices.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
@@ -80,6 +70,11 @@
 		23C7ECF12C3CC8E900001637 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppIntent.swift; sourceTree = "<group>"; };
 		23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObeyShortcuts.swift; sourceTree = "<group>"; };
+		23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollForRewardIntent.swift; sourceTree = "<group>"; };
+		23C7ECFC2C4045A200001637 /* RewardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardEntity.swift; sourceTree = "<group>"; };
+		23C7ECFE2C40463C00001637 /* RewardQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardQuery.swift; sourceTree = "<group>"; };
+		23C7ED002C40495F00001637 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
+		23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "obeyWatch Watch App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +122,7 @@
 				23BF8CA42C2D05BD00C40157 /* obey.entitlements */,
 				23BF8CB92C2D188C00C40157 /* Helpers */,
 				23C7ECF52C403CD400001637 /* Intents */,
+				23BF8CB72C2D186C00C40157 /* Views */,
 				23BF8CB82C2D187E00C40157 /* Model */,
 				23BF8CA52C2D05BD00C40157 /* Preview Content */,
 			);
@@ -155,7 +151,6 @@
 		23BF8CB82C2D187E00C40157 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				23BF8CB72C2D186C00C40157 /* Views */,
 				23BF8CB12C2D16B800C40157 /* AlertState.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
@@ -168,6 +163,7 @@
 			children = (
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
 				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
+				23C7ED002C40495F00001637 /* Roll.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -175,6 +171,7 @@
 		23C7ECDB2C35098D00001637 /* obeyWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */,
 				23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */,
 				23C7ECDE2C35098D00001637 /* ContentView.swift */,
 				23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
@@ -197,6 +194,9 @@
 			children = (
 				23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */,
 				23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */,
+				23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */,
+				23C7ECFC2C4045A200001637 /* RewardEntity.swift */,
+				23C7ECFE2C40463C00001637 /* RewardQuery.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -211,7 +211,6 @@
 				23BF8C952C2D05BB00C40157 /* Sources */,
 				23BF8C962C2D05BB00C40157 /* Frameworks */,
 				23BF8C972C2D05BB00C40157 /* Resources */,
-				23C7ECE82C35098F00001637 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -313,13 +312,17 @@
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
+				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
+				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
+				23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */,
 				23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */,
 				23BF8CB22C2D16B800C40157 /* AlertState.swift in Sources */,
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
+				23C7ED012C40495F00001637 /* Roll.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +336,7 @@
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* AlertState.swift in Sources */,
+				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
@@ -581,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";

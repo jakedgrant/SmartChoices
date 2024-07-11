@@ -7,7 +7,12 @@
 
 import Foundation
 
-enum Reward: CaseIterable, Identifiable {
+protocol Displayable: Identifiable {
+	var image: String { get }
+	var description: String { get }
+}
+
+enum Reward: CaseIterable, Identifiable, Displayable {
 	case book
 	case treat
 	case tv

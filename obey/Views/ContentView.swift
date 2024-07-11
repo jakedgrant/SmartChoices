@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-	@AppStorage("odds") var odds: Int = Constants.startingOdds
+	@AppStorage("odds", store: UserDefaults(suiteName: Roll.suiteName)) var odds: Int = Constants.startingOdds
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
 	@State private var alertState = AlertState.empty

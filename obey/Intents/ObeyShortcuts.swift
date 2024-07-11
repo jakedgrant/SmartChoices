@@ -12,6 +12,7 @@ class ObeyShortcuts: AppShortcutsProvider {
 	static var shortcutTileColor = ShortcutTileColor.teal
 	
 	static var appShortcuts: [AppShortcut] {
+		
 		AppShortcut(
 			intent: OpenAppIntent(),
 			phrases: [
@@ -20,6 +21,16 @@ class ObeyShortcuts: AppShortcutsProvider {
 			],
 			shortTitle: "Open app",
 			systemImageName: "arrow.up.forward.square.fill"
+		)
+		
+		AppShortcut(
+			intent: RollForRewardIntent(),
+			phrases: [
+				"Roll for a reward in \(.applicationName)",
+				"I made a Smart Choice!",
+			],
+			shortTitle: "Roll for reward",
+			systemImageName: "hands.and.sparkles"
 		)
 	}
 }
