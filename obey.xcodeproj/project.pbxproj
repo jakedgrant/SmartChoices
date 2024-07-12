@@ -568,6 +568,7 @@
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Choices";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -599,6 +600,7 @@
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Choices";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
