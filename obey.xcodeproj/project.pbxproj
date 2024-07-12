@@ -37,6 +37,7 @@
 		23C7ED032C40525000001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
 		23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
 		23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
+		23CC5F212C41D2C10018A724 /* Smart Choices.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23C7ECDA2C35098D00001637 /* Smart Choices.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,28 @@
 			remoteGlobalIDString = 23C7ECD92C35098D00001637;
 			remoteInfo = "obeyWatch Watch App";
 		};
+		23CC5F222C41D2C10018A724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23BF8C912C2D05BB00C40157 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23C7ECD92C35098D00001637;
+			remoteInfo = "obeyWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23CC5F242C41D2C10018A724 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				23CC5F212C41D2C10018A724 /* Smart Choices.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
@@ -105,6 +127,7 @@
 				23BF8C9B2C2D05BB00C40157 /* obey */,
 				23C7ECDB2C35098D00001637 /* obeyWatch Watch App */,
 				23BF8C9A2C2D05BB00C40157 /* Products */,
+				23CC5F202C41D2C10018A724 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +228,13 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
+		23CC5F202C41D2C10018A724 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,11 +245,13 @@
 				23BF8C952C2D05BB00C40157 /* Sources */,
 				23BF8C962C2D05BB00C40157 /* Frameworks */,
 				23BF8C972C2D05BB00C40157 /* Resources */,
+				23CC5F242C41D2C10018A724 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				23C7ECE62C35098F00001637 /* PBXTargetDependency */,
+				23CC5F232C41D2C10018A724 /* PBXTargetDependency */,
 			);
 			name = obey;
 			packageProductDependencies = (
@@ -354,6 +386,11 @@
 			isa = PBXTargetDependency;
 			target = 23C7ECD92C35098D00001637 /* obeyWatch Watch App */;
 			targetProxy = 23C7ECE52C35098F00001637 /* PBXContainerItemProxy */;
+		};
+		23CC5F232C41D2C10018A724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23C7ECD92C35098D00001637 /* obeyWatch Watch App */;
+			targetProxy = 23CC5F222C41D2C10018A724 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
