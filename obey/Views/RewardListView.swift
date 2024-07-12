@@ -125,30 +125,6 @@ struct TopRewards<T>: View where T: Displayable{
 	}
 }
 
-struct HorizontalRewardList<T>: View where T: Displayable {
-	var items: ArraySlice<T>
-	var showDescription: Bool
-	
-	var body: some View {
-		HStack {
-			ForEach(items) { item in
-				VStack {
-					Image(systemName: item.image)
-						.symbolRenderingMode(.hierarchical)
-					if showDescription {
-						Text(item.description)
-					}
-				}
-				.padding(20)
-				.background(Color(uiColor: UIColor.tertiarySystemBackground))
-				 .clipShape(
-					 RoundedRectangle(cornerRadius: 25)
-				 )
-			}
-		}
-	}
-}
-
 #Preview {
     RewardListView()
 }

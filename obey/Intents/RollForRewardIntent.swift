@@ -25,7 +25,7 @@ struct RollForRewardIntent: AppIntent {
 		
 		if isWinner {
 			
-			rewards = Reward.allCases.prefix(3).map { RewardEntity(from: $0) }
+			rewards = Reward.allCases.shuffled().prefix(3).map { RewardEntity(from: $0) }
 			let lastReward = rewards.last?.description ?? "something else"
 			let rewardsListString = rewards.prefix(2).map { $0.description }.joined(separator: ", ")
 			dialogFull = "You win!"

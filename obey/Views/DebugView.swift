@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DebugView: View {
-	@AppStorage("odds") var odds: Int = Constants.startingOdds
+	@AppStorage("odds", store: UserDefaults(suiteName: Roll.suiteName)) var odds: Int = Constants.startingOdds
 	
     var body: some View {
 		VStack {

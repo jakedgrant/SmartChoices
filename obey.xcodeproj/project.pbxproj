@@ -35,6 +35,8 @@
 		23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFE2C40463C00001637 /* RewardQuery.swift */; };
 		23C7ED012C40495F00001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
 		23C7ED032C40525000001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
+		23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
+		23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,7 @@
 		23C7ECFE2C40463C00001637 /* RewardQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardQuery.swift; sourceTree = "<group>"; };
 		23C7ED002C40495F00001637 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
 		23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "obeyWatch Watch App.entitlements"; sourceTree = "<group>"; };
+		23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRewardList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,7 @@
 		23BF8CB72C2D186C00C40157 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
@@ -312,6 +316,7 @@
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
+				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
@@ -335,6 +340,7 @@
 				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
+				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* AlertState.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
