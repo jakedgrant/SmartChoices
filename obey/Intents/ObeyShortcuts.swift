@@ -27,7 +27,8 @@ class ObeyShortcuts: AppShortcutsProvider {
 			intent: RollForRewardIntent(),
 			phrases: [
 				"Roll for a reward in \(.applicationName)",
-				"I made a Smart Choice!",
+				"I made \(.applicationName)",
+				"Reward me for \(.applicationName)",
 			],
 			shortTitle: "Roll for reward",
 			systemImageName: "hands.and.sparkles"

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Roll.suiteName)) var odds: Int = Constants.startingOdds
+	@AppStorage("losses", store: UserDefaults(suiteName: Roll.suiteName)) var losses: Int = 0
+	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
 	@State private var alertState = AlertState.empty
@@ -71,9 +73,15 @@ struct ContentView: View {
 		if result == 1 {
 			
 			decreaseOdds()
+			losses = 0
+			isShowingRewards = true
+		} else if losses >= odds {
+			
+			losses = 0
 			isShowingRewards = true
 		} else {
 			
+			losses += 1
 			isAlerting = true
 			withAnimation {
 				alertState = .unlucky

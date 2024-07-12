@@ -10,6 +10,7 @@ import SwiftData
 
 struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Roll.suiteName)) var odds: Int = Constants.startingOdds
+	@AppStorage("losses", store: UserDefaults(suiteName: Roll.suiteName)) var losses: Int = 0
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
 	@State private var alertState = AlertState.empty
@@ -44,7 +45,12 @@ struct ContentView: View {
 							isPresented: $isPresenting,
 							presenting: alertState
 						) { state in
-							Button(state.cta) {
+							
+							Button("Reward Anyway") {
+								alertState = .empty
+								isShowingRewards = true
+							}
+							Button(state.cta, role: .cancel) {
 								alertState = .empty
 							}
 						} message: { state in
@@ -86,12 +92,23 @@ struct ContentView: View {
 			}
 			alertState = .winner
 			isShowingRewards = true
+			losses = 0
 			decreaseOdds()
+		} else if losses >= odds {
+			withAnimation {
+				startPoint = -1
+				endPoint = 1
+			}
+			
+			alertState = .winner
+			isShowingRewards = true
+			losses = 0
 		} else {
 			withAnimation {
 				startPoint = 0
 				endPoint = 3
 			}
+			losses += 1
 			alertState = .unlucky
 			isPresenting = true
 		}
