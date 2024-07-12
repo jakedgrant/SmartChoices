@@ -19,12 +19,22 @@ struct Roll {
 			return true
 		}
 		
+		// get losses
+		let losses = getLosses()
+		
 		let result = Int.random(in: 1...odds)
 		
 		if result == 1 {
 			decreaseOdds()
+			resetLosses()
+			return true
+		} else if losses >= odds {
+			
+			resetLosses()
 			return true
 		} else {
+			
+			updateLosses(to: losses + 1)
 			return false
 		}
 	}
@@ -51,6 +61,22 @@ struct Roll {
 			odds += 1
 			updateOdds(to: odds)
 		}
+	}
+	
+	private static func getLosses() -> Int {
+		return UserDefaults(suiteName: suiteName)?.integer(forKey: "losses") ?? 0
+	}
+	
+	private static func updateLosses(to value: Int) {
+		guard let defaults = UserDefaults(suiteName: suiteName) else {
+			return
+		}
+		
+		defaults.setValue(value, forKey: "losses")
+	}
+	
+	private static func resetLosses() {
+		updateLosses(to: 0)
 	}
 }
 
