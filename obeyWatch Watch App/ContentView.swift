@@ -60,7 +60,7 @@ struct ContentView: View {
 			.containerBackground(
 				alertState == .empty
 				? Color.gray.gradient
-				: Color.pink.gradient,
+				: Color.accentColor.gradient,
 				for: .navigation
 			)
 			

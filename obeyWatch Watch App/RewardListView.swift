@@ -33,7 +33,7 @@ struct RewardListView: View {
 				}
 			}
 			.listStyle(.carousel)
-			.containerBackground(Color.accentColor.gradient, for: .navigation)
+			.containerBackground(Color.yellow.gradient, for: .navigation)
 		}
 	}
 }
