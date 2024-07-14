@@ -9,8 +9,6 @@ import Foundation
 
 struct Roll {
 	
-	static let suiteName = "group.com.jacobgrant.obey"
-	
 	public static func perform() -> Bool {
 		
 		// get odds
@@ -44,11 +42,11 @@ struct Roll {
 	}
 	
 	private static func getOdds() -> Int {
-		return UserDefaults(suiteName: suiteName)?.integer(forKey: "odds") ?? 0
+		return UserDefaults(suiteName: Constants.suiteName)?.integer(forKey: "odds") ?? 0
 	}
 	
 	private static func updateOdds(to value: Int) {
-		guard let defaults = UserDefaults(suiteName: suiteName) else {
+		guard let defaults = UserDefaults(suiteName: Constants.suiteName) else {
 			return
 		}
 		
@@ -64,11 +62,11 @@ struct Roll {
 	}
 	
 	private static func getLosses() -> Int {
-		return UserDefaults(suiteName: suiteName)?.integer(forKey: "losses") ?? 0
+		return UserDefaults(suiteName: Constants.suiteName)?.integer(forKey: "losses") ?? 0
 	}
 	
 	private static func updateLosses(to value: Int) {
-		guard let defaults = UserDefaults(suiteName: suiteName) else {
+		guard let defaults = UserDefaults(suiteName: Constants.suiteName) else {
 			return
 		}
 		

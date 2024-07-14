@@ -10,5 +10,7 @@ import Foundation
 struct Constants {
 	static let startingOdds = 5
 	static let maxOdds = 15
+	
+	static let suiteName = "group.com.jacobgrant.obey"
 }
 

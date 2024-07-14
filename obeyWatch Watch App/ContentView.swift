@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-	@AppStorage("odds", store: UserDefaults(suiteName: Roll.suiteName)) var odds: Int = Constants.startingOdds
-	@AppStorage("losses", store: UserDefaults(suiteName: Roll.suiteName)) var losses: Int = 0
+	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
+	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
-	@State private var alertState = AlertState.empty
+	@State private var alertState = Alert.empty
 	@State private var isDebug = false
 	
 	@State private var rotation = 0.0
