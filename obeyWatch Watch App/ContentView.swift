@@ -13,7 +13,6 @@ struct ContentView: View {
 	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
-	@State private var alertState = Alert.empty
 	@State private var isDebug = false
 	
 	@State private var rotation = 0.0
@@ -41,14 +40,11 @@ struct ContentView: View {
 			}
 			
 			.alert(
-				alertState.title,
+				Alert.unlucky.title,
 				isPresented: $isAlerting,
-				presenting: alertState) { state in
-					Button(state.cta) {
-						withAnimation {
-							alertState = .empty
-						}
-					}
+				presenting: Alert.unlucky) { state in
+					
+					Button(state.cta) {	}
 				} message: { state in
 					Text(state.subtitle)
 				}
@@ -58,9 +54,9 @@ struct ContentView: View {
 			}
 			
 			.containerBackground(
-				alertState == .empty
-				? Color.gray.gradient
-				: Color.accentColor.gradient,
+				isAlerting
+				? Color.accentColor.gradient
+				: Color.gray.gradient,
 				for: .navigation
 			)
 			
@@ -83,9 +79,6 @@ struct ContentView: View {
 			
 			losses += 1
 			isAlerting = true
-			withAnimation {
-				alertState = .unlucky
-			}
 		}
 	}
 	

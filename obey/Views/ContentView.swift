@@ -14,7 +14,6 @@ struct ContentView: View {
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
-	@State private var alertState = Alert.empty
 	
 	@State private var startPoint = -1
 	@State private var endPoint = 2
@@ -42,18 +41,15 @@ struct ContentView: View {
 						.buttonStyle(SCButtonStyle())
 					
 						.alert(
-							alertState.title,
+							Alert.unlucky.title,
 							isPresented: $isPresenting,
-							presenting: alertState
+							presenting: Alert.unlucky
 						) { state in
 							
 							Button("Reward Anyway") {
-								alertState = .empty
 								isShowingRewards = true
 							}
-							Button(state.cta, role: .cancel) {
-								alertState = .empty
-							}
+							Button(state.cta, role: .cancel) { }
 						} message: { state in
 							Text(state.subtitle)
 						}
@@ -62,8 +58,8 @@ struct ContentView: View {
 							RewardListView()
 						}
 					
-						.sensoryFeedback(.success, trigger: alertState) { _, new in
-							new == .winner
+						.sensoryFeedback(.success, trigger: isShowingRewards) { _, new in
+							new == true
 						}
 					
 					Spacer()
@@ -91,26 +87,25 @@ struct ContentView: View {
 				startPoint = -1
 				endPoint = 1
 			}
-			alertState = .winner
-			isShowingRewards = true
+			
 			losses = 0
 			decreaseOdds()
+			isShowingRewards = true
 		} else if losses >= odds {
 			withAnimation {
 				startPoint = -1
 				endPoint = 1
 			}
 			
-			alertState = .winner
-			isShowingRewards = true
 			losses = 0
+			isShowingRewards = true
 		} else {
 			withAnimation {
 				startPoint = 0
 				endPoint = 3
 			}
+			
 			losses += 1
-			alertState = .unlucky
 			isPresenting = true
 		}
 	}
@@ -122,15 +117,6 @@ struct ContentView: View {
 	}
 }
 
-
-
 #Preview {
 	ContentView()
 }
-
-/*
- 
- starting odds: 1 in 5
- ending odds: 1 in 15
- 
- */
