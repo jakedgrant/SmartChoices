@@ -6,26 +6,22 @@
 //
 
 import ConfettiSwiftUI
+import SwiftData
 import SwiftUI
 
 struct RewardListView: View {
 	@Environment(\.dismiss) var dismiss
-	
-	@State private var counter = 1
-	@State private var showAllRewards = false
-	
-	let rewards = Reward.allCases.shuffled()
+	@State var viewModel = ViewModel()
 	
     var body: some View {
-		
 		
 		NavigationStack {
 			ZStack {
 				List {
 					Section {
-						ForEach(rewards.prefix(3)) { reward in
+						ForEach(viewModel.topRewards) { reward in
 							
-							Label(reward.description, systemImage: reward.image)
+							Label(reward.name, systemImage: reward.systemImage)
 								.symbolRenderingMode(.hierarchical)
 								.padding(20)
 								.background(Color(uiColor: UIColor.tertiarySystemBackground))
@@ -37,12 +33,12 @@ struct RewardListView: View {
 						}
 					}
 					
-					if showAllRewards {
+					if viewModel.showAllRewards {
 						Section {
 							
-							ForEach(rewards.dropFirst(3)) { reward in
+							ForEach(viewModel.otherRewards) { reward in
 								
-								Label(reward.description, systemImage: reward.image)
+								Label(reward.name, systemImage: reward.systemImage)
 									.symbolRenderingMode(.hierarchical)
 									.padding(10)
 							}
@@ -54,16 +50,16 @@ struct RewardListView: View {
 					Spacer()
 					Button {
 						withAnimation {
-							showAllRewards.toggle()
+							viewModel.showAllRewards.toggle()
 						}
 					} label: {
-						if showAllRewards {
+						if viewModel.showAllRewards {
 							Image(systemName: "xmark.circle.fill")
 								.scaleEffect(2)
 								.symbolRenderingMode(.hierarchical)
 						} else {
 							Text("more rewards")
-								.shadow(radius: showAllRewards ? 5: 0)
+								.shadow(radius: viewModel.showAllRewards ? 5 : 0)
 						}
 					}
 					.background(Color.clear)
@@ -72,14 +68,14 @@ struct RewardListView: View {
 			}
 			
 			.confettiCannon(
-				counter: $counter,
+				counter: $viewModel.counter,
 				num: 100,
 				rainHeight: 700,
 				radius: 400
 			)
 			
 			.onAppear {
-				counter += 1
+				viewModel.counter += 1
 			}
 			
 			.navigationBarTitleDisplayMode(.inline)
@@ -103,6 +99,31 @@ struct RewardListView: View {
 		}
 		.fontWidth(.expanded)
     }
+}
+
+extension RewardListView {
+	
+	@Observable
+	final class ViewModel {
+		var counter = 1
+		var showAllRewards = false
+		var topRewards: ArraySlice<SDReward> = []
+		var otherRewards: ArraySlice<SDReward> = []
+		
+		init() {
+			
+			do {
+				let db = try RewardDatabase()
+				let rewards = db.rewards().shuffled()
+				
+				topRewards = rewards.prefix(3)
+				otherRewards = rewards.dropFirst(3)
+				
+			} catch {
+				print("error when fetching rewards for display \(error.localizedDescription)")
+			}
+		}
+	}
 }
 
 struct TopRewards<T>: View where T: Displayable{

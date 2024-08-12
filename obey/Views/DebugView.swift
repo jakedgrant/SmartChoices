@@ -11,6 +11,8 @@ struct DebugView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
+	@State private var isShowingManageRewards = false
+	
     var body: some View {
 		VStack(spacing: 12) {
 			
@@ -32,6 +34,13 @@ struct DebugView: View {
 			
 			HStack {
 				Text("Losses at \(losses)")
+			}
+			
+			Button("Manage rewards") {
+				isShowingManageRewards = true
+			}
+			.sheet(isPresented: $isShowingManageRewards) {
+				ManageRewardsView()
 			}
 		}
     }

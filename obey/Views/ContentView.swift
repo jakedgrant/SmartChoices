@@ -76,6 +76,10 @@ struct ContentView: View {
 				}
 			}
 			
+			.task {
+				await populateRewards()
+			}
+			
 			.fontWidth(.expanded)
 		}
     }
@@ -113,6 +117,20 @@ struct ContentView: View {
 	private func decreaseOdds() {
 		if odds < Constants.maxOdds {
 			odds += 1
+		}
+	}
+	
+	private func populateRewards() async {
+		
+		do {
+			let db = try RewardDatabase()
+			let rewards = db.rewards()
+			
+			if rewards.isEmpty {
+				db.createDefault()
+			}
+		} catch {
+			print("Error when trying to populate rewards \(error.localizedDescription)")
 		}
 	}
 }

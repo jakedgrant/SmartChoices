@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23077F602C699EF7000D131F /* EditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F5F2C699EF7000D131F /* EditRewardView.swift */; };
+		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
+		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
+		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
+		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -38,6 +43,14 @@
 		23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
 		23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
 		23CC5F212C41D2C10018A724 /* Smart Choices.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23C7ECDA2C35098D00001637 /* Smart Choices.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		23CC5F282C509F580018A724 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F272C509F580018A724 /* Database.swift */; };
+		23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */; };
+		23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2B2C509FDE0018A724 /* SDReward.swift */; };
+		23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
+		23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2B2C509FDE0018A724 /* SDReward.swift */; };
+		23CC5F302C50A3F90018A724 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F272C509F580018A724 /* Database.swift */; };
+		23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */; };
+		23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +85,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		23077F5F2C699EF7000D131F /* EditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRewardView.swift; sourceTree = "<group>"; };
+		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
+		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
+		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
+		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +118,10 @@
 		23C7ED002C40495F00001637 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
 		23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "obeyWatch Watch App.entitlements"; sourceTree = "<group>"; };
 		23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRewardList.swift; sourceTree = "<group>"; };
+		23CC5F272C509F580018A724 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
+		23CC5F2B2C509FDE0018A724 /* SDReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDReward.swift; sourceTree = "<group>"; };
+		23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +192,10 @@
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
+				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
+				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+				23077F5F2C699EF7000D131F /* EditRewardView.swift */,
+				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 			);
 			path = Views;
@@ -178,9 +204,11 @@
 		23BF8CB82C2D187E00C40157 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23CC5F262C509F4D0018A724 /* DB */,
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
+				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +230,7 @@
 				23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */,
 				23C7ECDE2C35098D00001637 /* ContentView.swift */,
 				23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
+				231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
 				23C7ECE02C35098F00001637 /* Assets.xcassets */,
 				23C7ECE22C35098F00001637 /* Preview Content */,
 			);
@@ -233,6 +262,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23CC5F262C509F4D0018A724 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				23CC5F272C509F580018A724 /* Database.swift */,
+				23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */,
+				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,20 +383,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
 				23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */,
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
+				23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
+				23077F602C699EF7000D131F /* EditRewardView.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
+				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
 				23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */,
+				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
+				231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */,
 				23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */,
 				23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */,
 				23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */,
+				23CC5F282C509F580018A724 /* Database.swift in Sources */,
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
+				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
 				23C7ED012C40495F00001637 /* Roll.swift in Sources */,
 			);
@@ -368,12 +415,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
+				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
+				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
+				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
 				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
+				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
+				23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 			);
