@@ -124,7 +124,7 @@ struct ContentView: View {
 		
 		do {
 			let db = try RewardDatabase()
-			let rewards = db.rewards()
+			let rewards = db.allRewards()
 			
 			if rewards.isEmpty {
 				db.createDefault()

@@ -26,15 +26,27 @@ final class RewardDatabase: SwiftDatabase {
 	}
 	
 	private let allPredicate = #Predicate<T> { _ in return true }
+	private let isActivePredicate = #Predicate<T> { $0.isActive }
 }
 
 extension RewardDatabase {
 	
-	func rewards() -> [T] {
+	func allRewards() -> [T] {
 		let sort = SortDescriptor<T>(\.name)
 		
 		do {
 			return try self.read(predicate: allPredicate, sortDescriptors: sort)
+		} catch {
+			print(error.localizedDescription)
+			return []
+		}
+	}
+	
+	func activeRewards() -> [T] {
+		let sort = SortDescriptor<T>(\.name)
+		
+		do {
+			return try self.read(predicate: isActivePredicate, sortDescriptors: sort)
 		} catch {
 			print(error.localizedDescription)
 			return []

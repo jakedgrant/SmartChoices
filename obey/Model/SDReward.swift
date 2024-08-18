@@ -13,12 +13,14 @@ import SwiftUI
 final class SDReward {
 	@Attribute(.unique) var name: String
 	var systemImage: String
+	var isActive: Bool
 	
 	static let defaultImage = "trophy.fill"
 	
-	init(name: String, systemImage: String? = nil) {
+	init(name: String, systemImage: String? = nil, isActive: Bool = true) {
 		self.name = name
 		self.systemImage = systemImage ?? Self.defaultImage
+		self.isActive = isActive
 	}
 }
 

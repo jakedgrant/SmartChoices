@@ -29,9 +29,26 @@ struct ManageRewardsView: View {
 							Label(reward.name, systemImage: reward.systemImage)
 								.symbolRenderingMode(.hierarchical)
 								.padding(10)
+								.opacity(reward.isActive ? 1 : 0.4)
 						})
+						.swipeActions(edge: .leading, allowsFullSwipe: true) {
+							Button { reward.isActive.toggle() } label: {
+								if reward.isActive {
+									Label("Deactivate", systemImage: "circle.slash")
+								} else {
+									Label("Activate", systemImage: "circle")
+								}
+							}
+							.tint(.accentColor)
+						}
+						.swipeActions(edge:.trailing, allowsFullSwipe: true) {
+							Button(role: .destructive) {
+								deleteReward(reward)
+							} label: {
+								Label("Delete", systemImage: "trash")
+							}
+						}
 					}
-					.onDelete(perform: deleteRewards)
 				}
 				.toolbar {
 					
@@ -61,12 +78,8 @@ struct ManageRewardsView: View {
 
 extension ManageRewardsView {
 	
-	private func deleteRewards(_ indexSet: IndexSet) {
-		
-		for index in indexSet {
-			let reward = rewards[index]
-			modelContext.delete(reward)
-		}
+	private func deleteReward(_ reward: SDReward) {
+		modelContext.delete(reward)
 	}
 	
 	private func addReward() {

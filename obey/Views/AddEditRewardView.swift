@@ -42,6 +42,11 @@ struct AddEditRewardView: View {
 					}
 				}
 			}
+			
+			Section {
+				Toggle("Active", isOn: $reward.isActive)
+					.tint(.accentColor)
+			}
 		}
 		.fontWidth(.expanded)
     }

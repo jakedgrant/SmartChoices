@@ -114,7 +114,7 @@ extension RewardListView {
 			
 			do {
 				let db = try RewardDatabase()
-				let rewards = db.rewards().shuffled()
+				let rewards = db.activeRewards().shuffled()
 				
 				topRewards = rewards.prefix(3)
 				otherRewards = rewards.dropFirst(3)
