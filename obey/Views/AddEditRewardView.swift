@@ -12,6 +12,8 @@ struct AddEditRewardView: View {
 	
 	@Bindable var reward: SDReward
 	
+	@State private var isShowingIconPicker = false
+	
     var body: some View {
 		Form {
 			
@@ -21,21 +23,20 @@ struct AddEditRewardView: View {
 			
 			Section("Icon") {
 				Button {
-					
+					isShowingIconPicker = true
 				} label: {
-					Image(systemName: reward.systemImage)
-						.padding(4)
-						.background(
-							RoundedRectangle(cornerRadius: 8)
-								.opacity(0.2)
-						)
-						.symbolRenderingMode(.hierarchical)
+					IconView(icon: reward.systemImage)
 				}
+				.sheet(isPresented: $isShowingIconPicker) {
+					IconPickerView(selectedImageName: $reward.systemImage)
+						.presentationDetents([.medium])
+				}
+				
 			} footer: {
 				HStack {
 					Spacer()
 					Button {
-						
+						// this kinda looks like it's for showing more icons...
 					} label: {
 						Text("More...")
 					}
