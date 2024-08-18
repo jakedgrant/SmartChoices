@@ -10,9 +10,13 @@ import SwiftUI
 
 struct AddEditRewardView: View {
 	
+	@Environment(\.modelContext) var modelContext
+	@Environment(\.dismiss) var dismiss
+	
 	@Bindable var reward: SDReward
 	
 	@State private var isShowingIconPicker = false
+	@State private var isConfirmingDelete = false
 	
     var body: some View {
 		Form {
@@ -47,9 +51,36 @@ struct AddEditRewardView: View {
 				Toggle("Active", isOn: $reward.isActive)
 					.tint(.accentColor)
 			}
+			
+			Section {
+				Button(role: .destructive) {
+					isConfirmingDelete = true
+				} label: {
+					Label("Delete", systemImage: "trash")
+				}
+				.foregroundStyle(.white)
+				.alert(
+					"Delete reward",
+					isPresented: $isConfirmingDelete
+				) {
+					Button(role: .destructive) {
+						deleteReward(reward)
+						dismiss()
+					} label: {
+						Text("Delete")
+					}
+				} message: {
+					Text("Are you sure?")
+				}
+			}
+			.listRowBackground(Color.red)
 		}
 		.fontWidth(.expanded)
     }
+	
+	private func deleteReward(_ reward: SDReward) {
+		modelContext.delete(reward)
+	}
 }
 
 extension Section where Parent == Text, Content: View, Footer: View{

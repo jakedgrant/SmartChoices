@@ -56,7 +56,7 @@ struct ManageRewardsView: View {
 						Text("Manage Rewards")
 					}
 				}
-				.navigationDestination(for: SDReward.self, destination: AddEditRewardView.init)
+				.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 				
 				Button(action: addReward) {
 					
