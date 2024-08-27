@@ -12,9 +12,9 @@ struct Roll {
 	public static func perform() -> Bool {
 		
 		// get odds
-		let odds = getOdds()
-		guard odds > 1 else {
-			return true
+		var odds = getOdds()
+		if odds < 1 {
+			odds = resetOdds()
 		}
 		
 		// get losses
@@ -37,12 +37,19 @@ struct Roll {
 		}
 	}
 	
-	public static func resetOdds() {
-		updateOdds(to: 1)
+	@discardableResult
+	public static func resetOdds() -> Int {
+		let startingOdds = Constants.startingOdds
+		updateOdds(to: startingOdds)
+		return startingOdds
 	}
 	
 	private static func getOdds() -> Int {
-		return UserDefaults(suiteName: Constants.suiteName)?.integer(forKey: "odds") ?? 0
+		guard let defaults = UserDefaults(suiteName: Constants.suiteName) else {
+			return 0
+		}
+		
+		return defaults.integer(forKey: "odds")
 	}
 	
 	private static func updateOdds(to value: Int) {
@@ -53,7 +60,7 @@ struct Roll {
 		defaults.setValue(value, forKey: "odds")
 	}
 	
-	private static func decreaseOdds() {
+	public static func decreaseOdds() {
 		var odds = getOdds()
 		if odds < Constants.maxOdds {
 			odds += 1
@@ -62,7 +69,11 @@ struct Roll {
 	}
 	
 	private static func getLosses() -> Int {
-		return UserDefaults(suiteName: Constants.suiteName)?.integer(forKey: "losses") ?? 0
+		guard let defaults = UserDefaults(suiteName: Constants.suiteName) else {
+			return 0
+		}
+		
+		return defaults.integer(forKey: "losses")
 	}
 	
 	private static func updateLosses(to value: Int) {
@@ -77,30 +88,3 @@ struct Roll {
 		updateLosses(to: 0)
 	}
 }
-
-/*private func roll() {
- let result = Int.random(in: 1...odds)
-	   if result == 1 {
-		   withAnimation {
-			   startPoint = -1
-			   endPoint = 1
-		   }
-		   alertState = .winner
-		   isShowingRewards = true
-		   decreaseOdds()
-	   } else {
-		   withAnimation {
-			   startPoint = 0
-			   endPoint = 3
-		   }
-		   alertState = .unlucky
-		   isPresenting = true
-	   }
-   }
-   
-   private func decreaseOdds() {
-	   if odds < Constants.maxOdds {
-		   odds += 1
-	   }
-   }
- */

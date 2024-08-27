@@ -20,14 +20,14 @@ struct DebugView: View {
 				HStack(spacing: 12) {
 					Text("Odds are 1 in \(odds)")
 					Button("Reset Odds") {
-						odds = Constants.startingOdds
+						Roll.resetOdds()
 					}
 				}
 				
 				VStack {
 					Text("Odds are 1 in \(odds)")
 					Button("Reset Odds") {
-						odds = Constants.startingOdds
+						Roll.resetOdds()
 					}
 				}
 			}

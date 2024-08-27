@@ -9,14 +9,14 @@ import AppIntents
 import Foundation
 import SwiftUI
 
-struct RewardEntity: AppEntity, Displayable{
+struct RewardEntity: AppEntity, Displayable {
 	
 	static var typeDisplayRepresentation: TypeDisplayRepresentation {
 		"Reward"
 	}
 	
 	static var defaultQuery = RewardQuery()
-	var id: Reward.ID
+	var id: SDReward.ID
 	
 	@Property(title: "Description")
 	var description: String
@@ -31,9 +31,9 @@ struct RewardEntity: AppEntity, Displayable{
 		)
 	}
 	
-	init(from reward: Reward) {
+	init(from reward: SDReward) {
 		self.id = reward.id
-		self.description = reward.description
-		self.image = reward.image
+		self.description = reward.name
+		self.image = reward.systemImage
 	}
 }

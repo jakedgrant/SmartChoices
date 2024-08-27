@@ -95,39 +95,9 @@ struct ContentView: View {
     }
 
 	private func roll() {
-		let result = Int.random(in: 1...odds)
-		if result == 1 {
-			withAnimation {
-				startPoint = -1
-				endPoint = 1
-			}
-			
-			losses = 0
-			decreaseOdds()
-			isShowingRewards = true
-		} else if losses >= odds {
-			withAnimation {
-				startPoint = -1
-				endPoint = 1
-			}
-			
-			losses = 0
-			isShowingRewards = true
-		} else {
-			withAnimation {
-				startPoint = 0
-				endPoint = 3
-			}
-			
-			losses += 1
-			isPresenting = true
-		}
-	}
-	
-	private func decreaseOdds() {
-		if odds < Constants.maxOdds {
-			odds += 1
-		}
+		let result = Roll.perform()
+		isPresenting = !result
+		isShowingRewards = result
 	}
 	
 	private func populateRewards() async {

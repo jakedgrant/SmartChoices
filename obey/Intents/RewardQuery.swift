@@ -11,12 +11,16 @@ import Foundation
 struct RewardQuery: EntityQuery {
 	
 	func entities(for identifiers: [RewardEntity.ID]) async throws -> [Entity] {
+		let db = try RewardDatabase()
+		let rewards = db.activeRewards().shuffled()
 		
-		return Reward.allCases.map { RewardEntity(from: $0) }
+		return rewards.map { RewardEntity(from: $0) }
 	}
 	
 	func suggestedEntities() async throws -> [RewardEntity] {
+		let db = try RewardDatabase()
+		let rewards = db.allRewards().shuffled()
 		
-		return Reward.allCases.map { RewardEntity(from: $0) }
+		return rewards.map { RewardEntity(from: $0) }
 	}
 }

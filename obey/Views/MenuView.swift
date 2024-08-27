@@ -16,7 +16,7 @@ struct MenuView: View {
     var body: some View {
 		Menu {
 			Button {
-				odds = Constants.startingOdds
+				Roll.resetOdds()
 			}label: {
 				Label("Odds are 1 in \(odds)", systemImage: "arrow.counterclockwise.circle")
 			}

@@ -10,7 +10,8 @@ import SwiftData
 import SwiftUI
 
 @Model
-final class SDReward {
+final class SDReward: Identifiable {
+	var id = UUID()
 	var name: String = ""
 	var systemImage: String = "trophy.fill"
 	var isActive: Bool = true
