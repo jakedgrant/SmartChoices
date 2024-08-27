@@ -11,15 +11,13 @@ import SwiftUI
 
 @Model
 final class SDReward {
-	@Attribute(.unique) var name: String
-	var systemImage: String
-	var isActive: Bool
+	var name: String = ""
+	var systemImage: String = "trophy.fill"
+	var isActive: Bool = true
 	
-	static let defaultImage = "trophy.fill"
-	
-	init(name: String, systemImage: String? = nil, isActive: Bool = true) {
+	init(name: String = "", systemImage: String = "trophy.fill", isActive: Bool = true) {
 		self.name = name
-		self.systemImage = systemImage ?? Self.defaultImage
+		self.systemImage = systemImage
 		self.isActive = isActive
 	}
 }

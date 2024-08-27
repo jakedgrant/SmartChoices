@@ -36,12 +36,14 @@ struct DebugView: View {
 				Text("Losses at \(losses)")
 			}
 			
+#if os(iOS)
 			Button("Manage rewards") {
 				isShowingManageRewards = true
 			}
 			.sheet(isPresented: $isShowingManageRewards) {
 				ManageRewardsView()
 			}
+#endif
 		}
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23077F622C72A4E1000D131F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F612C72A4E1000D131F /* Icon.swift */; };
 		23077F642C72A501000D131F /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F632C72A501000D131F /* IconView.swift */; };
+		23077F662C7D7309000D131F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F652C7D7309000D131F /* MenuView.swift */; };
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
@@ -88,6 +89,8 @@
 /* Begin PBXFileReference section */
 		23077F612C72A4E1000D131F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = obey/Model/Icon.swift; sourceTree = SOURCE_ROOT; };
 		23077F632C72A501000D131F /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		23077F652C7D7309000D131F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		23077F672C7D7BB4000D131F /* obeyWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "obeyWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
+				23077F652C7D7309000D131F /* MenuView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
 				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
 				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
@@ -229,6 +233,7 @@
 		23C7ECDB2C35098D00001637 /* obeyWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				23077F672C7D7BB4000D131F /* obeyWatch-Watch-App-Info.plist */,
 				23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */,
 				23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */,
 				23C7ECDE2C35098D00001637 /* ContentView.swift */,
@@ -393,6 +398,7 @@
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
 				23077F622C72A4E1000D131F /* Icon.swift in Sources */,
+				23077F662C7D7309000D131F /* MenuView.swift in Sources */,
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
@@ -661,6 +667,7 @@
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "obeyWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Smart Choices";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;
@@ -693,6 +700,7 @@
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "obeyWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Smart Choices";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jacobgrant.obey;

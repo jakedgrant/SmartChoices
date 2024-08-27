@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct RewardListView: View {
-	let rewards = Reward.allCases.shuffled()
+	@State var viewModel = ViewModel()
 	
 	var body: some View {
 		NavigationStack {
 			List {
 				Section("Pick a reward") {
-					ForEach(rewards.prefix(3)) { reward in
+					ForEach(viewModel.topRewards) { reward in
 						
-						Label(reward.description, systemImage: reward.image)
+						Label(reward.name, systemImage: reward.systemImage)
 							.foregroundStyle(Color.accentColor)
 							.symbolRenderingMode(.hierarchical)
 					}
@@ -24,9 +24,9 @@ struct RewardListView: View {
 		
 				Section("All other rewards") {
 					
-					ForEach(rewards.dropFirst(3)) { reward in
+					ForEach(viewModel.otherRewards) { reward in
 						
-						Label(reward.description, systemImage: reward.image)
+						Label(reward.name, systemImage: reward.systemImage)
 							.foregroundStyle(Color.accentColor)
 							.symbolRenderingMode(.hierarchical)
 					}
@@ -34,6 +34,28 @@ struct RewardListView: View {
 			}
 			.listStyle(.carousel)
 			.containerBackground(Color.yellow.gradient, for: .navigation)
+		}
+	}
+}
+
+extension RewardListView {
+	@Observable
+	final class ViewModel {
+		var topRewards: ArraySlice<SDReward> = []
+		var otherRewards: ArraySlice<SDReward> = []
+		
+		init() {
+			
+			do {
+				let db = try RewardDatabase()
+				let rewards = db.allRewards().shuffled()
+				
+				topRewards = rewards.prefix(3)
+				otherRewards = rewards.dropFirst(3)
+				
+			} catch {
+				print("error when fetching rewards for display \(error.localizedDescription)")
+			}
 		}
 	}
 }

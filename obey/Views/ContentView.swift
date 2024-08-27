@@ -14,6 +14,7 @@ struct ContentView: View {
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
+	@State private var isShowingManageRewards = false
 	
 	@State private var startPoint = -1
 	@State private var endPoint = 2
@@ -74,6 +75,15 @@ struct ContentView: View {
 				withAnimation {
 					isDebug.toggle()
 				}
+			}
+			
+			.toolbar {
+				ToolbarItem(placement: .bottomBar) {
+					MenuView(isShowingManageRewards: $isShowingManageRewards)
+				}
+			}
+			.sheet(isPresented: $isShowingManageRewards) {
+				ManageRewardsView()
 			}
 			
 			.task {
