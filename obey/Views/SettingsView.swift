@@ -9,6 +9,17 @@ import RevenueCatUI
 import SwiftUI
 import StoreKit
 
+enum Route {
+	case about
+	case rewardManage
+	case rewardHistory
+}
+
+class NavigationStateManager: ObservableObject {
+	
+	@Published var path = NavigationPath()
+}
+
 struct SettingsView: View {
 	@Environment(\.dismiss) var dismiss
 	
@@ -17,8 +28,10 @@ struct SettingsView: View {
 	@State private var isShowingPaywall = false
 	@State private var isShowingManageSubscription = false
 	
+	@StateObject var nav = NavigationStateManager()
+	
     var body: some View {
-		NavigationStack {
+		NavigationStack(path: $nav.path) {
 			Form {
 				
 				Section {
@@ -34,23 +47,35 @@ struct SettingsView: View {
 				}
 				
 				Section("Rewards") {
-					NavigationLink(destination: ManageRewardsView()) {
+					NavigationLink(value: Route.rewardManage) {
 						Label("Manage rewards", systemImage: "list.star")
 					}
 					
-					NavigationLink(destination: Text("Unimplemented")) {
+					NavigationLink(value: Route.rewardHistory) {
 						Label("Reward history", systemImage: userViewModel.unlockActive ? "scroll" : "lock" )
 					}
 				}
 				
 				Section {
-					NavigationLink(destination: Text("Unimplemented")) {
+					NavigationLink(value: Route.about) {
 						Label("About", systemImage: "i.circle")
 					}
 				}
 			}
 			.navigationTitle("Settings")
 			.navigationBarTitleDisplayMode(.large)
+			
+			.navigationDestination(for: Route.self) { routeValue in
+				switch routeValue {
+				case .about:
+					Text("Unimplemented")
+				case .rewardManage:
+					ManageRewardsView()
+				case .rewardHistory:
+					Text("Unimplemented")
+				}
+			}
+			.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 			
 			.sheet(isPresented: $isShowingPaywall, content: { PaywallView() })
 			
@@ -68,6 +93,7 @@ struct SettingsView: View {
 				}
 			}
 		}
+		.environmentObject(nav)
     }
 }
 
