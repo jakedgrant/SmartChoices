@@ -64,7 +64,7 @@ struct MenuView: View {
 			}
 			
 		} label: {
-			Image(systemName: "gear")
+			Image(systemName: "list.bullet")
 				.foregroundStyle(Color.white)
 				.bold()
 				.fontDesign(.rounded)

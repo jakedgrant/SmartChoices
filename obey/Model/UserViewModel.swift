@@ -43,7 +43,7 @@ class UserViewModel: ObservableObject {
 	 
 	 Read more about Identifying Users here: https://docs.revenuecat.com/docs/user-ids
 	 */
-	#warning("Public-facing usernames aren't optimal for user ID's - you should use something non-guessable, like a non-public database ID. For more information, visit https://docs.revenuecat.com/docs/user-ids.")
+//	#warning("Public-facing usernames aren't optimal for user ID's - you should use something non-guessable, like a non-public database ID. For more information, visit https://docs.revenuecat.com/docs/user-ids.")
 	func login(userId: String) async {
 		_ = try? await Purchases.shared.logIn(userId)
 	}

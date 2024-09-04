@@ -13,58 +13,52 @@ struct RewardListView: View {
 	@Environment(\.dismiss) var dismiss
 	@State var viewModel = ViewModel()
 	
-    var body: some View {
+	var body: some View {
 		
 		NavigationStack {
-			ZStack {
-				List {
-					Section {
-						ForEach(viewModel.topRewards) { reward in
-							
-							Label(reward.name, systemImage: reward.systemImage)
-								.symbolRenderingMode(.hierarchical)
-								.padding(20)
-								.background(Color(uiColor: UIColor.tertiarySystemBackground))
-								.clipShape(
-									RoundedRectangle(cornerRadius: 25)
-								)
-								.listRowSeparator(.hidden)
-								.listRowBackground(Color.clear)
-						}
-					}
-					
-					if viewModel.showAllRewards {
-						Section {
-							
-							ForEach(viewModel.otherRewards) { reward in
-								
-								Label(reward.name, systemImage: reward.systemImage)
-									.symbolRenderingMode(.hierarchical)
-									.padding(10)
-							}
-						}
+			List {
+				Section {
+					ForEach(viewModel.topRewards) { reward in
+						
+						Label(reward.name, systemImage: reward.systemImage)
+							.symbolRenderingMode(.hierarchical)
+							.padding(20)
+							.background(Color(uiColor: UIColor.tertiarySystemBackground))
+							.clipShape(
+								RoundedRectangle(cornerRadius: 25)
+							)
+							.listRowSeparator(.hidden)
+							.listRowBackground(Color.clear)
 					}
 				}
 				
-				VStack {
-					Spacer()
-					Button {
-						withAnimation {
-							viewModel.showAllRewards.toggle()
-						}
-					} label: {
-						if viewModel.showAllRewards {
-							Image(systemName: "xmark.circle.fill")
-								.scaleEffect(2)
+				if viewModel.showAllRewards {
+					Section {
+						
+						ForEach(viewModel.otherRewards) { reward in
+							
+							Label(reward.name, systemImage: reward.systemImage)
 								.symbolRenderingMode(.hierarchical)
-						} else {
-							Text("more rewards")
-								.shadow(radius: viewModel.showAllRewards ? 5 : 0)
+								.padding(10)
 						}
 					}
-					.background(Color.clear)
-					.frame(maxWidth: .infinity)
 				}
+			}
+			.navigationTitle(Text("Rewards"))
+			
+			.safeAreaInset(edge: .bottom) {
+				Button {
+					withAnimation {
+						viewModel.showAllRewards.toggle()
+					}
+				} label: {
+					
+					Label(viewModel.showAllRewards ? "hide" : "show more rewards",
+						  systemImage: viewModel.showAllRewards ? "xmark.circle.fill" : "plus.circle.fill")
+				}
+				.buttonStyle(SCButtonStyle())
+				.background(Color.clear)
+				.frame(maxWidth: .infinity)
 			}
 			
 			.confettiCannon(
@@ -83,22 +77,19 @@ struct RewardListView: View {
 			.interactiveDismissDisabled()
 			
 			.toolbar {
-				ToolbarItem(placement: .principal) {
-					Text("Rewards")
-				}
-				
 				ToolbarItem {
 					Button {
 						dismiss()
 					} label: {
-						Image(systemName: "xmark.circle.fill")
-							.symbolRenderingMode(.hierarchical)
+						Image(systemName: "xmark")
+							.imageScale(.small)
 					}
+					.buttonStyle(SCCircleButtonStyle(padding: 12))
 				}
 			}
 		}
 		.fontDesign(.rounded)
-    }
+	}
 }
 
 extension RewardListView {
@@ -147,5 +138,5 @@ struct TopRewards<T>: View where T: Displayable{
 }
 
 #Preview {
-    RewardListView()
+	RewardListView()
 }

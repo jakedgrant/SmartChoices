@@ -51,25 +51,17 @@ struct ManageRewardsView: View {
 						}
 					}
 				}
-				.toolbar {
-					
-					ToolbarItem {
-						Text("Manage Rewards")
-					}
-				}
+				.navigationTitle(Text("Manage Rewards"))
 				.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 				
-				Button(action: addReward) {
+				.safeAreaInset(edge: .bottom) {
 					
-					Image(systemName: "plus")
-						.imageScale(.large)
-						.bold()
-						.padding(10)
+					Button(action: addReward) {
+						Label("Add new reward", systemImage: "plus")
+					}
+					.buttonStyle(SCButtonStyle())
+					.frame(maxWidth: .infinity)
 				}
-				.labelStyle(.iconOnly)
-				.buttonStyle(.borderedProminent)
-				.offset(x: -28, y: -1)
-				.shadow(radius: 5)
 
 			}
 			.fontDesign(.rounded)

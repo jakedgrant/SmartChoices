@@ -35,10 +35,9 @@ struct ContentView: View {
 //				.ignoresSafeArea()
 				
 				VStack {
-					Spacer()
 					
 					Button("Smart Choice", action: roll)
-						.buttonStyle(SCCircleButtonStyle())
+						.buttonStyle(SCCircleButtonStyle(padding: 80))
 						.font(.title2)
 					
 						.alert(
