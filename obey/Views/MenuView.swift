@@ -12,7 +12,7 @@ struct MenuView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
-	@Binding var isShowingManageRewards: Bool
+	@Binding var isShowingSettings: Bool
 	
 	@ObservedObject private var userViewModel = UserViewModel.shared
 	
@@ -30,9 +30,9 @@ struct MenuView: View {
 			Divider()
 			
 			Button {
-				isShowingManageRewards = true
+				isShowingSettings = true
 			} label: {
-				Label("Manage rewards", systemImage: "list.star")
+				Label("Settings", systemImage: "gear")
 			}
 			
 			Divider()
@@ -80,5 +80,5 @@ struct MenuView: View {
 }
 
 #Preview {
-	MenuView(isShowingManageRewards: .constant(false))
+	MenuView(isShowingSettings: .constant(false))
 }

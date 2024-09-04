@@ -20,6 +20,7 @@
 		23077F772C851CFE000D131F /* Smart Choices.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 23077F752C851CFE000D131F /* Smart Choices.storekit */; };
 		23077F792C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */; };
 		23077F7A2C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */; };
+		23077F7F2C881802000D131F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F7E2C881802000D131F /* SettingsView.swift */; };
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
@@ -107,6 +108,7 @@
 		23077F732C851268000D131F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		23077F752C851CFE000D131F /* Smart Choices.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Smart Choices.storekit"; sourceTree = "<group>"; };
 		23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
+		23077F7E2C881802000D131F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
+				23077F7E2C881802000D131F /* SettingsView.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
 				23077F652C7D7309000D131F /* MenuView.swift */,
@@ -438,6 +441,7 @@
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
 				23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */,
+				23077F7F2C881802000D131F /* SettingsView.swift in Sources */,
 				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
 				23077F642C72A501000D131F /* IconView.swift in Sources */,

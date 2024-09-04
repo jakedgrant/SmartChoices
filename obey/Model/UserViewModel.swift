@@ -27,6 +27,10 @@ class UserViewModel: ObservableObject {
 			unlockActive = activeEntitlements.contains { key, value in
 				entitlementIDs.contains { $0 == key }
 			}
+			
+			isSubscriber = activeEntitlements.contains { key, _ in
+				key == Constants.subscriptionEntitlementID
+			}
 		}
 	}
 	
@@ -35,6 +39,8 @@ class UserViewModel: ObservableObject {
 	
 	/* Set from the didSet method of customerInfo above, based on the entitlement set in Constants.swift */
 	@Published var unlockActive: Bool = false
+	
+	@Published var isSubscriber: Bool = false
 	
 	/*
 	 How to login and identify your users with the Purchases SDK.

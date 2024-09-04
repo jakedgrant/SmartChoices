@@ -65,24 +65,24 @@ struct ManageRewardsView: View {
 
 			}
 			.fontDesign(.rounded)
-			.presentPaywallIfNeeded { customerInfo in
-				// Returning `true` will present the paywall
-				
-				let activeEntitlements = customerInfo.entitlements.active
-				let entitlementIDs = [Constants.subscriptionEntitlementID, Constants.onetimeEntitlementID]
-				
-				let active = activeEntitlements.contains { key, value in
-					entitlementIDs.contains { $0 == key }
-				}
-				
-				return !active
-				
-			} purchaseCompleted: { customerInfo in
-				print("Purchase completed: \(customerInfo.entitlements)")
-			} restoreCompleted: { customerInfo in
-				// Paywall will be dismissed automatically if "pro" is now active.
-				print("Purchases restored: \(customerInfo.entitlements)")
-			}
+//			.presentPaywallIfNeeded { customerInfo in
+//				// Returning `true` will present the paywall
+//				
+//				let activeEntitlements = customerInfo.entitlements.active
+//				let entitlementIDs = [Constants.subscriptionEntitlementID, Constants.onetimeEntitlementID]
+//				
+//				let active = activeEntitlements.contains { key, value in
+//					entitlementIDs.contains { $0 == key }
+//				}
+//				
+//				return !active
+//				
+//			} purchaseCompleted: { customerInfo in
+//				print("Purchase completed: \(customerInfo.entitlements)")
+//			} restoreCompleted: { customerInfo in
+//				// Paywall will be dismissed automatically if "pro" is now active.
+//				print("Purchases restored: \(customerInfo.entitlements)")
+//			}
 		}
     }
 }
