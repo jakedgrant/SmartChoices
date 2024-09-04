@@ -72,7 +72,11 @@ struct SettingsView: View {
 				case .rewardManage:
 					ManageRewardsView()
 				case .rewardHistory:
-					Text("Unimplemented")
+					if userViewModel.unlockActive {
+						Text("Unimplemented")
+					} else {
+						PaywallView()
+					}
 				}
 			}
 			.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
