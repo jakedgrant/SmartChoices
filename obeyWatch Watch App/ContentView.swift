@@ -24,7 +24,7 @@ struct ContentView: View {
 				
 				Button("Smart Choice", action: roll)
 					.bold()
-					.fontWidth(.expanded)
+					.fontDesign(.rounded)
 					.focusable()
 					.digitalCrownRotation($rotation) { value in
 						withAnimation {

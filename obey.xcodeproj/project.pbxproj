@@ -10,6 +10,16 @@
 		23077F622C72A4E1000D131F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F612C72A4E1000D131F /* Icon.swift */; };
 		23077F642C72A501000D131F /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F632C72A501000D131F /* IconView.swift */; };
 		23077F662C7D7309000D131F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F652C7D7309000D131F /* MenuView.swift */; };
+		23077F6A2C7ED6B8000D131F /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 23077F692C7ED6B8000D131F /* RevenueCat */; };
+		23077F6C2C7ED6B8000D131F /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23077F6B2C7ED6B8000D131F /* RevenueCatUI */; };
+		23077F6E2C7ED6DC000D131F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23077F6D2C7ED6DC000D131F /* StoreKit.framework */; };
+		23077F702C7ED891000D131F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F6F2C7ED891000D131F /* Secrets.swift */; };
+		23077F722C7EDD36000D131F /* PurchasesDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */; };
+		23077F742C851268000D131F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F732C851268000D131F /* UserViewModel.swift */; };
+		23077F762C851CFE000D131F /* Smart Choices.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 23077F752C851CFE000D131F /* Smart Choices.storekit */; };
+		23077F772C851CFE000D131F /* Smart Choices.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 23077F752C851CFE000D131F /* Smart Choices.storekit */; };
+		23077F792C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */; };
+		23077F7A2C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */; };
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
@@ -91,6 +101,12 @@
 		23077F632C72A501000D131F /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		23077F652C7D7309000D131F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		23077F672C7D7BB4000D131F /* obeyWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "obeyWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		23077F6D2C7ED6DC000D131F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		23077F6F2C7ED891000D131F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesDelegateHandler.swift; sourceTree = "<group>"; };
+		23077F732C851268000D131F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		23077F752C851CFE000D131F /* Smart Choices.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Smart Choices.storekit"; sourceTree = "<group>"; };
+		23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
@@ -134,7 +150,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23077F6A2C7ED6B8000D131F /* RevenueCat in Frameworks */,
 				23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */,
+				23077F6C2C7ED6B8000D131F /* RevenueCatUI in Frameworks */,
+				23077F6E2C7ED6DC000D131F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +170,8 @@
 		23BF8C902C2D05BB00C40157 = {
 			isa = PBXGroup;
 			children = (
+				23077F752C851CFE000D131F /* Smart Choices.storekit */,
+				23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */,
 				23BF8C9B2C2D05BB00C40157 /* obey */,
 				23C7ECDB2C35098D00001637 /* obeyWatch Watch App */,
 				23BF8C9A2C2D05BB00C40157 /* Products */,
@@ -214,8 +235,10 @@
 				23CC5F262C509F4D0018A724 /* DB */,
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
+				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
+				23077F732C851268000D131F /* UserViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +249,7 @@
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
 				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
 				23C7ED002C40495F00001637 /* Roll.swift */,
+				23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -268,6 +292,7 @@
 		23CC5F202C41D2C10018A724 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23077F6D2C7ED6DC000D131F /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,6 +328,8 @@
 			name = obey;
 			packageProductDependencies = (
 				23B80C252C2FB7810031B115 /* ConfettiSwiftUI */,
+				23077F692C7ED6B8000D131F /* RevenueCat */,
+				23077F6B2C7ED6B8000D131F /* RevenueCatUI */,
 			);
 			productName = obey;
 			productReference = 23BF8C992C2D05BB00C40157 /* obey.app */;
@@ -354,6 +381,7 @@
 			mainGroup = 23BF8C902C2D05BB00C40157;
 			packageReferences = (
 				23B80C242C2FB7810031B115 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
 			);
 			productRefGroup = 23BF8C9A2C2D05BB00C40157 /* Products */;
 			projectDirPath = "";
@@ -370,8 +398,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23077F762C851CFE000D131F /* Smart Choices.storekit in Resources */,
 				23BF8CA72C2D05BD00C40157 /* Preview Assets.xcassets in Resources */,
 				23BF8CA32C2D05BD00C40157 /* Assets.xcassets in Resources */,
+				23077F792C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,8 +409,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23077F772C851CFE000D131F /* Smart Choices.storekit in Resources */,
 				23C7ECE42C35098F00001637 /* Preview Assets.xcassets in Resources */,
 				23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */,
+				23077F7A2C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
+				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
 				23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */,
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */,
@@ -410,10 +443,12 @@
 				23077F642C72A501000D131F /* IconView.swift in Sources */,
 				231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */,
 				23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */,
+				23077F702C7ED891000D131F /* Secrets.swift in Sources */,
 				23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */,
 				23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */,
 				23CC5F282C509F580018A724 /* Database.swift in Sources */,
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
+				23077F722C7EDD36000D131F /* PurchasesDelegateHandler.swift in Sources */,
 				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
 				23C7ED012C40495F00001637 /* Roll.swift in Sources */,
@@ -755,6 +790,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
 		23B80C242C2FB7810031B115 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
@@ -766,6 +809,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		23077F692C7ED6B8000D131F /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		23077F6B2C7ED6B8000D131F /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCatUI;
+		};
 		23B80C252C2FB7810031B115 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 23B80C242C2FB7810031B115 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;

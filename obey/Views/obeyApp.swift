@@ -7,9 +7,22 @@
 
 import SwiftUI
 import SwiftData
+import RevenueCat
 
 @main
 struct obeyApp: App {
+	init() {
+		
+        #if DEBUG
+		Purchases.logLevel = .debug
+        #endif
+		
+		// Use this initializer if your app does not have an account system.
+		Purchases.configure(withAPIKey: Secrets.apiKey)
+
+		/* Set the delegate to our shared instance of PurchasesDelegateHandler */
+		Purchases.shared.delegate = PurchasesDelegateHandler.shared
+	}
 	
 	var sharedModelContainer: ModelContainer = {
 		let schema = Schema([SDReward.self])
@@ -25,6 +38,14 @@ struct obeyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+				.task {
+					do {
+						// Fetch the available offerings
+						UserViewModel.shared.offerings = try await Purchases.shared.offerings()
+					} catch {
+						print("Error fetching offerings: \(error)")
+					}
+				}
         }
 		.modelContainer(sharedModelContainer)
     }

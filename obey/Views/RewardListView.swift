@@ -97,7 +97,7 @@ struct RewardListView: View {
 				}
 			}
 		}
-		.fontWidth(.expanded)
+		.fontDesign(.rounded)
     }
 }
 

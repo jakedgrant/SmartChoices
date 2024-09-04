@@ -10,7 +10,8 @@ import SwiftUI
 struct ManageRewardsView: View {
     var body: some View {
         Text("Unimplemented")
-			.fontWidth(.expanded)
+			.fontDesign(.rounded)
+			.font(.title)
     }
 }
 

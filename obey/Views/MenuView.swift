@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct MenuView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
 	@Binding var isShowingManageRewards: Bool
+	
+	@ObservedObject private var userViewModel = UserViewModel.shared
 	
     var body: some View {
 		Menu {
@@ -31,8 +34,47 @@ struct MenuView: View {
 			} label: {
 				Label("Manage rewards", systemImage: "list.star")
 			}
+			
+			Divider()
+			
+			Button {
+				Task {
+					try? await Purchases.shared.restorePurchases()
+				}
+			} label: {
+				Label("Restore purchases", systemImage: "dollarsign.arrow.circlepath")
+			}
+			
+			Button {
+				if !userViewModel.unlockActive,
+				   let currentOffering = userViewModel.offerings?.current,
+				   let package = currentOffering.annual
+				{
+					Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
+						
+						userViewModel.customerInfo = customerInfo
+					}
+				}
+				
+			} label: {
+				Label(
+					userViewModel.unlockActive ? "Unlocked" : "Locked",
+					systemImage: userViewModel.unlockActive ? "lock.open" : "lock"
+				)
+			}
+			
 		} label: {
 			Image(systemName: "gear")
+				.foregroundStyle(Color.white)
+				.bold()
+				.fontDesign(.rounded)
+				.padding()
+				.background(SCButtonBackground())
+				.overlay(
+					Circle()
+						.stroke(.black.opacity(0.2), lineWidth: 8.0)
+				)
+				.clipShape(Circle())
 		}
     }
 }

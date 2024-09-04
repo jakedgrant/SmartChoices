@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import RevenueCat
 
 struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
@@ -20,8 +21,6 @@ struct ContentView: View {
 	@State private var endPoint = 2
 	
 	let colors: [Color] = [.red, .orange, .yellow, .green]
-	
-	@State private var isDebug = false
 	
     var body: some View {
 		NavigationStack {
@@ -39,7 +38,8 @@ struct ContentView: View {
 					Spacer()
 					
 					Button("Smart Choice", action: roll)
-						.buttonStyle(SCButtonStyle())
+						.buttonStyle(SCCircleButtonStyle())
+						.font(.title2)
 					
 						.alert(
 							Alert.unlucky.title,
@@ -62,18 +62,6 @@ struct ContentView: View {
 						.sensoryFeedback(.success, trigger: isShowingRewards) { _, new in
 							new == true
 						}
-					
-					Spacer()
-					
-					if isDebug {
-						DebugView()
-					}
-				}
-			}
-			
-			.onShake {
-				withAnimation {
-					isDebug.toggle()
 				}
 			}
 			
@@ -82,6 +70,7 @@ struct ContentView: View {
 					MenuView(isShowingManageRewards: $isShowingManageRewards)
 				}
 			}
+			
 			.sheet(isPresented: $isShowingManageRewards) {
 				ManageRewardsView()
 			}
@@ -89,8 +78,6 @@ struct ContentView: View {
 			.task {
 				await populateRewards()
 			}
-			
-			.fontWidth(.expanded)
 		}
     }
 

@@ -43,7 +43,7 @@ struct IconPickerView: View {
 						VStack(spacing: 2) {
 							HStack {
 								Text(set.name)
-									.fontWidth(.expanded)
+									.fontDesign(.rounded)
 									.foregroundStyle(.accent)
 									.bold()
 								Spacer()

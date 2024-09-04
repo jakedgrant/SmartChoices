@@ -75,7 +75,7 @@ struct AddEditRewardView: View {
 			}
 			.listRowBackground(Color.red)
 		}
-		.fontWidth(.expanded)
+		.fontDesign(.rounded)
     }
 	
 	private func deleteReward(_ reward: SDReward) {
