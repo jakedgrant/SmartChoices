@@ -15,5 +15,7 @@ struct Constants {
 	
 	static let subscriptionEntitlementID = "full_unlock_subscription"
 	static let onetimeEntitlementID = "full_unlock_onetime"
+	
+	static let defaultImageName = "star.circle.fill"
 }
 

@@ -20,15 +20,15 @@ struct RewardListView: View {
 				Section {
 					ForEach(viewModel.topRewards) { reward in
 						
-						Label(reward.name, systemImage: reward.systemImage)
-							.symbolRenderingMode(.hierarchical)
-							.padding(20)
-							.background(Color(uiColor: UIColor.tertiarySystemBackground))
-							.clipShape(
-								RoundedRectangle(cornerRadius: 25)
-							)
-							.listRowSeparator(.hidden)
-							.listRowBackground(Color.clear)
+						Button {
+							log(reward)
+						} label: {
+							Label(reward.name, systemImage: reward.systemImage)
+						}
+						.buttonStyle(SCButtonStyle())
+						.listRowSeparator(.hidden)
+						.listRowBackground(Color.clear)
+						.listRowInsets(.init(top: -8, leading: 0, bottom: -8, trailing: 0))
 					}
 				}
 				
@@ -37,9 +37,13 @@ struct RewardListView: View {
 						
 						ForEach(viewModel.otherRewards) { reward in
 							
-							Label(reward.name, systemImage: reward.systemImage)
-								.symbolRenderingMode(.hierarchical)
-								.padding(10)
+							Button {
+								log(reward)
+							} label: {
+								Label(reward.name, systemImage: reward.systemImage)
+									.symbolRenderingMode(.hierarchical)
+									.padding(10)
+							}
 						}
 					}
 				}
@@ -90,6 +94,11 @@ struct RewardListView: View {
 		}
 		.fontDesign(.rounded)
 	}
+	
+	private func log(_ reward: SDReward) {
+		viewModel.log(reward)
+		dismiss()
+	}
 }
 
 extension RewardListView {
@@ -112,6 +121,18 @@ extension RewardListView {
 				
 			} catch {
 				print("error when fetching rewards for display \(error.localizedDescription)")
+			}
+		}
+		
+		func log(_ reward: SDReward) {
+			
+			do {
+				let log = SDLog(reward: reward)
+				
+				let db = try LogDatabase()
+				try db.create(log)				
+			} catch {
+				print("error when saving to log \(error.localizedDescription)")
 			}
 		}
 	}
@@ -138,5 +159,14 @@ struct TopRewards<T>: View where T: Displayable{
 }
 
 #Preview {
-	RewardListView()
+	let config = ModelConfiguration(isStoredInMemoryOnly: true)
+	let container = try! ModelContainer(for: SDReward.self, configurations: config)
+	
+	for r in Reward.allCases {
+		let n = SDReward(name: r.description, systemImage: r.image)
+		container.mainContext.insert(n)
+	}
+	
+	return RewardListView()
+		.modelContainer(container)
 }

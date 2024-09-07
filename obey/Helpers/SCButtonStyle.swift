@@ -30,6 +30,7 @@ struct SCButtonStyle: ButtonStyle {
 		
 		configuration.label
 			.foregroundStyle(.white)
+			.symbolRenderingMode(.hierarchical)
 			.bold()
 			.fontDesign(.rounded)
 			.padding(.vertical, 12)

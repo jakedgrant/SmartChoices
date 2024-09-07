@@ -21,10 +21,13 @@
 		23077F792C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */; };
 		23077F7A2C851DF7000D131F /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */; };
 		23077F7F2C881802000D131F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F7E2C881802000D131F /* SettingsView.swift */; };
+		23077F812C883059000D131F /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
 		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
+		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -109,10 +112,12 @@
 		23077F752C851CFE000D131F /* Smart Choices.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Smart Choices.storekit"; sourceTree = "<group>"; };
 		23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		23077F7E2C881802000D131F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		23077F802C883059000D131F /* SDLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDLog.swift; sourceTree = "<group>"; };
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+		2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDatabase.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -241,6 +246,7 @@
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
+				23077F802C883059000D131F /* SDLog.swift */,
 				23077F732C851268000D131F /* UserViewModel.swift */,
 			);
 			path = Model;
@@ -306,6 +312,7 @@
 				23CC5F272C509F580018A724 /* Database.swift */,
 				23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */,
 				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,
+				2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -429,6 +436,7 @@
 				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
 				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
 				23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */,
+				2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */,
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
@@ -452,6 +460,7 @@
 				23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */,
 				23CC5F282C509F580018A724 /* Database.swift in Sources */,
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
+				23077F812C883059000D131F /* SDLog.swift in Sources */,
 				23077F722C7EDD36000D131F /* PurchasesDelegateHandler.swift in Sources */,
 				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
@@ -474,6 +483,7 @@
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
+				2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */,
 				23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,

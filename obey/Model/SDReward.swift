@@ -13,13 +13,16 @@ import SwiftUI
 final class SDReward: Identifiable {
 	var id = UUID()
 	var name: String = ""
-	var systemImage: String = "trophy.fill"
+	var systemImage: String = Constants.defaultImageName
 	var isActive: Bool = true
 	
-	init(name: String = "", systemImage: String = "trophy.fill", isActive: Bool = true) {
+	@Relationship(deleteRule: .nullify, inverse: \SDLog.reward) var logs: [SDLog]? = []
+	
+	init(name: String = "", systemImage: String = Constants.defaultImageName, isActive: Bool = true, logs: [SDLog]? = []) {
 		self.name = name
 		self.systemImage = systemImage
 		self.isActive = isActive
+		self.logs = logs
 	}
 }
 
