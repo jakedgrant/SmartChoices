@@ -73,7 +73,7 @@ struct SettingsView: View {
 					ManageRewardsView()
 				case .rewardHistory:
 					if userViewModel.unlockActive {
-						Text("Unimplemented")
+						LogListView()
 					} else {
 						PaywallView()
 					}
