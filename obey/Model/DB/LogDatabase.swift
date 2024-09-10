@@ -25,3 +25,26 @@ final class LogDatabase: SwiftDatabase {
 		)
 	}
 }
+
+extension LogDatabase {
+	
+	func logs(for reward: SDReward) -> [T] {
+		let rewardName = reward.name
+		let sort = SortDescriptor<T>(\.timestamp, order: .reverse)
+		let predicate = #Predicate<SDLog> { log in
+			
+			if let logReward = log.reward {
+				return logReward.name == rewardName
+			} else {
+				return false
+			}
+		}
+		
+		do {
+			return try self.read(predicate: predicate, sortDescriptors: sort)
+		} catch {
+			print(error.localizedDescription)
+			return []
+		}
+	}
+}

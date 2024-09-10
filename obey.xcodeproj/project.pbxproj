@@ -26,6 +26,7 @@
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
 		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */; };
@@ -507,6 +508,7 @@
 				2392DD112C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */,
 				2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */,
+				23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 				2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */,

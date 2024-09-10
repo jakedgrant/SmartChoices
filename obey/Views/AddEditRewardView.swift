@@ -12,6 +12,7 @@ struct AddEditRewardView: View {
 	
 	@Environment(\.modelContext) var modelContext
 	@Environment(\.dismiss) var dismiss
+	@EnvironmentObject var nav: NavigationStateManager
 	
 	@ObservedObject private var userViewModel = UserViewModel.shared
 	
@@ -19,6 +20,8 @@ struct AddEditRewardView: View {
 	
 	@State private var isShowingIconPicker = false
 	@State private var isConfirmingDelete = false
+	
+	@State private var logs: [SDLog] = []
 	
     var body: some View {
 		Form {
@@ -45,7 +48,7 @@ struct AddEditRewardView: View {
 					.disabled(!userViewModel.unlockActive)
 			} footer: {
 				if !userViewModel.unlockActive {
-					Text("Subscribe to Smarter Choices to enable and disable rewards")
+					Text("Subscribe to enable and disable rewards")
 				}
 			}
 			
@@ -71,12 +74,59 @@ struct AddEditRewardView: View {
 				}
 			}
 			.listRowBackground(Color.red)
+			
+			Section("History") {
+				if logs.isEmpty {
+					
+					Button {
+						guard userViewModel.unlockActive else {
+							nav.path.append(Route.paywall)
+							return
+						}
+						Task {
+							await getLogs()
+						}
+					} label: {
+						Label("Load reward history", systemImage: userViewModel.unlockActive ? "scroll" : "lock")
+					}
+				} else {
+					
+					ForEach(logs) { log in
+						
+						LogEntryView(timestamp: log.timestamp, name: log.reward?.name, systemImage: log.reward?.systemImage, odds: log.odds, losses: log.losses, increasedOdds: log.increasedOdds)
+							.transition(.opacity.animation(.easeInOut))
+					}
+				}
+			} footer: {
+				
+				if !userViewModel.unlockActive {
+					Text("Subscribe to view reward history")
+				}
+			}
 		}
+		.navigationTitle(Text(reward.name))
+		.navigationBarTitleDisplayMode(.inline)
+		.interactiveDismissDisabled()
 		.fontDesign(.rounded)
     }
 	
 	private func deleteReward(_ reward: SDReward) {
 		modelContext.delete(reward)
+	}
+	
+	private func getLogs() async {
+		
+		do {
+			let db = try LogDatabase()
+			
+			let newlogs = db.logs(for: reward)
+			
+			withAnimation {
+				logs = newlogs
+			}
+		} catch {
+			print("Error trying to retrieve reward logs - \(error.localizedDescription)")
+		}
 	}
 }
 
