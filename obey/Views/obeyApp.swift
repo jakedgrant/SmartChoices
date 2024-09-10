@@ -5,9 +5,9 @@
 //  Created by Jake Grant on 6/26/24.
 //
 
+import RevenueCat
 import SwiftUI
 import SwiftData
-import RevenueCat
 
 @main
 struct obeyApp: App {

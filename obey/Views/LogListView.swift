@@ -15,11 +15,26 @@ struct LogListView: View {
 	@Query(sort: \SDLog.timestamp, order: .reverse) private var logs: [SDLog]
 	
     var body: some View {
-		
-		List(logs) { log in
-			Label("t:\(log.timestamp.formatted()), r:\(log.reward?.name ?? "A reward")", systemImage: log.reward?.systemImage ?? Constants.defaultImageName)
+		List {
+			Section {
+				DisclosureGroup("Key", content: {
+					KeyView()
+				})
+				
+				ForEach(logs) { log in
+					LogEntryView(
+						timestamp: log.timestamp,
+						name: log.reward?.name,
+						systemImage: log.reward?.systemImage,
+						odds: log.odds,
+						losses: log.losses,
+						increasedOdds: log.increasedOdds
+					)
+				}
+			}
 		}
 		.navigationTitle(Text("Reward History"))
+		.navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -33,9 +48,13 @@ struct LogListView: View {
 	container.mainContext.insert(r1)
 	container.mainContext.insert(r2)
 	
-	let l1 = SDLog(timestamp: .init(timeIntervalSince1970: 1000), reward: r1)
-	let l2 = SDLog(timestamp: .init(timeIntervalSince1970: 0), reward: r1)
-	let l3 = SDLog(timestamp: .init(timeIntervalSince1970: 2000), reward: r2)
+	let stat1 = RollStat(odds: 5, losses: 0, increasedOdds: true)
+	let stat2 = RollStat(odds: 6, losses: 6, increasedOdds: false)
+	let stat3 = RollStat(odds: 6, losses: 2, increasedOdds: true)
+	
+	let l1 = SDLog(timestamp: .init(timeIntervalSince1970: 1000), reward: r1, stats: stat1)
+	let l2 = SDLog(timestamp: .init(timeIntervalSince1970: 0), reward: r1, stats: stat2)
+	let l3 = SDLog(timestamp: .init(timeIntervalSince1970: 2000), reward: r2, stats: stat3)
 	
 	container.mainContext.insert(l1)
 	container.mainContext.insert(l2)

@@ -11,7 +11,11 @@ import SwiftUI
 
 struct RewardListView: View {
 	@Environment(\.dismiss) var dismiss
-	@State var viewModel = ViewModel()
+	@State var viewModel: ViewModel
+	
+	init(stats: RollStat?) {
+		viewModel = ViewModel(stats: stats)
+	}
 	
 	var body: some View {
 		
@@ -110,7 +114,9 @@ extension RewardListView {
 		var topRewards: ArraySlice<SDReward> = []
 		var otherRewards: ArraySlice<SDReward> = []
 		
-		init() {
+		let stats: RollStat?
+		
+		init(stats: RollStat? = nil) {
 			
 			do {
 				let db = try RewardDatabase()
@@ -122,12 +128,14 @@ extension RewardListView {
 			} catch {
 				print("error when fetching rewards for display \(error.localizedDescription)")
 			}
+			
+			self.stats = stats
 		}
 		
 		func log(_ reward: SDReward) {
 			
 			do {
-				let log = SDLog(reward: reward)
+				let log = SDLog(reward: reward, stats: stats)
 				
 				let db = try LogDatabase()
 				try db.create(log)				
@@ -167,6 +175,6 @@ struct TopRewards<T>: View where T: Displayable{
 		container.mainContext.insert(n)
 	}
 	
-	return RewardListView()
+	return RewardListView(stats: RollStat(odds: 1, losses: 0, increasedOdds: true))
 		.modelContainer(container)
 }

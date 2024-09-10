@@ -29,6 +29,13 @@
 		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */; };
+		2392DD102C8E956E00DE3034 /* LogEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */; };
+		2392DD112C8E956E00DE3034 /* LogEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */; };
+		2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */; };
+		2392DD142C8EB09500DE3034 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD132C8EB09500DE3034 /* KeyView.swift */; };
+		2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD132C8EB09500DE3034 /* KeyView.swift */; };
+		2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
+		2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -120,6 +127,9 @@
 		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
 		2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDatabase.swift; sourceTree = "<group>"; };
 		2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
+		2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
+		2392DD132C8EB09500DE3034 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
+		2392DD162C8EB10700DE3034 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -225,8 +235,11 @@
 			children = (
 				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
 				23077F7E2C881802000D131F /* SettingsView.swift */,
+				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
+				2392DD162C8EB10700DE3034 /* BadgeLabel.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
 				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
+				2392DD132C8EB09500DE3034 /* KeyView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
 				23077F652C7D7309000D131F /* MenuView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
@@ -453,6 +466,8 @@
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
 				23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */,
+				2392DD142C8EB09500DE3034 /* KeyView.swift in Sources */,
+				2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 				23077F7F2C881802000D131F /* SettingsView.swift in Sources */,
 				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
@@ -462,6 +477,7 @@
 				23077F702C7ED891000D131F /* Secrets.swift in Sources */,
 				23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */,
 				23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */,
+				2392DD102C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F282C509F580018A724 /* Database.swift in Sources */,
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
 				23077F812C883059000D131F /* SDLog.swift in Sources */,
@@ -488,9 +504,13 @@
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
 				2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */,
+				2392DD112C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */,
+				2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
+				2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */,
+				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,11 @@ struct ContentView: View {
 						}
 					
 						.sheet(isPresented: $isShowingRewards) {
-							RewardListView()
+							RewardListView(stats: RollStat(
+								odds: odds,
+								losses: losses,
+								increasedOdds: nil
+							))
 						}
 					
 						.sensoryFeedback(.success, trigger: isShowingRewards) { _, new in

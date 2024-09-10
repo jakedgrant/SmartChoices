@@ -18,6 +18,36 @@
             endingLineNumber = "46"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "4AA11F33-E29E-43AD-8FF2-0F46D2AC93F1 - dec5b6312e8be723"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in obey.obeyApp.body.getter : some"
+                  moduleName = "obey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jake/Developer/obey/obey/Views/obeyApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+               <Location
+                  uuid = "4AA11F33-E29E-43AD-8FF2-0F46D2AC93F1 - da13ad9d806f5924"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in obey.obeyApp.body.getter : some"
+                  moduleName = "obey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jake/Developer/obey/obey/Views/obeyApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -146,6 +176,36 @@
             endingLineNumber = "53"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "6EB0E5CF-A783-4785-BA68-25EE38A1357F - c78685e476ff6e4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #7 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ModifiedContent&lt;SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.Text, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;)&gt; in obey.MenuView.body.getter : some"
+                  moduleName = "obey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jake/Developer/obey/obey/Views/MenuView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53">
+               </Location>
+               <Location
+                  uuid = "6EB0E5CF-A783-4785-BA68-25EE38A1357F - 84d422832e31aa90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable (Swift.Optional&lt;RevenueCat.StoreTransaction&gt;, Swift.Optional&lt;RevenueCat.CustomerInfo&gt;, Swift.Optional&lt;__C.NSError&gt;, Swift.Bool) -&gt; () in closure #7 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ModifiedContent&lt;SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.Text, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;)&gt; in obey.MenuView.body.getter : some"
+                  moduleName = "obey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jake/Developer/obey/obey/Views/MenuView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -174,8 +234,8 @@
             filePath = "obey/Views/RewardListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "log(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +250,8 @@
             filePath = "obey/Views/RewardListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "log(_:)"
             landmarkType = "7">
          </BreakpointContent>
