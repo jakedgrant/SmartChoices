@@ -146,36 +146,6 @@
             endingLineNumber = "53"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "6EB0E5CF-A783-4785-BA68-25EE38A1357F - c78685e476ff6e4b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #7 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ModifiedContent&lt;SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.Text, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;)&gt; in obey.MenuView.body.getter : some"
-                  moduleName = "obey"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jake/Developer/obey/obey/Views/MenuView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53">
-               </Location>
-               <Location
-                  uuid = "6EB0E5CF-A783-4785-BA68-25EE38A1357F - 84d422832e31aa90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor @Sendable (Swift.Optional&lt;RevenueCat.StoreTransaction&gt;, Swift.Optional&lt;RevenueCat.CustomerInfo&gt;, Swift.Optional&lt;__C.NSError&gt;, Swift.Bool) -&gt; () in closure #7 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ModifiedContent&lt;SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.AccessibilityAttachmentModifier&gt;, SwiftUI.Text, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Divider, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;, SwiftUI.Button&lt;SwiftUI.Label&lt;SwiftUI.Text, SwiftUI.Image&gt;&gt;)&gt; in obey.MenuView.body.getter : some"
-                  moduleName = "obey"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jake/Developer/obey/obey/Views/MenuView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -236,8 +206,8 @@
             filePath = "obey/Views/ManageRewardsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "addReward()"
             landmarkType = "7">
          </BreakpointContent>
@@ -252,8 +222,8 @@
             filePath = "obey/Views/ManageRewardsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "allowsAddReward()"
             landmarkType = "7">
          </BreakpointContent>

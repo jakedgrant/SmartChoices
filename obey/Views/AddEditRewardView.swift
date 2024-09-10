@@ -13,6 +13,8 @@ struct AddEditRewardView: View {
 	@Environment(\.modelContext) var modelContext
 	@Environment(\.dismiss) var dismiss
 	
+	@ObservedObject private var userViewModel = UserViewModel.shared
+	
 	@Bindable var reward: SDReward
 	
 	@State private var isShowingIconPicker = false
@@ -35,21 +37,16 @@ struct AddEditRewardView: View {
 					IconPickerView(selectedImageName: $reward.systemImage)
 						.presentationDetents([.medium])
 				}
-				
-			} footer: {
-				HStack {
-					Spacer()
-					Button {
-						// this kinda looks like it's for showing more icons...
-					} label: {
-						Text("More...")
-					}
-				}
 			}
 			
 			Section {
 				Toggle("Active", isOn: $reward.isActive)
 					.tint(.accentColor)
+					.disabled(!userViewModel.unlockActive)
+			} footer: {
+				if !userViewModel.unlockActive {
+					Text("Subscribe to Smarter Choices to enable and disable rewards")
+				}
 			}
 			
 			Section {

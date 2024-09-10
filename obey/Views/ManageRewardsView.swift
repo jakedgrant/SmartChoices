@@ -31,14 +31,19 @@ struct ManageRewardsView: View {
 					.opacity(reward.isActive ? 1 : 0.4)
 			})
 			.swipeActions(edge: .leading, allowsFullSwipe: true) {
-				Button { reward.isActive.toggle() } label: {
-					if reward.isActive {
-						Label("Deactivate", systemImage: "circle.slash")
-					} else {
-						Label("Activate", systemImage: "circle")
+				
+				if userViewModel.unlockActive {
+					Button { reward.isActive.toggle() } label: {
+						if reward.isActive {
+							Label("Deactivate", systemImage: "circle.slash")
+						} else {
+							Label("Activate", systemImage: "circle")
+						}
 					}
+					.tint(.accentColor)
+				} else {
+					EmptyView()
 				}
-				.tint(.accentColor)
 			}
 			.swipeActions(edge:.trailing, allowsFullSwipe: true) {
 				Button(role: .destructive) {
