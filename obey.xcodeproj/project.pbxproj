@@ -233,22 +233,22 @@
 		23BF8CB72C2D186C00C40157 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
-				23077F7E2C881802000D131F /* SettingsView.swift */,
-				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
+				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
 				2392DD162C8EB10700DE3034 /* BadgeLabel.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
-				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
-				2392DD132C8EB09500DE3034 /* KeyView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
-				23077F652C7D7309000D131F /* MenuView.swift */,
-				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
-				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
-				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
+				23077F612C72A4E1000D131F /* Icon.swift */,
 				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
 				23077F632C72A501000D131F /* IconView.swift */,
-				23077F612C72A4E1000D131F /* Icon.swift */,
+				2392DD132C8EB09500DE3034 /* KeyView.swift */,
+				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
+				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
+				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
+				23077F652C7D7309000D131F /* MenuView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
+				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
+				23077F7E2C881802000D131F /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,13 +256,13 @@
 		23BF8CB82C2D187E00C40157 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				23CC5F262C509F4D0018A724 /* DB */,
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
-				23077F6F2C7ED891000D131F /* Secrets.swift */,
+				23CC5F262C509F4D0018A724 /* DB */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
-				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
 				23077F802C883059000D131F /* SDLog.swift */,
+				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
+				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23077F732C851268000D131F /* UserViewModel.swift */,
 			);
 			path = Model;
@@ -326,9 +326,9 @@
 			isa = PBXGroup;
 			children = (
 				23CC5F272C509F580018A724 /* Database.swift */,
-				23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */,
-				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,
 				2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */,
+				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,
+				23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";

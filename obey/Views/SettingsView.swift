@@ -11,6 +11,7 @@ import StoreKit
 
 enum Route {
 	case about
+	case paywall
 	case rewardManage
 	case rewardHistory
 }
@@ -69,6 +70,8 @@ struct SettingsView: View {
 				switch routeValue {
 				case .about:
 					Text("Unimplemented")
+				case .paywall:
+					PaywallView()
 				case .rewardManage:
 					ManageRewardsView()
 				case .rewardHistory:
