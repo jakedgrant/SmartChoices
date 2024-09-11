@@ -43,7 +43,8 @@ struct SettingsView: View {
 							isShowingPaywall = true
 						}
 					} label: {
-						Text(userViewModel.unlockActive ? "Manage subscription" : "Subscribe now!")
+						Label(userViewModel.unlockActive ? "Manage subscription" : "Subscribe now!",
+							  systemImage: userViewModel.unlockActive ? "dollarsign.arrow.circlepath" : "hands.and.sparkles.fill")
 					}
 				}
 				
@@ -69,7 +70,7 @@ struct SettingsView: View {
 			.navigationDestination(for: Route.self) { routeValue in
 				switch routeValue {
 				case .about:
-					Text("Unimplemented")
+					AboutView()
 				case .paywall:
 					PaywallView()
 				case .rewardManage:
@@ -97,6 +98,7 @@ struct SettingsView: View {
 							.imageScale(.small)
 					}
 					.buttonStyle(SCCircleButtonStyle(padding: 12))
+					.padding(.trailing, -12)
 				}
 			}
 		}

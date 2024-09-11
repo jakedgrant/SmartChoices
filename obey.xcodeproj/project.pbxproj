@@ -27,6 +27,7 @@
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
 		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
+		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
 		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */; };
@@ -126,6 +127,7 @@
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDatabase.swift; sourceTree = "<group>"; };
 		2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
 				23077F7E2C881802000D131F /* SettingsView.swift */,
+				23357F1C2C915B710000DB7B /* AboutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */,
 				23077F702C7ED891000D131F /* Secrets.swift in Sources */,
 				23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */,
+				23357F1D2C915B710000DB7B /* AboutView.swift in Sources */,
 				23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */,
 				2392DD102C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F282C509F580018A724 /* Database.swift in Sources */,

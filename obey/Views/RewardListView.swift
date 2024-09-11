@@ -93,6 +93,7 @@ struct RewardListView: View {
 							.imageScale(.small)
 					}
 					.buttonStyle(SCCircleButtonStyle(padding: 12))
+					.padding(.trailing, -12)
 				}
 			}
 		}
