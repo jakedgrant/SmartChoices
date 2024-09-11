@@ -35,33 +35,35 @@ struct MenuView: View {
 				Label("Settings", systemImage: "gear")
 			}
 			
-			Divider()
-			
-			Button {
-				Task {
-					try? await Purchases.shared.restorePurchases()
-				}
-			} label: {
-				Label("Restore purchases", systemImage: "dollarsign.arrow.circlepath")
-			}
-			
-			Button {
-				if !userViewModel.unlockActive,
-				   let currentOffering = userViewModel.offerings?.current,
-				   let package = currentOffering.annual
-				{
-					Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
-						
-						userViewModel.customerInfo = customerInfo
-					}
-				}
-				
-			} label: {
-				Label(
-					userViewModel.unlockActive ? "Unlocked" : "Locked",
-					systemImage: userViewModel.unlockActive ? "lock.open" : "lock"
-				)
-			}
+			#if DEBUG
+//			Divider()
+//			
+//			Button {
+//				Task {
+//					try? await Purchases.shared.restorePurchases()
+//				}
+//			} label: {
+//				Label("Restore purchases", systemImage: "dollarsign.arrow.circlepath")
+//			}
+//			
+//			Button {
+//				if !userViewModel.unlockActive,
+//				   let currentOffering = userViewModel.offerings?.current,
+//				   let package = currentOffering.annual
+//				{
+//					Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
+//						
+//						userViewModel.customerInfo = customerInfo
+//					}
+//				}
+//				
+//			} label: {
+//				Label(
+//					userViewModel.unlockActive ? "Unlocked" : "Locked",
+//					systemImage: userViewModel.unlockActive ? "lock.open" : "lock"
+//				)
+//			}
+			#endif
 			
 		} label: {
 			Image(systemName: "list.bullet")
