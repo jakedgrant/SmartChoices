@@ -11,6 +11,8 @@ struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
+	@Environment(\.modelContext) var modelContext
+	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
 	@State private var isDebug = false
@@ -50,7 +52,7 @@ struct ContentView: View {
 				}
 			
 			.sheet(isPresented: $isShowingRewards) {
-				RewardListView()
+				RewardListView(modelContext: self.modelContext)
 			}
 			
 			.containerBackground(

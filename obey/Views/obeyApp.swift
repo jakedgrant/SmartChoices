@@ -23,17 +23,7 @@ struct obeyApp: App {
 		/* Set the delegate to our shared instance of PurchasesDelegateHandler */
 		Purchases.shared.delegate = PurchasesDelegateHandler.shared
 	}
-	
-	var sharedModelContainer: ModelContainer = {
-		let schema = Schema([SDReward.self, SDLog.self])
-		let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-		
-		do {
-			return try ModelContainer(for: schema, configurations: [modelConfiguration])
-		} catch {
-			fatalError("Could not create ModelContainer: \(error)")
-		}
-	}()
+
 
     var body: some Scene {
         WindowGroup {
@@ -47,6 +37,6 @@ struct obeyApp: App {
 					}
 				}
         }
-		.modelContainer(sharedModelContainer)
+		.modelContainer(for: [SDReward.self, SDLog.self])
     }
 }

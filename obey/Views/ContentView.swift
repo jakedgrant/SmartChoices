@@ -13,6 +13,8 @@ struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
+	@Environment(\.modelContext) var modelContext
+	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
 	@State private var isShowingSettings = false
@@ -55,11 +57,7 @@ struct ContentView: View {
 						}
 					
 						.sheet(isPresented: $isShowingRewards) {
-							RewardListView(stats: RollStat(
-								odds: odds,
-								losses: losses,
-								increasedOdds: nil
-							))
+							RewardListView(modelContext: self.modelContext)
 						}
 					
 						.sensoryFeedback(.success, trigger: isShowingRewards) { _, new in

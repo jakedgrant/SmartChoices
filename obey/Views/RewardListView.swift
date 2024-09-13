@@ -11,10 +11,30 @@ import SwiftUI
 
 struct RewardListView: View {
 	@Environment(\.dismiss) var dismiss
-	@State var viewModel: ViewModel
 	
-	init(stats: RollStat?) {
-		viewModel = ViewModel(stats: stats)
+	var modelContext: ModelContext
+	
+	@State private var topRewards: [SDReward]
+	@State private var otherRewards: [SDReward]
+	@State private var showAllRewards = false
+	@State private var counter = 1
+	
+	init(modelContext: ModelContext) {
+		
+		self.modelContext = modelContext
+		
+		let fetchDescriptor = FetchDescriptor<SDReward>(predicate: #Predicate<SDReward> { $0.isActive }, sortBy: [])
+		do {
+			let rewards = try modelContext.fetch(fetchDescriptor).shuffled()
+			
+			topRewards = rewards.dropLast(rewards.count - 3)
+			otherRewards = rewards.reversed().dropLast(3)
+			
+		} catch {
+			print("uh oh: \(error.localizedDescription)")
+			self.topRewards = []
+			self.otherRewards = []
+		}
 	}
 	
 	var body: some View {
@@ -22,7 +42,7 @@ struct RewardListView: View {
 		NavigationStack {
 			List {
 				Section {
-					ForEach(viewModel.topRewards) { reward in
+					ForEach(topRewards) { reward in
 						
 						Button {
 							log(reward)
@@ -36,10 +56,10 @@ struct RewardListView: View {
 					}
 				}
 				
-				if viewModel.showAllRewards {
+				if showAllRewards {
 					Section {
 						
-						ForEach(viewModel.otherRewards) { reward in
+						ForEach(otherRewards) { reward in
 							
 							Button {
 								log(reward)
@@ -55,29 +75,18 @@ struct RewardListView: View {
 			.navigationTitle(Text("Rewards"))
 			
 			.safeAreaInset(edge: .bottom) {
-				Button {
-					withAnimation {
-						viewModel.showAllRewards.toggle()
-					}
-				} label: {
-					
-					Label(viewModel.showAllRewards ? "hide" : "show more rewards",
-						  systemImage: viewModel.showAllRewards ? "xmark.circle.fill" : "plus.circle.fill")
-				}
-				.buttonStyle(SCButtonStyle())
-				.background(Color.clear)
-				.frame(maxWidth: .infinity)
+				ShowHideButton(isShowing: $showAllRewards)
 			}
 			
 			.confettiCannon(
-				counter: $viewModel.counter,
+				counter: $counter,
 				num: 100,
 				rainHeight: 700,
 				radius: 400
 			)
 			
 			.onAppear {
-				viewModel.counter += 1
+				counter += 1
 			}
 			
 			.navigationBarTitleDisplayMode(.inline)
@@ -100,50 +109,37 @@ struct RewardListView: View {
 		.fontDesign(.rounded)
 	}
 	
-	private func log(_ reward: SDReward) {
-		viewModel.log(reward)
-		dismiss()
+	private struct ShowHideButton: View {
+		
+		@Binding var isShowing: Bool
+		
+		var body: some View {
+			Button {
+				withAnimation {
+					isShowing.toggle()
+				}
+			} label: {
+				
+				Label(isShowing ? "hide" : "show more rewards",
+					  systemImage: isShowing ? "xmark.circle.fill" : "plus.circle.fill")
+			}
+			.buttonStyle(SCButtonStyle())
+			.background(Color.clear)
+			.frame(maxWidth: .infinity)
+		}
 	}
-}
-
-extension RewardListView {
 	
-	@Observable
-	final class ViewModel {
-		var counter = 1
-		var showAllRewards = false
-		var topRewards: ArraySlice<SDReward> = []
-		var otherRewards: ArraySlice<SDReward> = []
+	private func log(_ reward: SDReward) {
 		
-		let stats: RollStat?
-		
-		init(stats: RollStat? = nil) {
-			
-			do {
-				let db = try RewardDatabase()
-				let rewards = db.activeRewards().shuffled()
-				
-				topRewards = rewards.prefix(3)
-				otherRewards = rewards.dropFirst(3)
-				
-			} catch {
-				print("error when fetching rewards for display \(error.localizedDescription)")
-			}
-			
-			self.stats = stats
+		let log = SDLog(reward: reward, stats: nil)
+		modelContext.insert(log)
+		do {
+			try modelContext.save()
+		} catch {
+			print("error saving log - \(error.localizedDescription)")
 		}
 		
-		func log(_ reward: SDReward) {
-			
-			do {
-				let log = SDLog(reward: reward, stats: stats)
-				
-				let db = try LogDatabase()
-				try db.create(log)				
-			} catch {
-				print("error when saving to log \(error.localizedDescription)")
-			}
-		}
+		dismiss()
 	}
 }
 
@@ -167,15 +163,15 @@ struct TopRewards<T>: View where T: Displayable{
 	}
 }
 
-#Preview {
-	let config = ModelConfiguration(isStoredInMemoryOnly: true)
-	let container = try! ModelContainer(for: SDReward.self, configurations: config)
-	
-	for r in Reward.allCases {
-		let n = SDReward(name: r.description, systemImage: r.image)
-		container.mainContext.insert(n)
-	}
-	
-	return RewardListView(stats: RollStat(odds: 1, losses: 0, increasedOdds: true))
-		.modelContainer(container)
-}
+//#Preview {
+//	let config = ModelConfiguration(isStoredInMemoryOnly: true)
+//	let container = try! ModelContainer(for: SDReward.self, configurations: config)
+//	
+//	for r in Reward.allCases {
+//		let n = SDReward(name: r.description, systemImage: r.image)
+//		container.mainContext.insert(n)
+//	}
+//	
+//	return RewardListView(stats: RollStat(odds: 1, losses: 0, increasedOdds: true))
+//		.modelContainer(container)
+//}
