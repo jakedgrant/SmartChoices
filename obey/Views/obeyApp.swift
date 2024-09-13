@@ -25,7 +25,7 @@ struct obeyApp: App {
 	}
 	
 	var sharedModelContainer: ModelContainer = {
-		let schema = Schema([SDReward.self])
+		let schema = Schema([SDReward.self, SDLog.self])
 		let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 		
 		do {
