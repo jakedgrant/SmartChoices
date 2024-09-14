@@ -189,6 +189,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		232AF07C2C9507CE0077353B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				23357F1C2C915B710000DB7B /* AboutView.swift */,
+				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
+				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
+				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
+				23077F7E2C881802000D131F /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		23BF8C902C2D05BB00C40157 = {
 			isa = PBXGroup;
 			children = (
@@ -236,23 +249,18 @@
 		23BF8CB72C2D186C00C40157 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+				232AF07C2C9507CE0077353B /* Settings */,
 				2392DD162C8EB10700DE3034 /* BadgeLabel.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
 				23BF8CB32C2D173400C40157 /* DebugView.swift */,
 				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
 				23077F612C72A4E1000D131F /* Icon.swift */,
-				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
 				23077F632C72A501000D131F /* IconView.swift */,
 				2392DD132C8EB09500DE3034 /* KeyView.swift */,
 				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
-				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
-				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
 				23077F652C7D7309000D131F /* MenuView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
-				23077F7E2C881802000D131F /* SettingsView.swift */,
-				23357F1C2C915B710000DB7B /* AboutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,9 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
-				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
-				23C7ED002C40495F00001637 /* Roll.swift */,
 				23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */,
+				23C7ED002C40495F00001637 /* Roll.swift */,
+				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -309,11 +317,11 @@
 		23C7ECF52C403CD400001637 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */,
 				23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */,
-				23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */,
+				23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */,
 				23C7ECFC2C4045A200001637 /* RewardEntity.swift */,
 				23C7ECFE2C40463C00001637 /* RewardQuery.swift */,
+				23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
