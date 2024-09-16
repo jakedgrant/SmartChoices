@@ -14,6 +14,7 @@ struct ContentView: View {
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
 	@Environment(\.modelContext) var modelContext
+	@Query var rewards: [SDReward]
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
@@ -90,15 +91,18 @@ struct ContentView: View {
 	
 	private func populateRewards() async {
 		
-		do {
-			let db = try RewardDatabase()
-			let rewards = db.allRewards()
+		if rewards.isEmpty {
 			
-			if rewards.isEmpty {
-				db.createDefault()
+			Reward.allCases.forEach {
+				let newReward = SDReward(name: $0.description, systemImage: $0.image)
+				modelContext.insert(newReward)
 			}
-		} catch {
-			print("Error when trying to populate rewards \(error.localizedDescription)")
+			
+			do {
+				try modelContext.save()
+			} catch {
+				print("error saving log - \(error.localizedDescription)")
+			}
 		}
 	}
 }
