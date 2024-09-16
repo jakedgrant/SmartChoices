@@ -27,8 +27,8 @@ struct RewardListView: View {
 		do {
 			let rewards = try modelContext.fetch(fetchDescriptor).shuffled()
 			
-			topRewards = rewards.dropLast(rewards.count - 3)
-			otherRewards = rewards.reversed().dropLast(3)
+			topRewards = Array(rewards.prefix(3))
+			otherRewards = Array(rewards.dropFirst(3))
 			
 		} catch {
 			print("uh oh: \(error.localizedDescription)")
@@ -56,6 +56,12 @@ struct RewardListView: View {
 					}
 				}
 				
+				Section {
+					// tip kit?
+//					Text("Select a reward 😊")
+				}
+				.listRowBackground(Color.clear)
+				
 				if showAllRewards {
 					Section {
 						
@@ -75,7 +81,9 @@ struct RewardListView: View {
 			.navigationTitle(Text("Rewards"))
 			
 			.safeAreaInset(edge: .bottom) {
-				ShowHideButton(isShowing: $showAllRewards)
+				if !otherRewards.isEmpty {
+					ShowHideButton(isShowing: $showAllRewards)
+				}
 			}
 			
 			.confettiCannon(

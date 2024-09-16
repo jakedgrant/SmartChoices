@@ -63,6 +63,10 @@ struct SettingsView: View {
 						Label("About", systemImage: "i.circle")
 					}
 				}
+				
+				Section("Stats") {
+					StatsView()
+				}
 			}
 			.navigationTitle("Settings")
 			.navigationBarTitleDisplayMode(.large)

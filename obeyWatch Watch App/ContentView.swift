@@ -63,6 +63,10 @@ struct ContentView: View {
 			)
 			
 			.scenePadding()
+			
+			.task {
+				await populateRewards()
+			}
 		}
     }
 	
@@ -87,6 +91,20 @@ struct ContentView: View {
 	private func decreaseOdds() {
 		if odds < Constants.maxOdds {
 			odds += 1
+		}
+	}
+	
+	private func populateRewards() async {
+		
+		do {
+			let db = try RewardDatabase()
+			let rewards = db.allRewards()
+			
+			if rewards.isEmpty {
+				db.createDefault()
+			}
+		} catch {
+			print("Error when trying to populate rewards \(error.localizedDescription)")
 		}
 	}
 }

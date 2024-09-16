@@ -35,7 +35,7 @@ struct LogEntryView: View {
 						.foregroundStyle(.gray)
 				}
 				
-				OddsView(odds: odds, losses: losses, increasedOdds: increasedOdds)
+//				OddsView(odds: odds, losses: losses, increasedOdds: increasedOdds)
 			}
 			
 			Spacer()

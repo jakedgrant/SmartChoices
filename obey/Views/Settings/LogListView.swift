@@ -17,9 +17,9 @@ struct LogListView: View {
     var body: some View {
 		List {
 			Section {
-				DisclosureGroup("Key", content: {
-					KeyView()
-				})
+//				DisclosureGroup("Key", content: {
+//					KeyView()
+//				})
 				
 				ForEach(logs) { log in
 					LogEntryView(
