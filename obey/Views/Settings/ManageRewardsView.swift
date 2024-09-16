@@ -59,7 +59,7 @@ struct ManageRewardsView: View {
 		.safeAreaInset(edge: .bottom) {
 			
 			Button(action: addReward) {
-				Label(userViewModel.unlockActive ? "Add new reward" : "Unlock to add more rewards", systemImage: userViewModel.unlockActive ? "plus" : "lock")
+				Label(allowsAddReward() ? "Add new reward" : "Unlock to add more rewards", systemImage: allowsAddReward() ? "plus" : "lock")
 			}
 			.buttonStyle(SCButtonStyle())
 			.frame(maxWidth: .infinity)
