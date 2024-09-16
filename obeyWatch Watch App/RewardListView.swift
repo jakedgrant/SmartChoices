@@ -45,13 +45,15 @@ struct RewardListView: View {
 					}
 				}
 		
-				Section("All other rewards") {
-					
-					ForEach(otherRewards) { reward in
+				if !otherRewards.isEmpty {
+					Section("All other rewards") {
 						
-						Label(reward.name, systemImage: reward.systemImage)
-							.foregroundStyle(Color.accentColor)
-							.symbolRenderingMode(.hierarchical)
+						ForEach(otherRewards) { reward in
+							
+							Label(reward.name, systemImage: reward.systemImage)
+								.foregroundStyle(Color.accentColor)
+								.symbolRenderingMode(.hierarchical)
+						}
 					}
 				}
 			}
