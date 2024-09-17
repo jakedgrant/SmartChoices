@@ -8,6 +8,7 @@
 import ConfettiSwiftUI
 import SwiftData
 import SwiftUI
+import TipKit
 
 struct RewardListView: View {
 	@Environment(\.dismiss) var dismiss
@@ -18,6 +19,8 @@ struct RewardListView: View {
 	@State private var otherRewards: [SDReward]
 	@State private var showAllRewards = false
 	@State private var counter = 1
+	
+	let logRewardTip = LogRewardTip()
 	
 	init(modelContext: ModelContext) {
 		
@@ -56,11 +59,7 @@ struct RewardListView: View {
 					}
 				}
 				
-				Section {
-					// tip kit?
-//					Text("Select a reward 😊")
-				}
-				.listRowBackground(Color.clear)
+				TipView(logRewardTip)
 				
 				if showAllRewards {
 					Section {

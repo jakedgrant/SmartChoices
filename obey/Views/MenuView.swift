@@ -35,50 +35,28 @@ struct MenuView: View {
 				Label("Settings", systemImage: "gear")
 			}
 			
-			#if DEBUG
-//			Divider()
-//			
-//			Button {
-//				Task {
-//					try? await Purchases.shared.restorePurchases()
-//				}
-//			} label: {
-//				Label("Restore purchases", systemImage: "dollarsign.arrow.circlepath")
-//			}
-//			
-//			Button {
-//				if !userViewModel.unlockActive,
-//				   let currentOffering = userViewModel.offerings?.current,
-//				   let package = currentOffering.annual
-//				{
-//					Purchases.shared.purchase(package: package) { (transaction, customerInfo, error, userCancelled) in
-//						
-//						userViewModel.customerInfo = customerInfo
-//					}
-//				}
-//				
-//			} label: {
-//				Label(
-//					userViewModel.unlockActive ? "Unlocked" : "Locked",
-//					systemImage: userViewModel.unlockActive ? "lock.open" : "lock"
-//				)
-//			}
-			#endif
-			
 		} label: {
-			Image(systemName: "list.bullet")
-				.foregroundStyle(Color.white)
-				.bold()
-				.fontDesign(.rounded)
-				.padding()
-				.background(SCButtonBackground())
-				.overlay(
-					Circle()
-						.stroke(.black.opacity(0.2), lineWidth: 8.0)
-				)
-				.clipShape(Circle())
+			MenuImageView()
 		}
     }
+}
+
+struct MenuImageView: View {
+	
+	var body: some View {
+		
+		Image(systemName: "list.bullet")
+			.foregroundStyle(Color.white)
+			.bold()
+			.fontDesign(.rounded)
+			.padding()
+			.background(SCButtonBackground())
+			.overlay(
+				Circle()
+					.stroke(.black.opacity(0.2), lineWidth: 8.0)
+			)
+			.clipShape(Circle())
+	}
 }
 
 #Preview {

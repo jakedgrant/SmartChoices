@@ -5,6 +5,30 @@
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ios-dark-smart-choices-icon.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "tinted"
+        }
+      ],
+      "filename" : "ios-tinted-smart-choices-icon.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
     }
   ],
   "info" : {

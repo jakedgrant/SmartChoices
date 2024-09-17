@@ -8,6 +8,7 @@
 import RevenueCat
 import SwiftUI
 import SwiftData
+import TipKit
 
 @main
 struct obeyApp: App {
@@ -22,6 +23,16 @@ struct obeyApp: App {
 
 		/* Set the delegate to our shared instance of PurchasesDelegateHandler */
 		Purchases.shared.delegate = PurchasesDelegateHandler.shared
+		
+		
+		
+		do {
+			// Configure and load all tips in the app.
+			try Tips.configure()
+		}
+		catch {
+			print("Error initializing tips: \(error)")
+		}
 	}
 
 

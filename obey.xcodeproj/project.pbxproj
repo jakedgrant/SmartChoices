@@ -51,6 +51,14 @@
 		23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* Alert.swift */; };
 		23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
+		23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D32C97EB3200E21137 /* LogRewardTip.swift */; };
+		23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D32C97EB3200E21137 /* LogRewardTip.swift */; };
+		23C435D82C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */; };
+		23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */; };
+		23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */; };
+		23C435DC2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */; };
+		23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
+		23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
 		23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */; };
 		23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDE2C35098D00001637 /* ContentView.swift */; };
 		23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE02C35098F00001637 /* Assets.xcassets */; };
@@ -149,6 +157,10 @@
 		23BF8CB12C2D16B800C40157 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		23BF8CB32C2D173400C40157 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		23BF8CB52C2D17D800C40157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		23C435D32C97EB3200E21137 /* LogRewardTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRewardTip.swift; sourceTree = "<group>"; };
+		23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsSwipeActionsTip.swift; sourceTree = "<group>"; };
+		23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsTip.swift; sourceTree = "<group>"; };
+		23C435DD2C97F33C00E21137 /* BigButtonTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonTip.swift; sourceTree = "<group>"; };
 		23C7ECDA2C35098D00001637 /* Smart Choices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Choices.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = obeyWatchApp.swift; sourceTree = "<group>"; };
 		23C7ECDE2C35098D00001637 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -279,6 +291,7 @@
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23077F732C851268000D131F /* UserViewModel.swift */,
+				23C435D62C97EB3A00E21137 /* Tips */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,6 +305,17 @@
 				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		23C435D62C97EB3A00E21137 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				23C435D32C97EB3200E21137 /* LogRewardTip.swift */,
+				23C435DD2C97F33C00E21137 /* BigButtonTip.swift */,
+				23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */,
+				23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */,
+			);
+			path = Tips;
 			sourceTree = "<group>";
 		};
 		23C7ECDB2C35098D00001637 /* obeyWatch Watch App */ = {
@@ -465,9 +489,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
+				23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
 				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
 				23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */,
 				2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */,
+				23C435D82C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
@@ -485,6 +511,8 @@
 				2392DD142C8EB09500DE3034 /* KeyView.swift in Sources */,
 				2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 				23077F7F2C881802000D131F /* SettingsView.swift in Sources */,
+				23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */,
+				23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
 				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
 				23077F642C72A501000D131F /* IconView.swift in Sources */,
@@ -509,17 +537,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
 				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
 				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
 				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
+				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
+				23C435DC2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
 				2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */,
 				2392DD112C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */,
@@ -528,6 +559,7 @@
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 				2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */,
+				23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,7 +702,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_ASSET_PATHS = "\"obey/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -692,7 +724,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -712,7 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_ASSET_PATHS = "\"obey/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -734,7 +766,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -753,7 +785,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
@@ -767,7 +799,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
 				PRODUCT_NAME = "Smart Choices";
 				SDKROOT = watchos;
@@ -786,7 +818,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
@@ -800,7 +832,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
 				PRODUCT_NAME = "Smart Choices";
 				SDKROOT = watchos;

@@ -5,9 +5,10 @@
 //  Created by Jake Grant on 7/23/24.
 //
 
+import RevenueCatUI
 import SwiftData
 import SwiftUI
-import RevenueCatUI
+import TipKit
 
 struct ManageRewardsView: View {
 	
@@ -19,38 +20,48 @@ struct ManageRewardsView: View {
 	@Query(sort: \SDReward.name) private var rewards: [SDReward]
 	@State private var newRewardName = ""
 	
+	let swipeActionsTip = ManageRewardsSwipeActionsTip()
+	
 	var body: some View {
 		
-		List(rewards) { reward in
+		List {
 			
-			NavigationLink(value: reward, label: {
-				
-				Label(reward.name, systemImage: reward.systemImage)
-					.symbolRenderingMode(.hierarchical)
-					.padding(10)
-					.opacity(reward.isActive ? 1 : 0.4)
-			})
-			.swipeActions(edge: .leading, allowsFullSwipe: true) {
-				
-				if userViewModel.unlockActive {
-					Button { reward.isActive.toggle() } label: {
-						if reward.isActive {
-							Label("Deactivate", systemImage: "circle.slash")
-						} else {
-							Label("Activate", systemImage: "circle")
-						}
-					}
-					.tint(.accentColor)
-				} else {
-					EmptyView()
-				}
+			Section {
+				TipView(swipeActionsTip)
 			}
-			.swipeActions(edge:.trailing, allowsFullSwipe: true) {
-				Button(role: .destructive) {
-					deleteReward(reward)
-				} label: {
-					Label("Delete", systemImage: "trash")
+			
+			ForEach(rewards) { reward in
+				
+				NavigationLink(value: reward, label: {
+					
+					Label(reward.name, systemImage: reward.systemImage)
+						.symbolRenderingMode(.hierarchical)
+						.padding(10)
+						.opacity(reward.isActive ? 1 : 0.4)
+				})
+				.swipeActions(edge: .leading, allowsFullSwipe: true) {
+					
+					if userViewModel.unlockActive {
+						Button { reward.isActive.toggle() } label: {
+							if reward.isActive {
+								Label("Deactivate", systemImage: "circle.slash")
+							} else {
+								Label("Activate", systemImage: "circle")
+							}
+						}
+						.tint(.accentColor)
+					} else {
+						EmptyView()
+					}
 				}
+				.swipeActions(edge:.trailing, allowsFullSwipe: true) {
+					Button(role: .destructive) {
+						deleteReward(reward)
+					} label: {
+						Label("Delete", systemImage: "trash")
+					}
+				}
+				
 			}
 		}
 		.navigationTitle(Text("Manage Rewards"))

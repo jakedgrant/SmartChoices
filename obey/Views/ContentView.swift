@@ -5,9 +5,10 @@
 //  Created by Jake Grant on 6/26/24.
 //
 
-import SwiftUI
-import SwiftData
 import RevenueCat
+import SwiftData
+import SwiftUI
+import TipKit
 
 struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
@@ -69,7 +70,13 @@ struct ContentView: View {
 			
 			.toolbar {
 				ToolbarItem(placement: .bottomBar) {
-					MenuView(isShowingSettings: $isShowingSettings)
+					Button {
+						isShowingSettings = true
+					} label: {
+						
+						MenuImageView()
+					}
+//					MenuView(isShowingSettings: $isShowingSettings)
 				}
 			}
 			
