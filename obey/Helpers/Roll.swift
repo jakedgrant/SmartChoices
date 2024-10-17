@@ -23,10 +23,15 @@ struct Roll {
 		let result = Int.random(in: 1...odds)
 		
 		if result == 1 {
+			
+			LastStat.shared.update(odds: odds, losses: losses, increasedOdds: true)
+			
 			decreaseOdds()
 			resetLosses()
 			return true
 		} else if losses >= odds {
+			
+			LastStat.shared.update(odds: odds, losses: losses, increasedOdds: false)
 			
 			resetLosses()
 			return true

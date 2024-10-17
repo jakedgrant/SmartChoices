@@ -34,24 +34,4 @@ final class SDLog: Identifiable {
 		self.losses = losses
 		self.increasedOdds = increasedOdds
 	}
-	
-	init(
-		id: UUID = UUID(),
-		timestamp: Date = Date.now,
-		reward: SDReward,
-		stats: RollStat?
-	) {
-		self.id = id
-		self.timestamp = timestamp
-		self.reward = reward
-		self.odds = stats?.odds
-		self.losses = stats?.losses
-		self.increasedOdds = stats?.increasedOdds
-	}
-}
-
-struct RollStat {
-	let odds: Int
-	let losses: Int
-	let increasedOdds: Bool?
 }

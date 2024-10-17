@@ -35,7 +35,9 @@ struct LogEntryView: View {
 						.foregroundStyle(.gray)
 				}
 				
-//				OddsView(odds: odds, losses: losses, increasedOdds: increasedOdds)
+				if let odds, let losses {
+					OddsView(odds: odds, losses: losses, increasedOdds: increasedOdds)
+				}
 			}
 			
 			Spacer()
@@ -62,14 +64,14 @@ struct LogEntryView: View {
 	}
 	
 	private struct OddsView: View {
-		let odds: Int?
-		let losses: Int?
+		let odds: Int
+		let losses: Int
 		let increasedOdds: Bool?
 		
 		var body: some View {
 			HStack(spacing: 4) {
-				BadgeLabel("1 : \(odds ?? 0)", systemImage: "dice")
-				BadgeLabel("\(losses ?? 0)", systemImage: "star.slash")
+				BadgeLabel("1 : \(odds)", systemImage: "dice")
+				BadgeLabel("\(losses)", systemImage: "star.slash")
 				
 				if increasedOdds == true {
 					BadgeLabel(nil, systemImage: "arrow.up")

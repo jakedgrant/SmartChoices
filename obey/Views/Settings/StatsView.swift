@@ -15,7 +15,6 @@ struct StatsView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
-	
     var body: some View {
         
 		Group {

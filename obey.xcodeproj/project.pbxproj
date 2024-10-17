@@ -59,6 +59,8 @@
 		23C435DC2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */; };
 		23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
 		23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
+		23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
+		23C4360E2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
 		23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */; };
 		23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECDE2C35098D00001637 /* ContentView.swift */; };
 		23C7ECE12C35098F00001637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C7ECE02C35098F00001637 /* Assets.xcassets */; };
@@ -161,6 +163,7 @@
 		23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsSwipeActionsTip.swift; sourceTree = "<group>"; };
 		23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsTip.swift; sourceTree = "<group>"; };
 		23C435DD2C97F33C00E21137 /* BigButtonTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonTip.swift; sourceTree = "<group>"; };
+		23C4360C2CC0B2A600E21137 /* LastStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastStat.swift; sourceTree = "<group>"; };
 		23C7ECDA2C35098D00001637 /* Smart Choices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Choices.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = obeyWatchApp.swift; sourceTree = "<group>"; };
 		23C7ECDE2C35098D00001637 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -292,6 +295,7 @@
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23077F732C851268000D131F /* UserViewModel.swift */,
 				23C435D62C97EB3A00E21137 /* Tips */,
+				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -509,6 +513,7 @@
 				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
 				23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */,
 				2392DD142C8EB09500DE3034 /* KeyView.swift in Sources */,
+				23C4360E2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 				23077F7F2C881802000D131F /* SettingsView.swift in Sources */,
 				23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */,
@@ -560,6 +565,7 @@
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 				2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */,
 				23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
+				23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

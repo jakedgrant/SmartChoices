@@ -17,10 +17,12 @@ struct LogListView: View {
     var body: some View {
 		List {
 			Section {
-//				DisclosureGroup("Key", content: {
-//					KeyView()
-//				})
+				DisclosureGroup("Key", content: {
+					KeyView()
+				})
+			}
 				
+			Section {
 				ForEach(logs) { log in
 					LogEntryView(
 						timestamp: log.timestamp,

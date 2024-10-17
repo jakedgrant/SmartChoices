@@ -51,6 +51,7 @@ struct ContentView: View {
 						) { state in
 							
 							Button("Reward Anyway") {
+								LastStat.shared.update(odds: odds, losses: losses, increasedOdds: false)
 								isShowingRewards = true
 							}
 							Button(state.cta, role: .cancel) { }
@@ -73,10 +74,8 @@ struct ContentView: View {
 					Button {
 						isShowingSettings = true
 					} label: {
-						
 						MenuImageView()
 					}
-//					MenuView(isShowingSettings: $isShowingSettings)
 				}
 			}
 			

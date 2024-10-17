@@ -138,8 +138,15 @@ struct RewardListView: View {
 	
 	private func log(_ reward: SDReward) {
 		
-		let log = SDLog(reward: reward, stats: nil)
+		let log = SDLog(
+			reward: reward,
+			odds: LastStat.shared.odds,
+			losses: LastStat.shared.losses,
+			increasedOdds: LastStat.shared.increasedOdds
+		)
+		
 		modelContext.insert(log)
+		
 		do {
 			try modelContext.save()
 		} catch {
