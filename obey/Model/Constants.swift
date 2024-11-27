@@ -17,5 +17,7 @@ struct Constants {
 	static let onetimeEntitlementID = "full_unlock_onetime"
 	
 	static let defaultImageName = "star.circle.fill"
+	
+	static let startingVersion = "0.0.0"
 }
 

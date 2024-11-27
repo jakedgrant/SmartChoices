@@ -50,13 +50,9 @@ struct LogListView: View {
 	container.mainContext.insert(r1)
 	container.mainContext.insert(r2)
 	
-	let stat1 = RollStat(odds: 5, losses: 0, increasedOdds: true)
-	let stat2 = RollStat(odds: 6, losses: 6, increasedOdds: false)
-	let stat3 = RollStat(odds: 6, losses: 2, increasedOdds: true)
-	
-	let l1 = SDLog(timestamp: .init(timeIntervalSince1970: 1000), reward: r1, stats: stat1)
-	let l2 = SDLog(timestamp: .init(timeIntervalSince1970: 0), reward: r1, stats: stat2)
-	let l3 = SDLog(timestamp: .init(timeIntervalSince1970: 2000), reward: r2, stats: stat3)
+	let l1 = SDLog(timestamp: .init(timeIntervalSince1970: 1000), reward: r1, odds: 5, losses: 0, increasedOdds: true)
+	let l2 = SDLog(timestamp: .init(timeIntervalSince1970: 0), reward: r1, odds: 6, losses: 6, increasedOdds: false)
+	let l3 = SDLog(timestamp: .init(timeIntervalSince1970: 2000), reward: r2, odds: 6, losses: 2, increasedOdds: true)
 	
 	container.mainContext.insert(l1)
 	container.mainContext.insert(l2)

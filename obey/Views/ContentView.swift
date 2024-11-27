@@ -5,6 +5,7 @@
 //  Created by Jake Grant on 6/26/24.
 //
 
+import Recap
 import RevenueCat
 import SwiftData
 import SwiftUI
@@ -13,6 +14,7 @@ import TipKit
 struct ContentView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
+	@AppStorage("previousVersionString", store: UserDefaults(suiteName: Constants.suiteName)) var previousVersionString: String = Constants.startingVersion
 	
 	@Environment(\.modelContext) var modelContext
 	@Query var rewards: [SDReward]
@@ -20,6 +22,8 @@ struct ContentView: View {
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
 	@State private var isShowingSettings = false
+	@State private var isShowingRecap = false
+	@State private var releasePackage: ReleasePackage? = nil
 	
 	@State private var startPoint = -1
 	@State private var endPoint = 2
@@ -83,8 +87,16 @@ struct ContentView: View {
 				SettingsView()
 			}
 			
+			.sheet(item: $releasePackage) { package in
+				ObeyRecap(showing: package.releases)
+			}
+			
 			.task {
 				await populateRewards()
+			}
+			
+			.onAppear {
+				releasePackage = showReleasePackage
 			}
 		}
     }
@@ -110,6 +122,16 @@ struct ContentView: View {
 				print("error saving log - \(error.localizedDescription)")
 			}
 		}
+	}
+	
+	var showReleasePackage: ReleasePackage? {
+		let currentVersionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+		guard let currentVersionString else { return nil }
+
+		let packageToShow = ReleasePackage.display(for: currentVersionString, with: previousVersionString)
+		previousVersionString = currentVersionString
+		
+		return packageToShow
 	}
 }
 

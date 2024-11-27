@@ -28,6 +28,7 @@ struct SettingsView: View {
 	
 	@State private var isShowingPaywall = false
 	@State private var isShowingManageSubscription = false
+	@State private var isShowingRecap = false
 	
 	@StateObject var nav = NavigationStateManager()
 	
@@ -62,6 +63,12 @@ struct SettingsView: View {
 					NavigationLink(value: Route.about) {
 						Label("About", systemImage: "i.circle")
 					}
+					
+					Button {
+						isShowingRecap = true
+					} label: {
+						Label("What's new?", systemImage: "party.popper")
+					}
 				}
 				
 				Section("Stats") {
@@ -90,6 +97,8 @@ struct SettingsView: View {
 			.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 			
 			.sheet(isPresented: $isShowingPaywall, content: { PaywallView() })
+			
+			.sheet(isPresented: $isShowingRecap, content: { ObeyRecap(showing: .update) })
 			
 			.manageSubscriptionsSheet(isPresented: $isShowingManageSubscription)
 			

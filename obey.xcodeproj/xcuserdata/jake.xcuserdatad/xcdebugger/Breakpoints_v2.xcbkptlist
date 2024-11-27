@@ -260,5 +260,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07639CD3-6866-4F59-B163-408B410BD7B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "obey/Views/RewardListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "log(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "971889EE-9A46-4F3C-964E-02EE9DCFB8F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "obey/Views/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "971889EE-9A46-4F3C-964E-02EE9DCFB8F4 - 5592c6dce810f60a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (obey.Alert) -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.VStack&lt;&lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in obey.ContentView.body.getter : some"
+                  moduleName = "obey.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jake/Developer/obey/obey/Views/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57">
+               </Location>
+               <Location
+                  uuid = "971889EE-9A46-4F3C-964E-02EE9DCFB8F4 - 963cac6fe95cab1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (obey.Alert) -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.VStack&lt;&lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in obey.ContentView.body.getter : some"
+                  moduleName = "obey.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jake/Developer/obey/obey/Views/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6FDD4E6-22A6-4ECB-A0A4-5095BABB1F4F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "obey/Views/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "showReleasePackage"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
