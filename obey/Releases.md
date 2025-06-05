@@ -8,7 +8,7 @@
 - color: #4F86F7
 
 - title: Stats
-- descripton: You can now see a snapshot of the stats when a reward was earned.
+- description: You can now see a snapshot of the stats when a reward was earned.
 - symbol: chart.pie.fill
 - color: #4F86F7
 
