@@ -15,6 +15,7 @@ struct ReleasePackageTests {
 		arguments: [
 			RecapParameters(curr: "1.0", prev: "1.0", result: nil),
 			RecapParameters(curr: "1.0", prev: "1.1", result: nil),
+			RecapParameters(curr: "1.0.1", prev: "1.0.0", result: nil),
 			RecapParameters(curr: "1.1", prev: "1.0", result: .update),
 			RecapParameters(curr: "1.0", prev: Constants.startingVersion, result: .onboarding),
 			RecapParameters(curr: "1.1", prev: Constants.startingVersion, result: .onboarding)
