@@ -9,7 +9,7 @@ import Foundation
 import RevenueCat
 
 /*
- The class we'll use to publish CustomerInfo data to our Magic Weather app.
+ The class we'll use to publish CustomerInfo data to our Smart Choices app.
  */
 
 class PurchasesDelegateHandler: NSObject, ObservableObject {
