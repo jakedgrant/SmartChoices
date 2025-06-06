@@ -24,9 +24,11 @@
 		23077F812C883059000D131F /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
-		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
-		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
-		232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
+231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
+231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+ecd58c0bbc4b4ab39b6856c4 /* ManageUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = d1707ab0ffeb4f58a03caf0a /* ManageUsersView.swift */; };
+7a5b2cfda5ae4fa5a3da9c52 /* AddEditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ff319cc600448d82f6e56a /* AddEditUserView.swift */; };
+232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
 		23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
@@ -154,8 +156,10 @@
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
-		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
-		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+d1707ab0ffeb4f58a03caf0a /* ManageUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUsersView.swift; sourceTree = "<group>"; };
+38ff319cc600448d82f6e56a /* AddEditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditUserView.swift; sourceTree = "<group>"; };
+232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
@@ -245,13 +249,15 @@
 		232AF07C2C9507CE0077353B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				23357F1C2C915B710000DB7B /* AboutView.swift */,
-				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
-				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
-				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
-				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
-				23077F7E2C881802000D131F /* SettingsView.swift */,
-				232AF07D2C9658E40077353B /* StatsView.swift */,
+23357F1C2C915B710000DB7B /* AboutView.swift */,
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
+2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
+231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
+d1707ab0ffeb4f58a03caf0a /* ManageUsersView.swift */,
+23077F7E2C881802000D131F /* SettingsView.swift */,
+38ff319cc600448d82f6e56a /* AddEditUserView.swift */,
+232AF07D2C9658E40077353B /* StatsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -619,8 +625,10 @@
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
 				23077F812C883059000D131F /* SDLog.swift in Sources */,
 				23077F722C7EDD36000D131F /* PurchasesDelegateHandler.swift in Sources */,
-				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
-				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
+231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
+ecd58c0bbc4b4ab39b6856c4 /* ManageUsersView.swift in Sources */,
+7a5b2cfda5ae4fa5a3da9c52 /* AddEditUserView.swift in Sources */,
+23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
 				23C7ED012C40495F00001637 /* Roll.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,8 +649,10 @@
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
 				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
-				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
-				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
+231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
+ecd58c0bbc4b4ab39b6856c4 /* ManageUsersView.swift in Sources */,
+7a5b2cfda5ae4fa5a3da9c52 /* AddEditUserView.swift in Sources */,
+23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
 				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,

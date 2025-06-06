@@ -48,6 +48,6 @@ struct obeyApp: App {
                     }
                 }
         }
-        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self])
+        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self], migrationPlan: ObeyMigrationPlan.self)
     }
 }

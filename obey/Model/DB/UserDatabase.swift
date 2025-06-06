@@ -14,6 +14,7 @@ final class UserDatabase: SwiftDatabase {
 
         container = try ModelContainer(
             for: T.self,
+            migrationPlan: ObeyMigrationPlan.self,
             configurations: configuration
         )
     }

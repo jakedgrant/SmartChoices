@@ -10,10 +10,11 @@ import SwiftUI
 import StoreKit
 
 enum Route {
-	case about
-	case paywall
-	case rewardManage
-	case rewardHistory
+        case about
+        case paywall
+        case rewardManage
+        case rewardHistory
+        case userManage
 }
 
 class NavigationStateManager: ObservableObject {
@@ -49,20 +50,26 @@ struct SettingsView: View {
 					}
 				}
 				
-				Section("Rewards") {
-					NavigationLink(value: Route.rewardManage) {
-						Label("Manage rewards", systemImage: "list.star")
-					}
-					
-					NavigationLink(value: Route.rewardHistory) {
-						Label("Reward history", systemImage: userViewModel.unlockActive ? "scroll" : "lock" )
-					}
-				}
-				
-				Section {
-					NavigationLink(value: Route.about) {
-						Label("About", systemImage: "i.circle")
-					}
+                                Section("Rewards") {
+                                        NavigationLink(value: Route.rewardManage) {
+                                                Label("Manage rewards", systemImage: "list.star")
+                                        }
+
+                                        NavigationLink(value: Route.rewardHistory) {
+                                                Label("Reward history", systemImage: userViewModel.unlockActive ? "scroll" : "lock" )
+                                        }
+                                }
+
+                                Section("Users") {
+                                        NavigationLink(value: Route.userManage) {
+                                                Label("Manage users", systemImage: "person.2")
+                                        }
+                                }
+
+                                Section {
+                                        NavigationLink(value: Route.about) {
+                                                Label("About", systemImage: "i.circle")
+                                        }
 					
 					Button {
 						isShowingRecap = true
@@ -79,22 +86,25 @@ struct SettingsView: View {
 			.navigationBarTitleDisplayMode(.large)
 			
 			.navigationDestination(for: Route.self) { routeValue in
-				switch routeValue {
-				case .about:
-					AboutView()
-				case .paywall:
-					PaywallView()
-				case .rewardManage:
-					ManageRewardsView()
-				case .rewardHistory:
-					if userViewModel.unlockActive {
-						LogListView()
-					} else {
-						PaywallView()
-					}
-				}
-			}
-			.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
+                                switch routeValue {
+                                case .about:
+                                        AboutView()
+                                case .paywall:
+                                        PaywallView()
+                                case .rewardManage:
+                                        ManageRewardsView()
+                                case .rewardHistory:
+                                        if userViewModel.unlockActive {
+                                                LogListView()
+                                        } else {
+                                                PaywallView()
+                                        }
+                                case .userManage:
+                                        ManageUsersView()
+                                }
+                        }
+                        .navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
+                        .navigationDestination(for: SDUser.self) { AddEditUserView(user: $0) }
 			
 			.sheet(isPresented: $isShowingPaywall, content: { PaywallView() })
 			

@@ -13,17 +13,18 @@ final class LogDatabase: SwiftDatabase {
 	
 	let container: ModelContainer
 	
-	init(useInMemoryStore: Bool = false) throws {
-		let configuration = ModelConfiguration(
-			for: T.self,
-			isStoredInMemoryOnly: useInMemoryStore
-		)
-		
-		container = try ModelContainer(
-			for: T.self,
-			configurations: configuration
-		)
-	}
+        init(useInMemoryStore: Bool = false) throws {
+                let configuration = ModelConfiguration(
+                        for: T.self,
+                        isStoredInMemoryOnly: useInMemoryStore
+                )
+
+                container = try ModelContainer(
+                        for: T.self,
+                        migrationPlan: ObeyMigrationPlan.self,
+                        configurations: configuration
+                )
+        }
 }
 
 extension LogDatabase {

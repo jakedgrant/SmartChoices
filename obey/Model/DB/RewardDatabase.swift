@@ -13,17 +13,18 @@ final class RewardDatabase: SwiftDatabase {
 	
 	let container: ModelContainer
 	
-	init(useInMemoryStore: Bool = false) throws {
-		let configuration = ModelConfiguration(
-			for: T.self,
-			isStoredInMemoryOnly: useInMemoryStore
-		)
-		
-		container = try ModelContainer(
-			for: T.self,
-			configurations: configuration
-		)
-	}
+        init(useInMemoryStore: Bool = false) throws {
+                let configuration = ModelConfiguration(
+                        for: T.self,
+                        isStoredInMemoryOnly: useInMemoryStore
+                )
+
+                container = try ModelContainer(
+                        for: T.self,
+                        migrationPlan: ObeyMigrationPlan.self,
+                        configurations: configuration
+                )
+        }
 	
 	private let allPredicate = #Predicate<T> { _ in return true }
 	private let isActivePredicate = #Predicate<T> { $0.isActive }

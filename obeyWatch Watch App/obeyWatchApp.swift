@@ -16,6 +16,6 @@ struct obeyWatch_Watch_AppApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self])
+        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self], migrationPlan: ObeyMigrationPlan.self)
     }
 }
