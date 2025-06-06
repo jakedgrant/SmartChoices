@@ -109,7 +109,6 @@ struct obeyApp: App {
                 }
         }
         .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self])
-
 // Uncomment and run app on a physical device after making model changes
 //        .modelContainer(modelContainer)
     }

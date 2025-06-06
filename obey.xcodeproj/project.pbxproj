@@ -393,6 +393,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildF
 		23BF8CB82C2D187E00C40157 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23729D0C2DF2B273007317AA /* CodableColor.swift */,
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
 				23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */,
 				23729D0C2DF2B273007317AA /* StandardColor.swift */,
@@ -492,6 +493,7 @@ F18E1CC9107549FB93DC7768 /* AddRewardView.swift */,
 		23CC5F262C509F4D0018A724 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				23729D062DF2B24E007317AA /* UserDatabase.swift */,
 				23CC5F272C509F580018A724 /* Database.swift */,
 				2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */,
 				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,

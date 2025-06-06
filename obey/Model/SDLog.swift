@@ -14,7 +14,6 @@ final class SDLog: Identifiable {
     var timestamp = Date.now
     var reward: SDReward?
     var user: SDUser?
-
     // Surprise mode stats
     var odds: Int?
     var losses: Int?
@@ -37,7 +36,7 @@ final class SDLog: Identifiable {
         self.losses = losses
         self.increasedOdds = increasedOdds
     }
-
+    
     init(
         id: UUID = UUID(),
         timestamp: Date = Date.now,
