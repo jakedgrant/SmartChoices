@@ -13,7 +13,6 @@ final class SDLog: Identifiable {
     var id = UUID()
     var timestamp = Date.now
     var reward: SDReward?
-    @Relationship(deleteRule: .nullify, inverse: \SDUser.logs)
     var user: SDUser?
 
     // Stats

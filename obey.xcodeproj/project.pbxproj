@@ -29,6 +29,12 @@
 		232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
+		23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
+		23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
+		23729D0A2DF2B25D007317AA /* SDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D092DF2B25D007317AA /* SDUser.swift */; };
+		23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D092DF2B25D007317AA /* SDUser.swift */; };
+		23729D0D2DF2B273007317AA /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* CodableColor.swift */; };
+		23729D0E2DF2B273007317AA /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* CodableColor.swift */; };
 		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */; };
@@ -151,6 +157,9 @@
 		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
 		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
+		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
+		23729D0C2DF2B273007317AA /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
 		2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDatabase.swift; sourceTree = "<group>"; };
 		2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
@@ -318,12 +327,14 @@
 		23BF8CB82C2D187E00C40157 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23729D0C2DF2B273007317AA /* CodableColor.swift */,
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23CC5F262C509F4D0018A724 /* DB */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
 				23077F802C883059000D131F /* SDLog.swift */,
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
+				23729D092DF2B25D007317AA /* SDUser.swift */,
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23077F732C851268000D131F /* UserViewModel.swift */,
 				23C435D62C97EB3A00E21137 /* Tips */,
@@ -400,6 +411,7 @@
 		23CC5F262C509F4D0018A724 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				23729D062DF2B24E007317AA /* UserDatabase.swift */,
 				23CC5F272C509F580018A724 /* Database.swift */,
 				2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */,
 				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,
@@ -563,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23729D0D2DF2B273007317AA /* CodableColor.swift in Sources */,
 				23C436132CC0BFBC00E21137 /* ObeyRecap.swift in Sources */,
 				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
 				23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
@@ -580,6 +593,7 @@
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
+				23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */,
 				232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
@@ -592,6 +606,7 @@
 				23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
 				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
+				23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */,
 				23077F642C72A501000D131F /* IconView.swift in Sources */,
 				231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */,
 				23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */,
@@ -631,6 +646,7 @@
 				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
+				23729D0E2DF2B273007317AA /* CodableColor.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
@@ -641,9 +657,11 @@
 				2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */,
 				23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
+				23729D0A2DF2B25D007317AA /* SDUser.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 				2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */,
 				23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
+				23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */,
 				23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 			);

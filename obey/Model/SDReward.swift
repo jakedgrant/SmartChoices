@@ -18,8 +18,6 @@ final class SDReward: Identifiable {
 
     @Relationship(deleteRule: .nullify, inverse: \SDLog.reward)
     var logs: [SDLog]? = []
-
-    @Relationship(deleteRule: .nullify, inverse: \SDUser.rewards)
     var users: [SDUser]? = []
 
     init(
