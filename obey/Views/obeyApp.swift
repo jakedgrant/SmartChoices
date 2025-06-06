@@ -39,15 +39,15 @@ struct obeyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-				.task {
-					do {
-						// Fetch the available offerings
-						UserViewModel.shared.offerings = try await Purchases.shared.offerings()
-					} catch {
-						print("Error fetching offerings: \(error)")
-					}
-				}
+                .task {
+                    do {
+                        // Fetch the available offerings
+                        UserViewModel.shared.offerings = try await Purchases.shared.offerings()
+                    } catch {
+                        print("Error fetching offerings: \(error)")
+                    }
+                }
         }
-		.modelContainer(for: [SDReward.self, SDLog.self])
+        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self])
     }
 }
