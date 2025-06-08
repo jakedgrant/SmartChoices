@@ -42,6 +42,10 @@ struct AddEditRewardView: View {
 				}
 			}
 			
+			Section("Users") {
+				Text("\(usersDisplay(for: reward))")
+			}
+			
 			Section {
 				Toggle("Active", isOn: $reward.isActive)
 					.tint(.accentColor)
@@ -127,6 +131,16 @@ struct AddEditRewardView: View {
 		} catch {
 			print("Error trying to retrieve reward logs - \(error.localizedDescription)")
 		}
+	}
+	
+	private func usersDisplay(for reward: SDReward) -> String {
+		
+		guard let users = reward.users,
+			  !users.isEmpty else {
+			return "None"
+		}
+		
+		return users.compactMap { $0.name }.joined(separator: " ,")
 	}
 }
 

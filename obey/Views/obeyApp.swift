@@ -12,6 +12,9 @@ import TipKit
 
 @main
 struct obeyApp: App {
+	
+	let container: ModelContainer
+	
 	init() {
 		
         #if DEBUG
@@ -33,6 +36,15 @@ struct obeyApp: App {
 		catch {
 			print("Error initializing tips: \(error)")
 		}
+		
+		do {
+			container = try ModelContainer(
+				for: SDReward.self, SDLog.self, SDUser.self,
+				migrationPlan: ObeyMigrationPlan.self
+			)
+		} catch {
+			fatalError("Failed to initialize model container.")
+		}
 	}
 
 
@@ -48,6 +60,6 @@ struct obeyApp: App {
                     }
                 }
         }
-        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self], migrationPlan: ObeyMigrationPlan.self)
+        .modelContainer(container)
     }
 }

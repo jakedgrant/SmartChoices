@@ -10,12 +10,25 @@ import SwiftUI
 
 @main
 struct obeyWatch_Watch_AppApp: App {
+	
+	let container: ModelContainer
+	
+	init() {		
+		do {
+			container = try ModelContainer(
+				for: SDReward.self, SDLog.self, SDUser.self,
+				migrationPlan: ObeyMigrationPlan.self
+			)
+		} catch {
+			fatalError("Failed to initialize model container.")
+		}
+	}
 
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self], migrationPlan: ObeyMigrationPlan.self)
+        .modelContainer(container)
     }
 }

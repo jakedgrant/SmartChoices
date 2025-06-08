@@ -59,27 +59,34 @@ enum ObeyMigrationPlan: SchemaMigrationPlan {
         [ObeySchemaV1.self, ObeySchemaV2.self]
     }
 
-    static var stages: [MigrationStage] { [migrateV1toV2] }
+	static var stages: [MigrationStage] {
+		[migrateV1toV2]
+	}
 
-    static let migrateV1toV2 = MigrationStage.custom(fromVersion: ObeySchemaV1.self, toVersion: ObeySchemaV2.self) { context in
-        let defaults = UserDefaults(suiteName: Constants.suiteName)
-        let odds = defaults?.integer(forKey: "odds") ?? Constants.startingOdds
-        let losses = defaults?.integer(forKey: "losses") ?? 0
-        let defaultUser = SDUser(name: "Default", color: CodableColor(.blue), odds: odds, losses: losses)
-        context.insert(defaultUser)
-
-        let rewards = try context.fetch(FetchDescriptor<SDReward>())
-        for reward in rewards {
-            var users = reward.users ?? []
-            users.append(defaultUser)
-            reward.users = users
-        }
-
-        let logs = try context.fetch(FetchDescriptor<SDLog>())
-        for log in logs {
-            log.user = defaultUser
-        }
-
-        try context.save()
-    }
+	static let migrateV1toV2 = 	MigrationStage.custom(
+		fromVersion: ObeySchemaV1.self,
+		toVersion: ObeySchemaV2.self,
+		willMigrate: { context in
+			let defaults = UserDefaults(suiteName: Constants.suiteName)
+			let odds = defaults?.integer(forKey: "odds") ?? Constants.startingOdds
+			let losses = defaults?.integer(forKey: "losses") ?? 0
+			let defaultUser = SDUser(name: "Default", color: CodableColor(.blue), odds: odds, losses: losses)
+			context.insert(defaultUser)
+			
+			let rewards = try context.fetch(FetchDescriptor<SDReward>())
+			for reward in rewards {
+				var users = reward.users ?? []
+				users.append(defaultUser)
+				reward.users = users
+			}
+			
+			let logs = try context.fetch(FetchDescriptor<SDLog>())
+			for log in logs {
+				log.user = defaultUser
+			}
+			
+			try context.save()
+		},
+		didMigrate: nil
+	)
 }
