@@ -5,6 +5,8 @@ struct ManageUsersView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var nav: NavigationStateManager
 
+    @ObservedObject private var userViewModel = UserViewModel.shared
+
     @Query(sort: \SDUser.name) private var users: [SDUser]
     @State private var userToDelete: SDUser?
 
@@ -48,7 +50,10 @@ struct ManageUsersView: View {
         }
         .safeAreaInset(edge: .bottom) {
             Button(action: addUser) {
-                Label("Add new user", systemImage: "plus")
+                Label(
+                    allowsAddUser() ? "Add new user" : "Unlock to add multiple users",
+                    systemImage: allowsAddUser() ? "plus" : "lock"
+                )
             }
             .buttonStyle(SCButtonStyle())
             .frame(maxWidth: .infinity)
@@ -62,9 +67,22 @@ struct ManageUsersView: View {
     }
 
     private func addUser() {
+        guard allowsAddUser() else {
+            nav.path.append(Route.paywall)
+            return
+        }
+
         let newUser = SDUser()
         modelContext.insert(newUser)
         nav.path.append(newUser)
+    }
+
+    private func allowsAddUser() -> Bool {
+        if userViewModel.unlockActive {
+            return true
+        }
+
+        return users.count < 1
     }
 }
 
