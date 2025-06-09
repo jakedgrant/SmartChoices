@@ -45,6 +45,8 @@
 		2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD132C8EB09500DE3034 /* KeyView.swift */; };
 		2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
 		2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
+		23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */; };
+		23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -165,6 +167,8 @@
 		2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
 		2392DD132C8EB09500DE3034 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		2392DD162C8EB10700DE3034 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditUserView.swift; sourceTree = "<group>"; };
+		23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUsersView.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 		232AF07C2C9507CE0077353B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */,
+				23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */,
 				23357F1C2C915B710000DB7B /* AboutView.swift */,
 				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
 				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
@@ -590,6 +596,8 @@
 				23077F622C72A4E1000D131F /* Icon.swift in Sources */,
 				23077F662C7D7309000D131F /* MenuView.swift in Sources */,
 				2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */,
+				23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */,
+				23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */,
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
