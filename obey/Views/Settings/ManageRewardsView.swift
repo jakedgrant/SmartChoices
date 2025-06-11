@@ -73,6 +73,7 @@ struct ManageRewardsView: View {
 
 			}
 		}
+		.animation(.default, value: filteredRewards.count)
 		.navigationTitle(Text("Manage Rewards"))
 		.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 
@@ -83,14 +84,28 @@ struct ManageRewardsView: View {
 			}
 			.buttonStyle(SCButtonStyle())
 			.frame(maxWidth: .infinity)
+			.animation(.default, value: rewards.count)
 		}
 		.toolbar {
 			ToolbarItem(placement: .navigationBarTrailing) {
 				Menu {
 					Text("Filter by user")
-					Button("All Users") { selectedUser = nil }
+					Divider()
+					Button {
+						withAnimation {
+							selectedUser = nil
+						}
+					} label :{
+						Label("All Users", systemImage: imageName(for: nil))
+					}
 					ForEach(users) { user in
-						Button(user.name) { selectedUser = user }
+						Button {
+							withAnimation {
+							 selectedUser = user
+						 }
+					 } label: {
+							Label(user.name, systemImage: imageName(for: user.id))
+						}
 					}
 				} label: {
 					Text(selectedUser?.name ?? "All Users")
@@ -98,6 +113,10 @@ struct ManageRewardsView: View {
 			}
 		}
 		.fontDesign(.rounded)
+	}
+	
+	private func imageName(for userId: SDUser.ID?) -> String {
+		return userId == selectedUser?.id ? "checkmark" : ""
 	}
 }
 

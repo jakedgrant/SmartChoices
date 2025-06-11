@@ -57,6 +57,7 @@ struct ManageUsersView: View {
             }
             .buttonStyle(SCButtonStyle())
             .frame(maxWidth: .infinity)
+			.animation(.default, value: users.count)
         }
         .fontDesign(.rounded)
     }
