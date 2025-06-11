@@ -5,6 +5,8 @@
 
 ## User settings
 xcuserdata/
+xschememanagement.plist
+Breakpoints_v2.xcbkptlist
 
 ## Obj-C/Swift specific
 *.hmap
