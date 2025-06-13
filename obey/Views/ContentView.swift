@@ -17,10 +17,10 @@ struct ContentView: View {
 	@AppStorage("previousVersionString", store: UserDefaults(suiteName: Constants.suiteName)) var previousVersionString: String = Constants.startingVersion
 	
 	@Environment(\.modelContext) var modelContext
-        @Query var rewards: [SDReward]
-        @Query(sort: \SDUser.name) var users: [SDUser]
-
-        @ObservedObject private var userViewModel = UserViewModel.shared
+	@Query var rewards: [SDReward]
+	@Query(sort: \SDUser.name) var users: [SDUser]
+	
+	@ObservedObject private var userViewModel = UserViewModel.shared
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
@@ -76,24 +76,24 @@ struct ContentView: View {
 				}
 			}
 			
-                        .toolbar {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                        Picker("User", selection: $userViewModel.selectedUser) {
-                                                ForEach(users) { user in
-                                                        Text(user.name).tag(Optional(user))
-                                                }
-                                        }
-                                        .pickerStyle(.menu)
-                                }
-
-                                ToolbarItem(placement: .bottomBar) {
-                                        Button {
-                                                isShowingSettings = true
-                                        } label: {
-                                                MenuImageView()
-                                        }
-                                }
-                        }
+			.toolbar {
+				ToolbarItem(placement: .navigationBarTrailing) {
+					Picker("User", selection: $userViewModel.selectedUser) {
+						ForEach(users) { user in
+							Text(user.name).tag(Optional(user))
+						}
+					}
+					.pickerStyle(.menu)
+				}
+				
+				ToolbarItem(placement: .bottomBar) {
+					Button {
+						isShowingSettings = true
+					} label: {
+						MenuImageView()
+					}
+				}
+			}
 			
 			.sheet(isPresented: $isShowingSettings) {
 				SettingsView()
@@ -103,10 +103,10 @@ struct ContentView: View {
 				ObeyRecap(showing: package.releases)
 			}
 			
-                        .task {
-                                await populateRewards()
-                                userViewModel.ensureSelectedUser(context: modelContext)
-                        }
+			.task {
+				await populateRewards()
+				userViewModel.ensureSelectedUser(context: modelContext)
+			}
 			
 			.onAppear {
 				releasePackage = showReleasePackage

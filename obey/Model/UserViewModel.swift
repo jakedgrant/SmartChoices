@@ -44,10 +44,10 @@ class UserViewModel: ObservableObject {
 	@Published var isSubscriber: Bool = false
 
 	private let defaults = UserDefaults(suiteName: Constants.suiteName)
-@Published var selectedUser: SDUser? {
-	didSet {
-		defaults?.set(selectedUser?.id.uuidString, forKey: "selectedUserID")
-	}
+	@Published var selectedUser: SDUser? {
+		didSet {
+			defaults?.set(selectedUser?.id.uuidString, forKey: "selectedUserID")
+		}
 	}
 	
 	/*
@@ -62,38 +62,53 @@ class UserViewModel: ObservableObject {
 		_ = try? await Purchases.shared.logIn(userId)
 	}
 	
-func logout() async {
+	func logout() async {
 		_ = try? await Purchases.shared.logOut()
 	}
 
 	func ensureSelectedUser(context: ModelContext) {
+		
 		if let idString = defaults?.string(forKey: "selectedUserID"),
-		let uuid = UUID(uuidString: idString) {
-		let descriptor = FetchDescriptor<SDUser>(
-		predicate: #Predicate<SDUser> { $0.id == uuid }
-		)
-		if let user = try? context.fetch(descriptor).first {
-		selectedUser = user
-		return
-		}
+		   let uuid = UUID(uuidString: idString) {
+			
+			let descriptor = FetchDescriptor<SDUser>(
+				predicate: #Predicate<SDUser> { $0.id == uuid }
+			)
+			
+			if let user = try? context.fetch(descriptor).first {
+				selectedUser = user
+				return
+			}
 		}
 		
+		if let user = fetchOrCreateFirstUser(context: context) {
+			selectedUser = user
+		}
+	}
+	
+	private func fetchOrCreateFirstUser(context: ModelContext) -> SDUser? {
+		
 		let descriptor = FetchDescriptor<SDUser>(
-		sortBy: [SortDescriptor(\SDUser.name)]
+			sortBy: [SortDescriptor(\SDUser.name)]
 		)
+		
 		do {
-		let users = try context.fetch(descriptor)
-		if let first = users.first {
-		selectedUser = first
-		} else {
-		let newUser = SDUser(name: "User 1")
-		context.insert(newUser)
-		try context.save()
-		selectedUser = newUser
-		}
+			
+			let users = try context.fetch(descriptor)
+			
+			if let first = users.first {
+				return first
+			} else {
+				
+				let newUser = SDUser(name: "New Kid")
+				context.insert(newUser)
+				try context.save()
+				return newUser
+			}
 		} catch {
-		print("Error selecting user - \(error.localizedDescription)")
+			
+			print("Error selecting user - \(error.localizedDescription)")
+			return nil
 		}
-		}
-
+	}
 }
