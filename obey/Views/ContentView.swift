@@ -74,18 +74,21 @@ struct ContentView: View {
 							new == true
 						}
 				}
-			}
-			
-			.toolbar {
-				ToolbarItem(placement: .navigationBarTrailing) {
+				
+				VStack {
 					Picker("User", selection: $userViewModel.selectedUser) {
 						ForEach(users) { user in
 							Text(user.name).tag(Optional(user))
+								.fontDesign(.rounded)
 						}
 					}
 					.pickerStyle(.menu)
+					
+					Spacer()
 				}
-				
+			}
+			
+			.toolbar {
 				ToolbarItem(placement: .bottomBar) {
 					Button {
 						isShowingSettings = true
