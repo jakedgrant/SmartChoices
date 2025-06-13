@@ -118,7 +118,11 @@ struct ContentView: View {
     }
 
 	private func roll() {
-		let result = Roll.perform()
+		let result = if let selectedUser = userViewModel.selectedUser {
+			Roll.perform(for: selectedUser)
+		} else {
+			Roll.perform()
+		}
 		isPresenting = !result
 		isShowingRewards = result
 	}

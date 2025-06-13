@@ -78,7 +78,7 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("Stats") {
+				Section("Stats for \(userViewModel.selectedUser?.name ?? "All")") {
                     StatsView()
                 }
             }
