@@ -27,8 +27,15 @@ struct RewardListView: View {
 		self.modelContext = modelContext
 		
 		let fetchDescriptor = FetchDescriptor<SDReward>(predicate: #Predicate<SDReward> { $0.isActive }, sortBy: [])
+		
 		do {
-			let rewards = try modelContext.fetch(fetchDescriptor).shuffled()
+			var rewards = try modelContext.fetch(fetchDescriptor).shuffled()
+			
+			if let selectedUser = UserViewModel.shared.selectedUser {
+				rewards = rewards.filter { reward in
+					reward.users?.contains(where: { $0.id == selectedUser.id }) ?? false
+				}
+			}
 			
 			topRewards = Array(rewards.prefix(3))
 			otherRewards = Array(rewards.dropFirst(3))
