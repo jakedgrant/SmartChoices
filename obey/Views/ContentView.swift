@@ -18,6 +18,9 @@ struct ContentView: View {
 	
 	@Environment(\.modelContext) var modelContext
 	@Query var rewards: [SDReward]
+	@Query(sort: \SDUser.name) var users: [SDUser]
+	
+	@ObservedObject private var userViewModel = UserViewModel.shared
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
@@ -71,6 +74,18 @@ struct ContentView: View {
 							new == true
 						}
 				}
+				
+				VStack {
+					Picker("User", selection: $userViewModel.selectedUser) {
+						ForEach(users) { user in
+							Text(user.name).tag(Optional(user))
+								.fontDesign(.rounded)
+						}
+					}
+					.pickerStyle(.menu)
+					
+					Spacer()
+				}
 			}
 			
 			.toolbar {
@@ -93,6 +108,7 @@ struct ContentView: View {
 			
 			.task {
 				await populateRewards()
+				userViewModel.ensureSelectedUser(context: modelContext)
 			}
 			
 			.onAppear {
