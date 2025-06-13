@@ -65,6 +65,10 @@ struct ManageUsersView: View {
     private func deleteUser(_ user: SDUser) {
         modelContext.delete(user)
         userToDelete = nil
+
+        if userViewModel.selectedUser == user {
+            userViewModel.selectedUser = users.first { $0.id != user.id }
+        }
     }
 
     private func addUser() {
@@ -76,6 +80,8 @@ struct ManageUsersView: View {
         let newUser = SDUser()
         modelContext.insert(newUser)
         nav.path.append(newUser)
+
+        userViewModel.selectedUser = newUser
     }
 
     private func allowsAddUser() -> Bool {

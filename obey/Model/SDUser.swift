@@ -36,3 +36,13 @@ final class SDUser: Identifiable {
 extension SDUser {
     var swiftUIColor: Color { color.color }
 }
+
+extension SDUser: Hashable {
+    static func == (lhs: SDUser, rhs: SDUser) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

@@ -138,12 +138,14 @@ struct RewardListView: View {
 	
 	private func log(_ reward: SDReward) {
 		
-		let log = SDLog(
-			reward: reward,
-			odds: LastStat.shared.odds,
-			losses: LastStat.shared.losses,
-			increasedOdds: LastStat.shared.increasedOdds
-		)
+                let selectedUser = UserViewModel.shared.selectedUser
+                let log = SDLog(
+                        reward: reward,
+                        user: selectedUser,
+                        odds: selectedUser?.odds ?? LastStat.shared.odds,
+                        losses: selectedUser?.losses ?? LastStat.shared.losses,
+                        increasedOdds: LastStat.shared.increasedOdds
+                )
 		
 		modelContext.insert(log)
 		

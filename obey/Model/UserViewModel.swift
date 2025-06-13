@@ -7,6 +7,7 @@
 
 import Foundation
 import RevenueCat
+import SwiftData
 import SwiftUI
 
 /* Static shared model for UserView */
@@ -41,6 +42,13 @@ class UserViewModel: ObservableObject {
 	@Published var unlockActive: Bool = false
 	
 	@Published var isSubscriber: Bool = false
+
+	private let defaults = UserDefaults(suiteName: Constants.suiteName)
+@Published var selectedUser: SDUser? {
+	didSet {
+		defaults?.set(selectedUser?.id.uuidString, forKey: "selectedUserID")
+	}
+	}
 	
 	/*
 	 How to login and identify your users with the Purchases SDK.
@@ -54,14 +62,38 @@ class UserViewModel: ObservableObject {
 		_ = try? await Purchases.shared.logIn(userId)
 	}
 	
-	func logout() async {
-		/**
-		 The current user ID is no longer valid for your instance of *Purchases* since the user is logging out, and is no longer authorized to access customerInfo for that user ID.
-		 
-		 `logOut` clears the cache and regenerates a new anonymous user ID.
-		 
-		 - Note: Each time you call `logOut`, a new installation will be logged in the RevenueCat dashboard as that metric tracks unique user ID's that are in-use. Since this method generates a new anonymous ID, it counts as a new user ID in-use.
-		 */
+func logout() async {
 		_ = try? await Purchases.shared.logOut()
 	}
+
+	func ensureSelectedUser(context: ModelContext) {
+		if let idString = defaults?.string(forKey: "selectedUserID"),
+		let uuid = UUID(uuidString: idString) {
+		let descriptor = FetchDescriptor<SDUser>(
+		predicate: #Predicate<SDUser> { $0.id == uuid }
+		)
+		if let user = try? context.fetch(descriptor).first {
+		selectedUser = user
+		return
+		}
+		}
+		
+		let descriptor = FetchDescriptor<SDUser>(
+		sortBy: [SortDescriptor(\SDUser.name)]
+		)
+		do {
+		let users = try context.fetch(descriptor)
+		if let first = users.first {
+		selectedUser = first
+		} else {
+		let newUser = SDUser(name: "User 1")
+		context.insert(newUser)
+		try context.save()
+		selectedUser = newUser
+		}
+		} catch {
+		print("Error selecting user - \(error.localizedDescription)")
+		}
+		}
+
 }
