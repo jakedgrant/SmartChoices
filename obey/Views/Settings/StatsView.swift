@@ -15,21 +15,61 @@ struct StatsView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
+	@ObservedObject var userViewModel: UserViewModel = .shared
+	
+	private var rewardCountDescription: String {
+		if let user = userViewModel.selectedUser,
+		   let rewards = user.rewards {
+			
+			return rewards.count.description
+		} else {
+			
+			return rewards.count.description
+		}
+	}
+	
+	private var logCountDescription: String {
+		if let user = userViewModel.selectedUser,
+		   let logs = user.logs {
+			
+			return logs.count.description
+		} else {
+			
+			return logs.count.description
+		}
+	}
+	
+	private var oddsDescription: String {
+		if let user = userViewModel.selectedUser {
+			return user.odds.description
+		} else {
+			return odds.description
+		}
+	}
+	
+	private var lossesDescription: String {
+		if let user = userViewModel.selectedUser {
+			return user.losses.description
+		} else {
+			return losses.description
+		}
+	}
+	
     var body: some View {
         
 		Group {
-			StatLine(text: "Available rewards:", value: rewards.count.description)
+			StatLine(text: "Available rewards:", value: rewardCountDescription)
 			
-			StatLine(text: "Times rewarded:", value: logs.count.description)
+			StatLine(text: "Times rewarded:", value: logCountDescription)
 			
 			Button {
 				Roll.resetOdds()
 			} label: {
-				StatLine(text: "Current odds:", value: odds.description, subtitle: "tap to reset")
+				StatLine(text: "Current odds:", value: oddsDescription, subtitle: "tap to reset")
 			}
 			.buttonStyle(.plain)
 			
-			StatLine(text: "Current losses:", value: losses.description)
+			StatLine(text: "Current losses:", value: lossesDescription)
 		}
     }
 	
