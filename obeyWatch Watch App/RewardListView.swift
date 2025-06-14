@@ -14,6 +14,7 @@ struct RewardListView: View {
 	
 	@State private var topRewards: [SDReward]
 	@State private var otherRewards: [SDReward]
+	@Environment(\.themeColor) private var themeColor
 	
 	init(modelContext: ModelContext) {
 		
@@ -40,18 +41,18 @@ struct RewardListView: View {
 					ForEach(topRewards) { reward in
 						
 						Label(reward.name, systemImage: reward.systemImage)
-							.foregroundStyle(Color.accentColor)
+							.foregroundStyle(themeColor)
 							.symbolRenderingMode(.hierarchical)
 					}
 				}
-		
+				
 				if !otherRewards.isEmpty {
 					Section("All other rewards") {
 						
 						ForEach(otherRewards) { reward in
 							
 							Label(reward.name, systemImage: reward.systemImage)
-								.foregroundStyle(Color.accentColor)
+								.foregroundStyle(themeColor)
 								.symbolRenderingMode(.hierarchical)
 						}
 					}

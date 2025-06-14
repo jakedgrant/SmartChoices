@@ -25,6 +25,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
 
     @ObservedObject private var userViewModel = UserViewModel.shared
+	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
 
     @State private var isShowingPaywall = false
     @State private var isShowingManageSubscription = false
@@ -78,7 +79,7 @@ struct SettingsView: View {
                     }
                 }
 
-				Section("Stats for \(userViewModel.selectedUser?.name ?? "All")") {
+				Section("Stats for \(selectedUserManager.selectedUser?.name ?? "All")") {
                     StatsView()
                 }
             }

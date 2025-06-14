@@ -14,6 +14,7 @@ struct ContentView: View {
 	
 	@Environment(\.modelContext) var modelContext
 	@Query var rewards: [SDReward]
+	@Environment(\.themeColor) private var themeColor
 	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
@@ -21,7 +22,7 @@ struct ContentView: View {
 	
 	@State private var rotation = 0.0
 	
-    var body: some View {
+	var body: some View {
 		NavigationStack {
 			VStack {
 				Spacer()
@@ -53,24 +54,24 @@ struct ContentView: View {
 					Text(state.subtitle)
 				}
 			
-			.sheet(isPresented: $isShowingRewards) {
-				RewardListView(modelContext: self.modelContext)
-			}
+				.sheet(isPresented: $isShowingRewards) {
+					RewardListView(modelContext: self.modelContext)
+				}
 			
-			.containerBackground(
-				isAlerting
-				? Color.accentColor.gradient
-				: Color.gray.gradient,
-				for: .navigation
-			)
+				.containerBackground(
+					isAlerting
+					? themeColor.gradient
+					: Color.gray.gradient,
+					for: .navigation
+				)
 			
-			.scenePadding()
+				.scenePadding()
 			
-			.task {
-				await populateRewards()
-			}
+				.task {
+					await populateRewards()
+				}
 		}
-    }
+	}
 	
 	private func roll() {
 		let result = Int.random(in: 1...odds)
@@ -115,5 +116,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }

@@ -21,6 +21,8 @@ struct ContentView: View {
 	@Query(sort: \SDUser.name) var users: [SDUser]
 	
 	@ObservedObject private var userViewModel = UserViewModel.shared
+	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
+	@Environment(\.themeColor) private var themeColor
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
@@ -33,17 +35,17 @@ struct ContentView: View {
 	
 	let colors: [Color] = [.red, .orange, .yellow, .green]
 	
-    var body: some View {
+	var body: some View {
 		NavigationStack {
 			ZStack {
 				
-//				LinearGradient(
-//					colors: colors,
-//					startPoint: UnitPoint(x: 0.5, y: CGFloat(startPoint)),
-//					endPoint: UnitPoint(x:0.5, y: CGFloat(endPoint))
-//				)
-//				.animation(.easeIn, value: endPoint)
-//				.ignoresSafeArea()
+				//				LinearGradient(
+				//					colors: colors,
+				//					startPoint: UnitPoint(x: 0.5, y: CGFloat(startPoint)),
+				//					endPoint: UnitPoint(x:0.5, y: CGFloat(endPoint))
+				//				)
+				//				.animation(.easeIn, value: endPoint)
+				//				.ignoresSafeArea()
 				
 				VStack {
 					
@@ -76,7 +78,7 @@ struct ContentView: View {
 				}
 				
 				VStack {
-					Picker("User", selection: $userViewModel.selectedUser) {
+					Picker("User", selection: $selectedUserManager.selectedUser) {
 						ForEach(users) { user in
 							Text(user.name).tag(Optional(user))
 								.fontDesign(.rounded)
@@ -108,17 +110,18 @@ struct ContentView: View {
 			
 			.task {
 				await populateRewards()
-				userViewModel.ensureSelectedUser(context: modelContext)
+				selectedUserManager.ensureSelectedUser(context: modelContext)
 			}
 			
 			.onAppear {
 				releasePackage = showReleasePackage
 			}
 		}
-    }
-
+		.tint(themeColor)
+	}
+	
 	private func roll() {
-		let result = if let selectedUser = userViewModel.selectedUser {
+		let result = if let selectedUser = selectedUserManager.selectedUser {
 			Roll.perform(for: selectedUser)
 		} else {
 			Roll.perform()
@@ -147,7 +150,7 @@ struct ContentView: View {
 	var showReleasePackage: ReleasePackage? {
 		let currentVersionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 		guard let currentVersionString else { return nil }
-
+		
 		let packageToShow = ReleasePackage.display(for: currentVersionString, with: previousVersionString)
 		previousVersionString = currentVersionString
 		

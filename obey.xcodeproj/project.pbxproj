@@ -47,6 +47,10 @@
 		2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
 		23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */; };
 		23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */; };
+		23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */; };
+		23AB23DE2DFD100800BB4589 /* SelectedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */; };
+		23AB23E02DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */; };
+		23AB23E12DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -169,6 +173,8 @@
 		2392DD162C8EB10700DE3034 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditUserView.swift; sourceTree = "<group>"; };
 		23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUsersView.swift; sourceTree = "<group>"; };
+		23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUserManager.swift; sourceTree = "<group>"; };
+		23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorKey.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -343,6 +349,7 @@
 				23729D092DF2B25D007317AA /* SDUser.swift */,
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
 				23077F732C851268000D131F /* UserViewModel.swift */,
+				23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */,
 				23C435D62C97EB3A00E21137 /* Tips */,
 				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
 			);
@@ -352,6 +359,7 @@
 		23BF8CB92C2D188C00C40157 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */,
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
 				23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */,
 				23C7ED002C40495F00001637 /* Roll.swift */,
@@ -592,6 +600,7 @@
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
+				23AB23E12DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
 				23077F622C72A4E1000D131F /* Icon.swift in Sources */,
 				23077F662C7D7309000D131F /* MenuView.swift in Sources */,
@@ -614,6 +623,7 @@
 				23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
 				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
+				23AB23DE2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
 				23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */,
 				23077F642C72A501000D131F /* IconView.swift in Sources */,
 				231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */,
@@ -645,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
+				23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
@@ -672,6 +683,7 @@
 				23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */,
 				23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
+				23AB23E02DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
