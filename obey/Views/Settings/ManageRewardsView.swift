@@ -58,7 +58,7 @@ struct ManageRewardsView: View {
 								Label("Activate", systemImage: "circle")
 							}
 						}
-						.tint(.accentColor)
+						.tint(.themeColor)
 					} else {
 						EmptyView()
 					}

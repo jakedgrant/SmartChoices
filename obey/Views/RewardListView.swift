@@ -31,7 +31,7 @@ struct RewardListView: View {
 		do {
 			var rewards = try modelContext.fetch(fetchDescriptor).shuffled()
 			
-			if let selectedUser = UserViewModel.shared.selectedUser {
+			if let selectedUser = SelectedUserManager.shared.selectedUser {
 				rewards = rewards.filter { reward in
 					reward.users?.contains(where: { $0.id == selectedUser.id }) ?? false
 				}
@@ -145,7 +145,7 @@ struct RewardListView: View {
 	
 	private func log(_ reward: SDReward) {
 		
-		let selectedUser = UserViewModel.shared.selectedUser
+		let selectedUser = SelectedUserManager.shared.selectedUser
 		let log = SDLog(
 			reward: reward,
 			user: selectedUser,

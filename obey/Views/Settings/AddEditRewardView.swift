@@ -60,7 +60,7 @@ struct AddEditRewardView: View {
             
             Section {
                 Toggle("Active", isOn: $reward.isActive)
-                    .tint(.accentColor)
+					.tint(.themeColor)
                     .disabled(!userViewModel.unlockActive)
             } footer: {
                 if !userViewModel.unlockActive {

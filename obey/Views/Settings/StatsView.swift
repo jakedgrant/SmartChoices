@@ -15,10 +15,10 @@ struct StatsView: View {
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
-	@ObservedObject var userViewModel: UserViewModel = .shared
+	@ObservedObject var selectedUserManager: SelectedUserManager = .shared
 	
 	private var rewardCountDescription: String {
-		if let user = userViewModel.selectedUser,
+		if let user = selectedUserManager.selectedUser,
 		   let rewards = user.rewards {
 			
 			return rewards.count.description
@@ -29,7 +29,7 @@ struct StatsView: View {
 	}
 	
 	private var logCountDescription: String {
-		if let user = userViewModel.selectedUser,
+		if let user = selectedUserManager.selectedUser,
 		   let logs = user.logs {
 			
 			return logs.count.description
@@ -40,7 +40,7 @@ struct StatsView: View {
 	}
 	
 	private var oddsDescription: String {
-		if let user = userViewModel.selectedUser {
+		if let user = selectedUserManager.selectedUser {
 			return user.odds.description
 		} else {
 			return odds.description
@@ -48,7 +48,7 @@ struct StatsView: View {
 	}
 	
 	private var lossesDescription: String {
-		if let user = userViewModel.selectedUser {
+		if let user = selectedUserManager.selectedUser {
 			return user.losses.description
 		} else {
 			return losses.description

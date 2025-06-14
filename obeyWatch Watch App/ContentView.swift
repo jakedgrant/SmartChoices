@@ -59,7 +59,7 @@ struct ContentView: View {
 			
 			.containerBackground(
 				isAlerting
-				? Color.accentColor.gradient
+				? Color.themeColor.gradient
 				: Color.gray.gradient,
 				for: .navigation
 			)

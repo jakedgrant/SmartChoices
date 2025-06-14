@@ -6,6 +6,7 @@ struct ManageUsersView: View {
     @EnvironmentObject private var nav: NavigationStateManager
 
     @ObservedObject private var userViewModel = UserViewModel.shared
+	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
 
     @Query(sort: \SDUser.name) private var users: [SDUser]
     @State private var userToDelete: SDUser?
@@ -66,8 +67,8 @@ struct ManageUsersView: View {
         modelContext.delete(user)
         userToDelete = nil
 
-        if userViewModel.selectedUser == user {
-            userViewModel.selectedUser = users.first { $0.id != user.id }
+        if selectedUserManager.selectedUser == user {
+			selectedUserManager.selectedUser = users.first { $0.id != user.id }
         }
     }
 
@@ -81,7 +82,7 @@ struct ManageUsersView: View {
         modelContext.insert(newUser)
         nav.path.append(newUser)
 
-        userViewModel.selectedUser = newUser
+		selectedUserManager.selectedUser = newUser
     }
 
     private func allowsAddUser() -> Bool {

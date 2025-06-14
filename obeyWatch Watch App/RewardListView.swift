@@ -40,7 +40,7 @@ struct RewardListView: View {
 					ForEach(topRewards) { reward in
 						
 						Label(reward.name, systemImage: reward.systemImage)
-							.foregroundStyle(Color.accentColor)
+							.foregroundStyle(Color.themeColor)
 							.symbolRenderingMode(.hierarchical)
 					}
 				}
@@ -51,7 +51,7 @@ struct RewardListView: View {
 						ForEach(otherRewards) { reward in
 							
 							Label(reward.name, systemImage: reward.systemImage)
-								.foregroundStyle(Color.accentColor)
+								.foregroundStyle(Color.themeColor)
 								.symbolRenderingMode(.hierarchical)
 						}
 					}

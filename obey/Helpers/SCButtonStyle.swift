@@ -9,15 +9,18 @@ import SwiftUI
 
 struct SCButtonBackground: View {
 	var isPressed = false
+	
+	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
+	
 	var body: some View {
 		ZStack {
 			
-			Color.accentColor
+			Color.themeColor
 			
 			LinearGradient(
 				colors: isPressed
 				? [.black.opacity(0.55)]
-				: [.accentColor, .black.opacity(0.35)],
+				: [Color.themeColor, .black.opacity(0.35)],
 				startPoint: UnitPoint(x: 0.0, y: 0.0),
 				endPoint: UnitPoint(x:0.0, y: 1.0)
 			)
