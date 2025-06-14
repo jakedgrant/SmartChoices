@@ -20,8 +20,9 @@ struct ContentView: View {
 	@Query var rewards: [SDReward]
 	@Query(sort: \SDUser.name) var users: [SDUser]
 	
-	@ObservedObject private var userViewModel = UserViewModel.shared
-	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
+        @ObservedObject private var userViewModel = UserViewModel.shared
+        @ObservedObject private var selectedUserManager = SelectedUserManager.shared
+        @Environment(\.themeColor) private var themeColor
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
@@ -115,8 +116,8 @@ struct ContentView: View {
 			.onAppear {
 				releasePackage = showReleasePackage
 			}
-		}
-		.tint(.themeColor)
+                }
+                .tint(themeColor)
     }
 
 	private func roll() {
