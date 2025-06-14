@@ -13,7 +13,8 @@ import TipKit
 struct ManageRewardsView: View {
 
 	@Environment(\.modelContext) var modelContext
-	@EnvironmentObject var nav: NavigationStateManager
+        @EnvironmentObject var nav: NavigationStateManager
+        @Environment(\.themeColor) private var themeColor
 
 	@ObservedObject private var userViewModel = UserViewModel.shared
 
@@ -57,11 +58,11 @@ struct ManageRewardsView: View {
 							} else {
 								Label("Activate", systemImage: "circle")
 							}
-						}
-						.tint(.themeColor)
-					} else {
-						EmptyView()
-					}
+                                                }
+                                                .tint(themeColor)
+                                        } else {
+                                                EmptyView()
+                                        }
 				}
 				.swipeActions(edge: .trailing, allowsFullSwipe: true) {
 					Button(role: .destructive) {

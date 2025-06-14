@@ -12,7 +12,8 @@ import TipKit
 
 @main
 struct obeyApp: App {
-	init() {
+        @StateObject private var selectedUserManager = SelectedUserManager.shared
+        init() {
 		
         #if DEBUG
 		Purchases.logLevel = .debug
@@ -39,6 +40,7 @@ struct obeyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .themeColor(selectedUserManager.selectedUser?.color.color ?? .accentColor)
                 .task {
                     do {
                         // Fetch the available offerings

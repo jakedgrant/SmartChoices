@@ -13,6 +13,7 @@ struct AddEditRewardView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var nav: NavigationStateManager
+    @Environment(\.themeColor) private var themeColor
 
     @ObservedObject private var userViewModel = UserViewModel.shared
 
@@ -60,7 +61,7 @@ struct AddEditRewardView: View {
             
             Section {
                 Toggle("Active", isOn: $reward.isActive)
-					.tint(.themeColor)
+                                        .tint(themeColor)
                     .disabled(!userViewModel.unlockActive)
             } footer: {
                 if !userViewModel.unlockActive {

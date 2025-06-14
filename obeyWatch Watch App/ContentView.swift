@@ -13,7 +13,8 @@ struct ContentView: View {
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
 	@Environment(\.modelContext) var modelContext
-	@Query var rewards: [SDReward]
+        @Query var rewards: [SDReward]
+        @Environment(\.themeColor) private var themeColor
 	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
@@ -57,12 +58,12 @@ struct ContentView: View {
 				RewardListView(modelContext: self.modelContext)
 			}
 			
-			.containerBackground(
-				isAlerting
-				? Color.themeColor.gradient
-				: Color.gray.gradient,
-				for: .navigation
-			)
+                        .containerBackground(
+                                isAlerting
+                                ? themeColor.gradient
+                                : Color.gray.gradient,
+                                for: .navigation
+                        )
 			
 			.scenePadding()
 			

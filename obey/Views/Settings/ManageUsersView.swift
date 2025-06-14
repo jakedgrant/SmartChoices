@@ -6,7 +6,7 @@ struct ManageUsersView: View {
     @EnvironmentObject private var nav: NavigationStateManager
 
     @ObservedObject private var userViewModel = UserViewModel.shared
-	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
+    private let selectedUserManager = SelectedUserManager.shared
 
     @Query(sort: \SDUser.name) private var users: [SDUser]
     @State private var userToDelete: SDUser?
