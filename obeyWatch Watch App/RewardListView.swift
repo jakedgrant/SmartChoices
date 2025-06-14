@@ -10,11 +10,11 @@ import SwiftUI
 
 struct RewardListView: View {
 	
-        var modelContext: ModelContext
-
-        @State private var topRewards: [SDReward]
-        @State private var otherRewards: [SDReward]
-        @Environment(\.themeColor) private var themeColor
+	var modelContext: ModelContext
+	
+	@State private var topRewards: [SDReward]
+	@State private var otherRewards: [SDReward]
+	@Environment(\.themeColor) private var themeColor
 	
 	init(modelContext: ModelContext) {
 		
@@ -40,20 +40,20 @@ struct RewardListView: View {
 				Section("Pick a reward") {
 					ForEach(topRewards) { reward in
 						
-                                                Label(reward.name, systemImage: reward.systemImage)
-                                                        .foregroundStyle(themeColor)
-                                                        .symbolRenderingMode(.hierarchical)
+						Label(reward.name, systemImage: reward.systemImage)
+							.foregroundStyle(themeColor)
+							.symbolRenderingMode(.hierarchical)
 					}
 				}
-		
+				
 				if !otherRewards.isEmpty {
 					Section("All other rewards") {
 						
 						ForEach(otherRewards) { reward in
 							
-                                                        Label(reward.name, systemImage: reward.systemImage)
-                                                                .foregroundStyle(themeColor)
-                                                                .symbolRenderingMode(.hierarchical)
+							Label(reward.name, systemImage: reward.systemImage)
+								.foregroundStyle(themeColor)
+								.symbolRenderingMode(.hierarchical)
 						}
 					}
 				}

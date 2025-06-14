@@ -12,7 +12,9 @@ import TipKit
 
 @main
 struct obeyApp: App {
+	
         @StateObject private var selectedUserManager = SelectedUserManager.shared
+	
         init() {
 		
         #if DEBUG

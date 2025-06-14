@@ -20,9 +20,9 @@ struct ContentView: View {
 	@Query var rewards: [SDReward]
 	@Query(sort: \SDUser.name) var users: [SDUser]
 	
-        @ObservedObject private var userViewModel = UserViewModel.shared
-        @ObservedObject private var selectedUserManager = SelectedUserManager.shared
-        @Environment(\.themeColor) private var themeColor
+	@ObservedObject private var userViewModel = UserViewModel.shared
+	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
+	@Environment(\.themeColor) private var themeColor
 	
 	@State private var isPresenting = false
 	@State private var isShowingRewards = false
@@ -35,17 +35,17 @@ struct ContentView: View {
 	
 	let colors: [Color] = [.red, .orange, .yellow, .green]
 	
-    var body: some View {
+	var body: some View {
 		NavigationStack {
 			ZStack {
 				
-//				LinearGradient(
-//					colors: colors,
-//					startPoint: UnitPoint(x: 0.5, y: CGFloat(startPoint)),
-//					endPoint: UnitPoint(x:0.5, y: CGFloat(endPoint))
-//				)
-//				.animation(.easeIn, value: endPoint)
-//				.ignoresSafeArea()
+				//				LinearGradient(
+				//					colors: colors,
+				//					startPoint: UnitPoint(x: 0.5, y: CGFloat(startPoint)),
+				//					endPoint: UnitPoint(x:0.5, y: CGFloat(endPoint))
+				//				)
+				//				.animation(.easeIn, value: endPoint)
+				//				.ignoresSafeArea()
 				
 				VStack {
 					
@@ -116,10 +116,10 @@ struct ContentView: View {
 			.onAppear {
 				releasePackage = showReleasePackage
 			}
-                }
-                .tint(themeColor)
-    }
-
+		}
+		.tint(themeColor)
+	}
+	
 	private func roll() {
 		let result = if let selectedUser = selectedUserManager.selectedUser {
 			Roll.perform(for: selectedUser)
@@ -150,7 +150,7 @@ struct ContentView: View {
 	var showReleasePackage: ReleasePackage? {
 		let currentVersionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 		guard let currentVersionString else { return nil }
-
+		
 		let packageToShow = ReleasePackage.display(for: currentVersionString, with: previousVersionString)
 		previousVersionString = currentVersionString
 		
