@@ -19,7 +19,7 @@ struct AddEditUserView: View {
                 ColorPicker("", selection: Binding(
                     get: { user.swiftUIColor },
                     set: { user.color = CodableColor($0) }
-                ))
+                ), supportsOpacity: false)
                 .labelsHidden()
             }
 

@@ -19,29 +19,39 @@ struct MultiUserMigrationView: View {
 
     var body: some View {
         VStack {
-            switch step {
-            case .welcome:
-                welcome
-            case .name:
-                nameEntry
-            case .color:
-                colorPicker
-            case .rewards:
-                rewardSelection
-            }
+            currentStepView
         }
         .fontDesign(.rounded)
         .padding()
+        .animation(.easeInOut, value: step)
+    }
+
+    @ViewBuilder
+    private var currentStepView: some View {
+        switch step {
+        case .welcome:
+            welcome.transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+        case .name:
+            nameEntry.transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+        case .color:
+            colorPicker.transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+        case .rewards:
+            rewardSelection.transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+        }
     }
 
     private var welcome: some View {
         VStack(spacing: 20) {
             Text("We're adding support for multiple kids! Let's set up a profile and move your rewards.")
+                .font(.title)
+                .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
-            Button("Continue") {
+            Button(action: {
                 modelContext.insert(user)
                 selectedUserManager.selectedUser = user
                 step = .name
+            }) {
+                Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
         }
@@ -53,9 +63,11 @@ struct MultiUserMigrationView: View {
                 .font(.title)
             TextField("Name", text: $user.name)
                 .textFieldStyle(.roundedBorder)
-            Spacer()
-            Button("Continue") { step = .color }
-                .buttonStyle(SCButtonStyle())
+            Button(action: { step = .color }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+            .disabled(user.name.isEmpty)
         }
     }
 
@@ -66,11 +78,13 @@ struct MultiUserMigrationView: View {
             ColorPicker("", selection: Binding(
                 get: { user.swiftUIColor },
                 set: { user.color = CodableColor($0) }
-            ))
+            ), supportsOpacity: false)
             .labelsHidden()
-            Spacer()
-            Button("Continue") { step = .rewards }
-                .buttonStyle(SCButtonStyle())
+            .scaleEffect(2)
+            Button(action: { step = .rewards }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
         }
     }
 
@@ -86,9 +100,11 @@ struct MultiUserMigrationView: View {
                     Label(reward.name, systemImage: reward.systemImage)
                 }
             }
-            Button("Continue") { finalize() }
-                .buttonStyle(SCButtonStyle())
-                .frame(maxWidth: .infinity)
+            Button(action: { finalize() }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+            .frame(maxWidth: .infinity)
         }
     }
 
