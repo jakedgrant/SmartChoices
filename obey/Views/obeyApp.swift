@@ -42,7 +42,7 @@ struct obeyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .themeColor(selectedUserManager.selectedUser?.color.color ?? .accentColor)
+                .themeColor(selectedUserManager.selectedUser?.swiftUIColor ?? .accentColor)
                 .task {
                     do {
                         // Fetch the available offerings
