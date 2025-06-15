@@ -3,6 +3,7 @@ import SwiftUI
 @testable import obey
 
 struct ThemeColorEnvironmentTests {
+    @MainActor
     @Test("Environment color updates when selected user changes")
     func themeColorReflectsSelectedUser() async throws {
         let manager = SelectedUserManager.shared
@@ -13,13 +14,14 @@ struct ThemeColorEnvironmentTests {
         manager.selectedUser = redUser
         var env = EnvironmentValues()
         env.themeColor = manager.selectedUser?.color.color ?? .accentColor
-        #expect(env.themeColor == .red)
+        #expect(env.themeColor == CodableColor(.red).color)
 
         manager.selectedUser = greenUser
         env.themeColor = manager.selectedUser?.color.color ?? .accentColor
-        #expect(env.themeColor == .green)
+        #expect(env.themeColor == CodableColor(.green).color)
     }
 
+    @MainActor
     @Test("Changing user color propagates to environment")
     func themeColorReflectsUserColorChange() async throws {
         let manager = SelectedUserManager.shared
@@ -29,10 +31,10 @@ struct ThemeColorEnvironmentTests {
 
         var env = EnvironmentValues()
         env.themeColor = manager.selectedUser?.color.color ?? .accentColor
-        #expect(env.themeColor == .blue)
+        #expect(env.themeColor == CodableColor(.blue).color)
 
         user.color = CodableColor(.orange)
         env.themeColor = manager.selectedUser?.color.color ?? .accentColor
-        #expect(env.themeColor == .orange)
+        #expect(env.themeColor == CodableColor(.orange).color)
     }
 }
