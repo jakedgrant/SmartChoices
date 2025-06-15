@@ -1,0 +1,221 @@
+import SwiftData
+import SwiftUI
+
+struct MultiUserMigrationView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.themeColor) private var themeColor
+    
+    @ObservedObject private var selectedUserManager = SelectedUserManager.shared
+    
+    @AppStorage("userMigrationCompleted", store: UserDefaults(suiteName: Constants.suiteName))
+    private var migrationCompleted: Bool = false
+    
+    @Query(sort: \SDReward.name) private var rewards: [SDReward]
+    
+    @State private var user = SDUser()
+    @State private var step: Step = .welcome
+    
+    private enum Step { case welcome, name, color, rewards }
+    
+    var body: some View {
+        VStack {
+            currentStepView
+        }
+        .fontDesign(.rounded)
+        .padding(.horizontal, 20)
+        .padding(.bottom, 8)
+        .animation(.easeIn, value: step)
+    }
+    
+    @ViewBuilder
+    private var currentStepView: some View {
+        switch step {
+        case .welcome:
+            welcome.transition(stepTransition)
+        case .name:
+            nameEntry.transition(stepTransition)
+        case .color:
+            colorPicker.transition(stepTransition)
+        case .rewards:
+            rewardSelection.transition(stepTransition)
+        }
+    }
+    
+    private var welcome: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            ReplacingImage(from: "person.fill", to: "person.3.fill")
+                .foregroundStyle(themeColor)
+            Text("We're adding support for multiple kids! Let's set up a profile and move your rewards.")
+                .font(.title)
+                .bold()
+                .fontDesign(.rounded)
+                .multilineTextAlignment(.center)
+            Spacer()
+            Button(action: {
+                modelContext.insert(user)
+                selectedUserManager.selectedUser = user
+                step = .name
+            }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+        }
+    }
+    
+    private var nameEntry: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            Image(systemName: "person.crop.circle")
+                .font(.system(size: 100))
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(themeColor)
+            Text("Who do we want to reward?")
+                .font(.title)
+                .bold()
+            TextField("Name", text: $user.name)
+                .textFieldStyle(.plain)
+                .font(.largeTitle)
+            Spacer()
+            Button(action: { step = .color }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+            .disabled(user.name.isEmpty)
+        }
+    }
+    
+    private var colorPicker: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            Image(systemName: "paintpalette.fill")
+                .font(.system(size: 100))
+                .symbolRenderingMode(.multicolor)
+            Text("What is \(user.name.possessive) favorite color?")
+                .font(.title)
+                .bold()
+            ColorPicker("", selection: Binding(
+                get: { user.swiftUIColor },
+                set: { user.color = CodableColor($0) }
+            ), supportsOpacity: false)
+            .labelsHidden()
+            .scaleEffect(CGSize(width: 2, height: 2))
+            Spacer()
+            Button(action: { step = .rewards }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+        }
+    }
+    
+    private var rewardSelection: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            VStack(alignment: .leading) {
+                Text("How do we want to reward \(user.name)?")
+                    .font(.title)
+                    .bold()
+                Text("You can add more rewards later")
+                    .font(.title3)
+                    .foregroundStyle(.secondary)
+            }
+            List(rewards) { reward in
+                Toggle(isOn: binding(for: reward)) {
+                    Label(reward.name, systemImage: reward.systemImage)
+                }
+            }
+            .listStyle(.plain)
+            Spacer()
+            Button(action: { finalize() }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+        }
+    }
+    
+    private func finalize() {
+        do {
+            try modelContext.save()
+            migrationCompleted = true
+            dismiss()
+        } catch {
+            print("Error saving user - \(error.localizedDescription)")
+        }
+    }
+    
+    private func binding(for reward: SDReward) -> Binding<Bool> {
+        Binding(
+            get: { user.rewards?.contains(where: { $0.id == reward.id }) ?? false },
+            set: { newValue in
+                if newValue {
+                    if user.rewards == nil { user.rewards = [] }
+                    if !(user.rewards?.contains(where: { $0.id == reward.id }) ?? false) {
+                        user.rewards?.append(reward)
+                    }
+                } else {
+                    guard let idx = user.rewards?.firstIndex(where: { $0.id == reward.id }) else { return }
+                    user.rewards?.remove(at: idx)
+                }
+            }
+        )
+    }
+    
+    private var stepTransition: AnyTransition {
+        .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading).combined(with: .opacity))
+    }
+}
+
+struct ReplacingImage: View {
+    let startImage: String
+    let endImage: String
+    
+    @State private var showGroup = false
+    
+    init(from startImage: String, to endImage: String) {
+        self.startImage = startImage
+        self.endImage = endImage
+    }
+    
+    var body: some View {
+        Image(systemName: showGroup ? endImage : startImage)
+            .font(.system(size: 100)).contentTransition(
+                .symbolEffect(
+                    .replace.magic(fallback: .replace)
+                )
+            )
+            .symbolRenderingMode(.hierarchical)
+            .onAppear {
+                // trigger the swap after a brief delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    withAnimation(.easeInOut(duration: 0.6)) {
+                        showGroup = true
+                    }
+                }
+            }
+    }
+}
+
+private extension String {
+    /// Returns the possessive form of the string, appending
+    /// just an apostrophe if it already ends in "s", otherwise "'s".
+    var possessive: String {
+        guard let last = lowercased().last else { return self }
+        if last == "s" {
+            return self + "'"
+        } else {
+            return self + "'s"
+        }
+    }
+}
+
+#Preview {
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: SDReward.self, SDUser.self, configurations: config)
+        let view = MultiUserMigrationView()
+        return view.modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container")
+    }
+}

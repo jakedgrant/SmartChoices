@@ -33,6 +33,13 @@ struct ManageRewardsView: View {
 	}
 	
 	var body: some View {
+        
+        if let name = selectedUser?.name {
+            Text("Showing rewards for \(name)")
+                .transition(.opacity)
+                .italic()
+                .foregroundStyle(.secondary)
+        }
 		
 		List {
 			
@@ -74,8 +81,9 @@ struct ManageRewardsView: View {
 				
 			}
 		}
-		.animation(.default, value: filteredRewards.count)
+		.animation(.default, value: selectedUser)
 		.navigationTitle(Text("Manage Rewards"))
+        .navigationBarTitleDisplayMode(.inline)
 		.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 		
 		.safeAreaInset(edge: .bottom) {
@@ -89,28 +97,16 @@ struct ManageRewardsView: View {
 		}
 		.toolbar {
 			ToolbarItem(placement: .navigationBarTrailing) {
-				Menu {
-					Text("Filter by user")
-					Divider()
-					Button {
-						withAnimation {
-							selectedUser = nil
-						}
-					} label :{
-						Label("All Users", systemImage: imageName(for: nil))
-					}
-					ForEach(users) { user in
-						Button {
-							withAnimation {
-								selectedUser = user
-							}
-						} label: {
-							Label(user.name, systemImage: imageName(for: user.id))
-						}
-					}
-				} label: {
-					Text(selectedUser?.name ?? "All Users")
-				}
+                Menu {
+                    Picker("Filter for user", selection: $selectedUser) {
+                        Text("All").tag(nil as SDUser?)
+                        ForEach(users) { user in
+                            Text(user.name).tag(user as SDUser?)
+                        }
+                    }
+                } label: {
+                    Image(systemName: selectedUser == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
+                }
 			}
 		}
 		.fontDesign(.rounded)

@@ -6,7 +6,7 @@ import SwiftUI
 final class SDUser: Identifiable {
     var id = UUID()
     var name: String = ""
-    var color: CodableColor = CodableColor(.blue)
+    var color: CodableColor = CodableColor(.mint)
     var odds: Int = Constants.startingOdds
     var losses: Int = 0
 
@@ -18,7 +18,7 @@ final class SDUser: Identifiable {
 
     init(
         name: String = "",
-        color: CodableColor = CodableColor(.blue),
+        color: CodableColor = CodableColor(.mint),
         odds: Int = Constants.startingOdds,
         losses: Int = 0,
         rewards: [SDReward]? = [],
