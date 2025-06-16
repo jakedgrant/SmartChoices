@@ -14,9 +14,33 @@ struct MultiUserMigrationView: View {
     @Query(sort: \SDReward.name) private var rewards: [SDReward]
     
     @State private var user = SDUser()
-    @State private var step: Step = .welcome
-    
-    private enum Step { case welcome, name, color, rewards }
+    @State private var stepIndex: Int
+    @State private var isUserInserted = false
+
+    enum Step { case welcome, name, color, rewards }
+
+    enum Flow {
+        case migration
+        case addUser
+
+        var steps: [Step] {
+            switch self {
+            case .migration:
+                return [.welcome, .name, .color, .rewards]
+            case .addUser:
+                return [.name, .color, .rewards]
+            }
+        }
+    }
+
+    private let flow: Flow
+    private var steps: [Step] { flow.steps }
+    private var step: Step { steps[stepIndex] }
+
+    init(flow: Flow = .migration) {
+        self.flow = flow
+        _stepIndex = State(initialValue: 0)
+    }
     
     var body: some View {
         VStack {
@@ -26,6 +50,7 @@ struct MultiUserMigrationView: View {
         .padding(.horizontal, 20)
         .padding(.bottom, 8)
         .animation(.easeIn, value: step)
+        .onAppear { if step == .name { insertUserIfNeeded() } }
     }
     
     @ViewBuilder
@@ -54,9 +79,8 @@ struct MultiUserMigrationView: View {
                 .multilineTextAlignment(.center)
             Spacer()
             Button(action: {
-                modelContext.insert(user)
-                selectedUserManager.selectedUser = user
-                step = .name
+                insertUserIfNeeded(force: true)
+                advance()
             }) {
                 Label("Continue", systemImage: "arrow.right")
             }
@@ -78,7 +102,7 @@ struct MultiUserMigrationView: View {
                 .textFieldStyle(.plain)
                 .font(.largeTitle)
             Spacer()
-            Button(action: { step = .color }) {
+            Button(action: { advance() }) {
                 Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
@@ -102,7 +126,7 @@ struct MultiUserMigrationView: View {
             .labelsHidden()
             .scaleEffect(CGSize(width: 2, height: 2))
             Spacer()
-            Button(action: { step = .rewards }) {
+            Button(action: { advance() }) {
                 Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
@@ -136,12 +160,27 @@ struct MultiUserMigrationView: View {
     
     private func finalize() {
         do {
+            insertUserIfNeeded()
             try modelContext.save()
             migrationCompleted = true
             dismiss()
         } catch {
             print("Error saving user - \(error.localizedDescription)")
         }
+    }
+
+    private func advance() {
+        if stepIndex < steps.count - 1 {
+            stepIndex += 1
+        }
+    }
+
+    private func insertUserIfNeeded(force: Bool = false) {
+        guard step == .name || force else { return }
+        guard !isUserInserted else { return }
+        modelContext.insert(user)
+        selectedUserManager.selectedUser = user
+        isUserInserted = true
     }
     
     private func binding(for reward: SDReward) -> Binding<Bool> {
