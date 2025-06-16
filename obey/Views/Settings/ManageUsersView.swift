@@ -35,7 +35,6 @@ struct ManageUsersView: View {
 		}
 		.navigationTitle(Text("Manage Users"))
         .navigationBarTitleDisplayMode(.inline)
-		.navigationDestination(for: SDUser.self) { AddEditUserView(user: $0) }
 		.alert("Delete user", isPresented: Binding(
 			get: { userToDelete != nil },
 			set: { if !$0 { userToDelete = nil } }
