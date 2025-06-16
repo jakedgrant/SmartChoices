@@ -24,6 +24,8 @@ class NavigationStateManager: ObservableObject {
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
 
+    @Environment(\.themeColor) private var themeColor
+
     @ObservedObject private var userViewModel = UserViewModel.shared
 	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
 
@@ -125,6 +127,7 @@ struct SettingsView: View {
                 }
             }
         }
+        .tint(themeColor)
         .environmentObject(nav)
     }
 }
