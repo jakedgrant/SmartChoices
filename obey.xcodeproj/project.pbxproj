@@ -33,8 +33,8 @@
 		23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
 		23729D0A2DF2B25D007317AA /* SDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D092DF2B25D007317AA /* SDUser.swift */; };
 		23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D092DF2B25D007317AA /* SDUser.swift */; };
-		23729D0D2DF2B273007317AA /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* CodableColor.swift */; };
-		23729D0E2DF2B273007317AA /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* CodableColor.swift */; };
+               23729D0D2DF2B273007317AA /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* StandardColor.swift */; };
+               23729D0E2DF2B273007317AA /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* StandardColor.swift */; };
 		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */; };
@@ -166,7 +166,7 @@
 		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
-		23729D0C2DF2B273007317AA /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
+               23729D0C2DF2B273007317AA /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDatabase.swift; sourceTree = "<group>"; };
 		2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
-				23729D0C2DF2B273007317AA /* CodableColor.swift */,
+                               23729D0C2DF2B273007317AA /* StandardColor.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23CC5F262C509F4D0018A724 /* DB */,
 				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
@@ -592,7 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23729D0D2DF2B273007317AA /* CodableColor.swift in Sources */,
+                               23729D0D2DF2B273007317AA /* StandardColor.swift in Sources */,
 				23C436132CC0BFBC00E21137 /* ObeyRecap.swift in Sources */,
 				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
 				23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
@@ -669,7 +669,7 @@
 				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
-				23729D0E2DF2B273007317AA /* CodableColor.swift in Sources */,
+                               23729D0E2DF2B273007317AA /* StandardColor.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,

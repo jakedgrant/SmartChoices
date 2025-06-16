@@ -133,7 +133,7 @@ struct MultiUserMigrationView: View {
                 .bold()
             ColorPicker("", selection: Binding(
                 get: { user.swiftUIColor },
-                set: { user.color = CodableColor($0) }
+                set: { user.color = StandardColor($0) }
             ), supportsOpacity: false)
             .labelsHidden()
             .scaleEffect(CGSize(width: 2, height: 2))
