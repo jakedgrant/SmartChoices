@@ -84,7 +84,6 @@ struct ManageRewardsView: View {
 		.animation(.default, value: selectedUser)
 		.navigationTitle(Text("Manage Rewards"))
         .navigationBarTitleDisplayMode(.inline)
-		.navigationDestination(for: SDReward.self) { AddEditRewardView(reward: $0) }
 		
 		.safeAreaInset(edge: .bottom) {
 			
@@ -160,6 +159,7 @@ extension ManageRewardsView {
 	container.mainContext.insert(u1)
 	container.mainContext.insert(u2)
 	
-	return ManageRewardsView()
-		.modelContainer(container)
+        return ManageRewardsView()
+                .modelContainer(container)
+                .environmentObject(NavigationStateManager())
 }
