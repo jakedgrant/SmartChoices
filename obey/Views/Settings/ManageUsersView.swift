@@ -8,8 +8,9 @@ struct ManageUsersView: View {
 	@ObservedObject private var userViewModel = UserViewModel.shared
 	private let selectedUserManager = SelectedUserManager.shared
 	
-	@Query(sort: \SDUser.name) private var users: [SDUser]
-	@State private var userToDelete: SDUser?
+    @Query(sort: \SDUser.name) private var users: [SDUser]
+    @State private var userToDelete: SDUser?
+    @State private var isShowingAddFlow = false
 	
 	var body: some View {
 		List {
@@ -50,19 +51,25 @@ struct ManageUsersView: View {
 		} message: {
 			Text("Are you sure?")
 		}
-		.safeAreaInset(edge: .bottom) {
-			Button(action: addUser) {
-				Label(
-					allowsAddUser() ? "Add new user" : "Unlock to add multiple users",
-					systemImage: allowsAddUser() ? "plus" : "lock"
-				)
-			}
-			.buttonStyle(SCButtonStyle())
-			.frame(maxWidth: .infinity)
-			.animation(.default, value: users.count)
-		}
-		.fontDesign(.rounded)
-	}
+        
+        .safeAreaInset(edge: .bottom) {
+            Button(action: addUser) {
+                Label(
+                    allowsAddUser() ? "Add new user" : "Unlock to add multiple users",
+                    systemImage: allowsAddUser() ? "plus" : "lock"
+                )
+            }
+            .buttonStyle(SCButtonStyle())
+            .frame(maxWidth: .infinity)
+            .animation(.default, value: users.count)
+        }
+        
+        .sheet(isPresented: $isShowingAddFlow) {
+            MultiUserMigrationView(flow: .addUser)
+        }
+        
+        .fontDesign(.rounded)
+    }
 	
 	private func deleteUser(_ user: SDUser) {
 		modelContext.delete(user)
@@ -72,20 +79,16 @@ struct ManageUsersView: View {
 			selectedUserManager.selectedUser = users.first { $0.id != user.id }
 		}
 	}
-	
-	private func addUser() {
-		guard allowsAddUser() else {
-			nav.path.append(Route.paywall)
-			return
-		}
-		
-		let newUser = SDUser()
-		modelContext.insert(newUser)
-		nav.path.append(newUser)
-		
-		selectedUserManager.selectedUser = newUser
-	}
-	
+    
+    private func addUser() {
+        guard allowsAddUser() else {
+            nav.path.append(Route.paywall)
+            return
+        }
+        
+        isShowingAddFlow = true
+    }
+    
 	private func allowsAddUser() -> Bool {
 		if userViewModel.unlockActive {
 			return true
