@@ -16,6 +16,9 @@ struct MultiUserMigrationView: View {
     @State private var user = SDUser()
     @State private var stepIndex: Int
     @State private var isUserInserted = false
+    @State private var isCanceled = false
+
+    private let previousUser: SDUser?
 
     enum Step { case welcome, name, color, rewards }
 
@@ -40,17 +43,28 @@ struct MultiUserMigrationView: View {
     init(flow: Flow = .migration) {
         self.flow = flow
         _stepIndex = State(initialValue: 0)
+        previousUser = SelectedUserManager.shared.selectedUser
     }
     
     var body: some View {
-        VStack {
-            currentStepView
+        NavigationStack {
+            VStack {
+                currentStepView
+            }
+            .toolbar {
+                if flow == .addUser {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { cancelAdd() }
+                    }
+                }
+            }
         }
         .fontDesign(.rounded)
         .padding(.horizontal, 20)
         .padding(.bottom, 8)
         .animation(.easeIn, value: step)
         .onAppear { if step == .name { insertUserIfNeeded() } }
+        .onDisappear { if flow == .addUser && !migrationCompleted && !isCanceled { removeInsertedUser() } }
     }
     
     @ViewBuilder
@@ -173,6 +187,20 @@ struct MultiUserMigrationView: View {
         if stepIndex < steps.count - 1 {
             stepIndex += 1
         }
+    }
+
+    private func cancelAdd() {
+        isCanceled = true
+        removeInsertedUser()
+        dismiss()
+    }
+
+    private func removeInsertedUser() {
+        guard flow == .addUser else { return }
+        guard isUserInserted else { return }
+        modelContext.delete(user)
+        selectedUserManager.selectedUser = previousUser
+        isUserInserted = false
     }
 
     private func insertUserIfNeeded(force: Bool = false) {
