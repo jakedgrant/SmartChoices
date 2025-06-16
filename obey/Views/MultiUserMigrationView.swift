@@ -18,7 +18,7 @@ struct MultiUserMigrationView: View {
     @State private var isUserInserted = false
     @State private var isCanceled = false
 
-    private let previousUser: SDUser?
+    @State private var previousUser: SDUser?
 
     enum Step { case welcome, name, color, rewards }
 
@@ -43,7 +43,6 @@ struct MultiUserMigrationView: View {
     init(flow: Flow = .migration) {
         self.flow = flow
         _stepIndex = State(initialValue: 0)
-        previousUser = SelectedUserManager.shared.selectedUser
     }
     
     var body: some View {
@@ -64,7 +63,6 @@ struct MultiUserMigrationView: View {
         .padding(.bottom, 8)
         .animation(.easeIn, value: step)
         .onAppear { if step == .name { insertUserIfNeeded() } }
-        .onDisappear { if flow == .addUser && !migrationCompleted && !isCanceled { removeInsertedUser() } }
     }
     
     @ViewBuilder
@@ -116,7 +114,7 @@ struct MultiUserMigrationView: View {
                 .textFieldStyle(.plain)
                 .font(.largeTitle)
             Spacer()
-            Button(action: { advance() }) {
+            Button(action: advance) {
                 Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
@@ -140,7 +138,7 @@ struct MultiUserMigrationView: View {
             .labelsHidden()
             .scaleEffect(CGSize(width: 2, height: 2))
             Spacer()
-            Button(action: { advance() }) {
+            Button(action: advance) {
                 Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
@@ -165,7 +163,7 @@ struct MultiUserMigrationView: View {
             }
             .listStyle(.plain)
             Spacer()
-            Button(action: { finalize() }) {
+            Button(action: finalize) {
                 Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
@@ -207,6 +205,7 @@ struct MultiUserMigrationView: View {
         guard step == .name || force else { return }
         guard !isUserInserted else { return }
         modelContext.insert(user)
+        previousUser = selectedUserManager.selectedUser
         selectedUserManager.selectedUser = user
         isUserInserted = true
     }
