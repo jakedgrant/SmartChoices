@@ -59,5 +59,6 @@ struct LogListView: View {
 	container.mainContext.insert(l3)
 	
     return LogListView()
-		.modelContainer(container)
+                .modelContainer(container)
+                .environmentObject(NavigationStateManager())
 }

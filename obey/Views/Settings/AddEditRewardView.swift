@@ -193,8 +193,9 @@ extension Section where Parent == Text, Content: View, Footer: View{
 		let container = try ModelContainer(for: SDReward.self, configurations: config)
 		
 		let r = SDReward(name: "Preview reward")
-		return AddEditRewardView(reward: r)
-			.modelContainer(container)
+                return AddEditRewardView(reward: r)
+                        .modelContainer(container)
+                        .environmentObject(NavigationStateManager())
 	} catch {
 		fatalError("Failed to create model container.")
 	}
