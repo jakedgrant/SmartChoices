@@ -16,11 +16,7 @@ struct AddEditUserView: View {
             }
 
             Section("Color") {
-                ColorPicker("", selection: Binding(
-                    get: { user.swiftUIColor },
-                    set: { user.color = StandardColor($0) }
-                ), supportsOpacity: false)
-                .labelsHidden()
+                StandardColorPicker(selection: $user.color)
             }
 
             Section {
