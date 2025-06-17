@@ -104,7 +104,8 @@
 		23CC5F2F2C50A3F60018A724 /* SDReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2B2C509FDE0018A724 /* SDReward.swift */; };
 		23CC5F302C50A3F90018A724 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F272C509F580018A724 /* Database.swift */; };
 		23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */; };
-		23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
+                23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
+                C2EF4D26CD839479EB8907F5 /* StandardColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,7 +218,8 @@
 		23CC5F272C509F580018A724 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
 		23CC5F2B2C509FDE0018A724 /* SDReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDReward.swift; sourceTree = "<group>"; };
-		23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDatabase.swift; sourceTree = "<group>"; };
+                23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDatabase.swift; sourceTree = "<group>"; };
+                1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColorPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -254,26 +256,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		232AF07C2C9507CE0077353B /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				23357F1C2C915B710000DB7B /* AboutView.swift */,
-				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
-				23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */,
-				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
-				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
-				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
-				23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */,
-				23077F7E2C881802000D131F /* SettingsView.swift */,
-				232AF07D2C9658E40077353B /* StatsView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		23BF8C902C2D05BB00C40157 = {
-			isa = PBXGroup;
-			children = (
-				23077F752C851CFE000D131F /* Smart Choices.storekit */,
+                232AF07C2C9507CE0077353B /* Settings */ = {
+                        isa = PBXGroup;
+                        children = (
+                                23357F1C2C915B710000DB7B /* AboutView.swift */,
+                                231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+                                23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */,
+                                231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
+                                2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
+                                231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
+                                23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */,
+                                23077F7E2C881802000D131F /* SettingsView.swift */,
+                                232AF07D2C9658E40077353B /* StatsView.swift */,
+                        );
+                        path = Settings;
+                        sourceTree = "<group>";
+                };
+                28B1169142499CE6030DC56B /* Shared */ = {
+                        isa = PBXGroup;
+                        children = (
+                                1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */,
+                        );
+                        path = Shared;
+                        sourceTree = "<group>";
+                };
+                23BF8C902C2D05BB00C40157 = {
+                        isa = PBXGroup;
+                        children = (
+                                23077F752C851CFE000D131F /* Smart Choices.storekit */,
 				23077F782C851DF7000D131F /* StoreKitTestCertificate.cer */,
 				23BF8C9B2C2D05BB00C40157 /* obey */,
 				23C7ECDB2C35098D00001637 /* obeyWatch Watch App */,
@@ -333,8 +343,9 @@
 				23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 				23C436122CC0BFBC00E21137 /* ObeyRecap.swift */,
-				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
-				232AF07C2C9507CE0077353B /* Settings */,
+                                23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
+                                28B1169142499CE6030DC56B /* Shared */,
+                                232AF07C2C9507CE0077353B /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -638,8 +649,9 @@
 				23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */,
 				2392DD102C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F282C509F580018A724 /* Database.swift in Sources */,
-				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
-				23077F812C883059000D131F /* SDLog.swift in Sources */,
+                                23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
+                                C2EF4D26CD839479EB8907F5 /* StandardColorPicker.swift in Sources */,
+                                23077F812C883059000D131F /* SDLog.swift in Sources */,
 				23077F722C7EDD36000D131F /* PurchasesDelegateHandler.swift in Sources */,
 				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
