@@ -28,13 +28,13 @@ enum StandardColor: String, CaseIterable, Codable {
         else if uiColor.isEqual(UIColor.orange) { self = .orange }
         else if uiColor.isEqual(UIColor.yellow) { self = .yellow }
         else if uiColor.isEqual(UIColor.green) { self = .green }
-        else if uiColor.isEqual(UIColor.systemMint) { self = .mint }
-        else if uiColor.isEqual(UIColor.systemTeal) { self = .teal }
+//        else if uiColor.isEqual(UIColor.systemMint) { self = .mint }
+//        else if uiColor.isEqual(UIColor.systemTeal) { self = .teal }
         else if uiColor.isEqual(UIColor.cyan) { self = .cyan }
         else if uiColor.isEqual(UIColor.blue) { self = .blue }
-        else if uiColor.isEqual(UIColor.systemIndigo) { self = .indigo }
+//        else if uiColor.isEqual(UIColor.systemIndigo) { self = .indigo }
         else if uiColor.isEqual(UIColor.purple) { self = .purple }
-        else if uiColor.isEqual(UIColor.systemPink) { self = .pink }
+//        else if uiColor.isEqual(UIColor.systemPink) { self = .pink }
         else if uiColor.isEqual(UIColor.brown) { self = .brown }
         else if uiColor.isEqual(UIColor.gray) { self = .gray }
         else { self = .mint }
