@@ -21,6 +21,7 @@ struct StandardColorPicker: View {
                             }
                         }
                 }
+                .buttonStyle(.plain)
             }
         }
     }
