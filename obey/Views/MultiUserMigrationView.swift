@@ -131,12 +131,8 @@ struct MultiUserMigrationView: View {
             Text("What is \(user.name.possessive) favorite color?")
                 .font(.title)
                 .bold()
-            ColorPicker("", selection: Binding(
-                get: { user.swiftUIColor },
-                set: { user.color = StandardColor($0) }
-            ), supportsOpacity: false)
-            .labelsHidden()
-            .scaleEffect(CGSize(width: 2, height: 2))
+            StandardColorPicker(selection: $user.color)
+                .frame(maxWidth: 300)
             Spacer()
             Button(action: advance) {
                 Label("Continue", systemImage: "arrow.right")
