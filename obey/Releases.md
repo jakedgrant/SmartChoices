@@ -1,3 +1,12 @@
+# 1.2
+## Smart Choices Cranberry
+### Major
+
+- title: Multi user support
+- description: Now you can have separate rewards and odds for multiple users. Perfect for households with multiple children. Available to all subscribers now!
+- symbol: person.3.fill
+- color: #DB5079
+
 # 1.1
 ## Smart Choices Blueberry
 ### Minor

@@ -107,9 +107,9 @@ struct ContentView: View {
                 .interactiveDismissDisabled(true)
             }
             
-            .sheet(item: $releasePackage) { package in
-                ObeyRecap(showing: package.releases)
-            }
+//            .sheet(item: $releasePackage) { package in
+//                ObeyRecap(showing: package.releases)
+//            }
             
             .task {
                 await populateRewards()
@@ -120,11 +120,11 @@ struct ContentView: View {
                 }
             }
 			
-			.onAppear {
-                if userMigrationCompleted {
-                    releasePackage = showReleasePackage
-                }
-			}
+//			.onAppear {
+//                if userMigrationCompleted {
+//                    releasePackage = showReleasePackage
+//                }
+//			}
 		}
 		.tint(themeColor)
 	}
