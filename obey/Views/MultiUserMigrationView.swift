@@ -206,7 +206,7 @@ struct MultiUserMigrationView: View {
             insertUserIfNeeded()
             try modelContext.save()
             migrationCompleted = true
-            if flow == .onboarding && !userViewModel.unlockActive {
+            if (flow == .onboarding || flow == .migration) && !userViewModel.unlockActive {
                 showPaywall = true
             } else {
                 dismiss()
