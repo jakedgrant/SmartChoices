@@ -23,16 +23,18 @@ struct LogListView: View {
 			}
 				
 			Section {
-				ForEach(logs) { log in
-					LogEntryView(
-						timestamp: log.timestamp,
-						name: log.reward?.name,
-						systemImage: log.reward?.systemImage,
-						odds: log.odds,
-						losses: log.losses,
-						increasedOdds: log.increasedOdds
-					)
-				}
+                                ForEach(logs) { log in
+                                        LogEntryView(
+                                                timestamp: log.timestamp,
+                                                name: log.reward?.name,
+                                                systemImage: log.reward?.systemImage,
+                                                odds: log.odds,
+                                                losses: log.losses,
+                                                increasedOdds: log.increasedOdds,
+                                                userName: log.user?.name,
+                                                userColor: log.user?.swiftUIColor
+                                        )
+                                }
 			}
 		}
 		.navigationTitle(Text("Reward History"))

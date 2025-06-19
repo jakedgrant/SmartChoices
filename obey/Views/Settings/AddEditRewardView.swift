@@ -108,12 +108,12 @@ struct AddEditRewardView: View {
 					}
 				} else {
 					
-					ForEach(logs) { log in
-						
-						LogEntryView(timestamp: log.timestamp, name: log.reward?.name, systemImage: log.reward?.systemImage, odds: log.odds, losses: log.losses, increasedOdds: log.increasedOdds)
-							.transition(.opacity.animation(.easeInOut))
-					}
-				}
+                                        ForEach(logs) { log in
+
+                                                LogEntryView(timestamp: log.timestamp, name: log.reward?.name, systemImage: log.reward?.systemImage, odds: log.odds, losses: log.losses, increasedOdds: log.increasedOdds, userName: log.user?.name, userColor: log.user?.swiftUIColor)
+                                                        .transition(.opacity.animation(.easeInOut))
+                                        }
+                                }
 			} footer: {
 				
 				if !userViewModel.unlockActive {
