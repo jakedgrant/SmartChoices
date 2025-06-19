@@ -3,25 +3,30 @@ import SwiftUI
 struct StandardColorPicker: View {
     @Binding var selection: StandardColor
     
-    private let columns = [GridItem(.adaptive(minimum: 44))]
+    private let columns = [GridItem(.adaptive(minimum: 60))]
     
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(StandardColor.allCases, id: \.self) { color in
                 Button {
-                    selection = color
+                    withAnimation {
+                        selection = color
+                    }
                 } label: {
                     Circle()
                         .fill(color.color)
                         .frame(width: 40, height: 40)
-                        .overlay {
-                            if selection == color {
-                                Circle()
-                                    .stroke(Color.primary, lineWidth: 3)
-                            }
-                        }
                 }
                 .buttonStyle(.plain)
+                .padding(6)
+                .overlay {
+                    if selection == color {
+                        Circle()
+                            .stroke(color.color, lineWidth: 3)
+                            .transition(.scale)
+                            .animation(.easeInOut, value: selection)
+                    }
+                }
             }
         }
     }
