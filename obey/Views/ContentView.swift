@@ -35,7 +35,8 @@ struct ContentView: View {
 	@State private var startPoint = -1
 	@State private var endPoint = 2
 	
-	let colors: [Color] = [.red, .orange, .yellow, .green]
+        let colors: [Color] = [.red, .orange, .yellow, .green]
+       let switchUserTip = SwitchUserTip()
 	
 	var body: some View {
 		NavigationStack {
@@ -72,16 +73,17 @@ struct ContentView: View {
 				}
 				
 				VStack {
-					Picker("User", selection: $selectedUserManager.selectedUser) {
-						ForEach(users) { user in
-							Text(user.name).tag(Optional(user))
-								.fontDesign(.rounded)
-						}
-					}
-					.pickerStyle(.menu)
-					
-					Spacer()
-				}
+                                        Picker("User", selection: $selectedUserManager.selectedUser) {
+                                                ForEach(users) { user in
+                                                        Text(user.name).tag(Optional(user))
+                                                                .fontDesign(.rounded)
+                                                }
+                                        }
+                                        .pickerStyle(.menu)
+                                        .popoverTip(switchUserTip)
+
+                                        Spacer()
+                                }
 			}
 			
 			.toolbar {
