@@ -25,6 +25,7 @@ struct SCButtonBackground: View {
 				endPoint: UnitPoint(x:0.0, y: 1.0)
 			)
 		}
+        .animation(.easeInOut, value: themeColor)
 	}
 }
 

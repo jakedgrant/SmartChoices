@@ -102,7 +102,10 @@ struct MultiUserMigrationView: View {
                 .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
             Spacer()
-            Button(action: advance) {
+            Button(action: {
+                insertUserIfNeeded(force: true)
+                advance()
+            }) {
                 Label("Continue", systemImage: "arrow.right")
             }
             .buttonStyle(SCButtonStyle())
