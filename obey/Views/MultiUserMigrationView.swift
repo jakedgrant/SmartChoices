@@ -1,12 +1,14 @@
 import SwiftData
 import SwiftUI
+import RevenueCatUI
 
 struct MultiUserMigrationView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.themeColor) private var themeColor
-    
+
     @ObservedObject private var selectedUserManager = SelectedUserManager.shared
+    @ObservedObject private var userViewModel = UserViewModel.shared
     
     @AppStorage("userMigrationCompleted", store: UserDefaults(suiteName: Constants.suiteName))
     private var migrationCompleted: Bool = false
@@ -17,14 +19,17 @@ struct MultiUserMigrationView: View {
     @State private var stepIndex: Int
     @State private var isUserInserted = false
     @State private var isCanceled = false
+    @State private var showPaywall = false
+    @FocusState private var isNameFocused: Bool
 
     @State private var previousUser: SDUser?
 
-    enum Step { case welcome, name, color, rewards }
+    enum Step { case intro, welcome, name, color, rewards }
 
     enum Flow {
         case migration
         case addUser
+        case onboarding
 
         var steps: [Step] {
             switch self {
@@ -32,6 +37,8 @@ struct MultiUserMigrationView: View {
                 return [.welcome, .name, .color, .rewards]
             case .addUser:
                 return [.name, .color, .rewards]
+            case .onboarding:
+                return [.intro, .name, .color, .rewards]
             }
         }
     }
@@ -63,11 +70,14 @@ struct MultiUserMigrationView: View {
         .padding(.bottom, 8)
         .animation(.easeIn, value: step)
         .onAppear { if step == .name { insertUserIfNeeded() } }
+        .sheet(isPresented: $showPaywall, onDismiss: { dismiss() }) { PaywallView() }
     }
     
     @ViewBuilder
     private var currentStepView: some View {
         switch step {
+        case .intro:
+            intro.transition(stepTransition)
         case .welcome:
             welcome.transition(stepTransition)
         case .name:
@@ -76,6 +86,29 @@ struct MultiUserMigrationView: View {
             colorPicker.transition(stepTransition)
         case .rewards:
             rewardSelection.transition(stepTransition)
+        }
+    }
+
+    private var intro: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            Image(systemName: "hands.and.sparkles.fill")
+                .font(.system(size: 100))
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(themeColor)
+            Text("Welcome to Smart Choices! Rewards are more meaningful when earned. Roll the dice for a chance to win, and keep trying if you don't.")
+                .font(.title)
+                .bold()
+                .fontDesign(.rounded)
+                .multilineTextAlignment(.center)
+            Spacer()
+            Button(action: {
+                insertUserIfNeeded(force: true)
+                advance()
+            }) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
         }
     }
     
@@ -113,6 +146,8 @@ struct MultiUserMigrationView: View {
             TextField("Name", text: $user.name)
                 .textFieldStyle(.plain)
                 .font(.largeTitle)
+                .focused($isNameFocused)
+                .onAppear { isNameFocused = true }
             Spacer()
             Button(action: advance) {
                 Label("Continue", systemImage: "arrow.right")
@@ -171,13 +206,20 @@ struct MultiUserMigrationView: View {
             insertUserIfNeeded()
             try modelContext.save()
             migrationCompleted = true
-            dismiss()
+            if flow == .onboarding && !userViewModel.unlockActive {
+                showPaywall = true
+            } else {
+                dismiss()
+            }
         } catch {
             print("Error saving user - \(error.localizedDescription)")
         }
     }
 
     private func advance() {
+        if isNameFocused {
+            isNameFocused = false
+        }
         if stepIndex < steps.count - 1 {
             stepIndex += 1
         }
@@ -185,6 +227,7 @@ struct MultiUserMigrationView: View {
 
     private func cancelAdd() {
         isCanceled = true
+        isNameFocused = false
         removeInsertedUser()
         dismiss()
     }

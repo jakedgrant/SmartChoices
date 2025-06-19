@@ -101,8 +101,10 @@ struct ContentView: View {
             .sheet(isPresented: $isShowingMigration, onDismiss: {
                 selectedUserManager.ensureSelectedUser(context: modelContext)
             }) {
-                MultiUserMigrationView()
-                    .interactiveDismissDisabled(true)
+                MultiUserMigrationView(
+                    flow: previousVersionString == Constants.startingVersion ? .onboarding : .migration
+                )
+                .interactiveDismissDisabled(true)
             }
             
             .sheet(item: $releasePackage) { package in
