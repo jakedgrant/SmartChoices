@@ -20,6 +20,7 @@ struct MultiUserMigrationView: View {
     @State private var isUserInserted = false
     @State private var isCanceled = false
     @State private var showPaywall = false
+    @FocusState private var isNameFocused: Bool
 
     @State private var previousUser: SDUser?
 
@@ -142,6 +143,8 @@ struct MultiUserMigrationView: View {
             TextField("Name", text: $user.name)
                 .textFieldStyle(.plain)
                 .font(.largeTitle)
+                .focused($isNameFocused)
+                .onAppear { isNameFocused = true }
             Spacer()
             Button(action: advance) {
                 Label("Continue", systemImage: "arrow.right")
