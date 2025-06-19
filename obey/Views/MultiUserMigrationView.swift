@@ -217,6 +217,9 @@ struct MultiUserMigrationView: View {
     }
 
     private func advance() {
+        if isNameFocused {
+            isNameFocused = false
+        }
         if stepIndex < steps.count - 1 {
             stepIndex += 1
         }
@@ -224,6 +227,7 @@ struct MultiUserMigrationView: View {
 
     private func cancelAdd() {
         isCanceled = true
+        isNameFocused = false
         removeInsertedUser()
         dismiss()
     }
