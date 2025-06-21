@@ -70,7 +70,12 @@ struct MultiUserMigrationView: View {
         .padding(.bottom, 8)
         .animation(.easeIn, value: step)
         .onAppear { if step == .name { insertUserIfNeeded() } }
-        .sheet(isPresented: $showPaywall, onDismiss: { dismiss() }) { PaywallView() }
+        .sheet(isPresented: $showPaywall, onDismiss: {
+            dismiss()
+            SwitchUserTip.didAddUserEvent.sendDonation()
+        }) {
+            PaywallView()
+        }
     }
     
     @ViewBuilder
@@ -210,6 +215,7 @@ struct MultiUserMigrationView: View {
                 showPaywall = true
             } else {
                 dismiss()
+                SwitchUserTip.didAddUserEvent.sendDonation()
             }
         } catch {
             print("Error saving user - \(error.localizedDescription)")

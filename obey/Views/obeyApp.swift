@@ -19,6 +19,11 @@ struct obeyApp: App {
 		
         #if DEBUG
 		Purchases.logLevel = .debug
+        do {
+            try Tips.resetDatastore()
+        } catch {
+            print("error reseting tips: \(error)")
+        }
         #endif
 		
 		// Use this initializer if your app does not have an account system.
