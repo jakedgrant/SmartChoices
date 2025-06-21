@@ -70,9 +70,11 @@
 		23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */; };
 		23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */; };
 		23C435DC2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */; };
-		23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
-		23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
-		23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
+                23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
+                23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
+               23C435E12D9D4F0100E21137 /* SwitchUserTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */; };
+               23C435E22D9D4F0100E21137 /* SwitchUserTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */; };
+                23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
 		23C4360E2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
 		23C436112CC0BF3700E21137 /* Recap in Frameworks */ = {isa = PBXBuildFile; productRef = 23C436102CC0BF3700E21137 /* Recap */; };
 		23C436132CC0BFBC00E21137 /* ObeyRecap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C436122CC0BFBC00E21137 /* ObeyRecap.swift */; };
@@ -195,9 +197,10 @@
 		23BF8CB52C2D17D800C40157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		23C435D32C97EB3200E21137 /* LogRewardTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRewardTip.swift; sourceTree = "<group>"; };
 		23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsSwipeActionsTip.swift; sourceTree = "<group>"; };
-		23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsTip.swift; sourceTree = "<group>"; };
-		23C435DD2C97F33C00E21137 /* BigButtonTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonTip.swift; sourceTree = "<group>"; };
-		23C4360C2CC0B2A600E21137 /* LastStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastStat.swift; sourceTree = "<group>"; };
+               23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsTip.swift; sourceTree = "<group>"; };
+               23C435DD2C97F33C00E21137 /* BigButtonTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonTip.swift; sourceTree = "<group>"; };
+               23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUserTip.swift; sourceTree = "<group>"; };
+               23C4360C2CC0B2A600E21137 /* LastStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastStat.swift; sourceTree = "<group>"; };
 		23C436122CC0BFBC00E21137 /* ObeyRecap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObeyRecap.swift; sourceTree = "<group>"; };
 		23C436142CC0C00C00E21137 /* Releases.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Releases.md; sourceTree = "<group>"; };
 		23C436162CC362F000E21137 /* Intro.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Intro.md; sourceTree = "<group>"; };
@@ -379,9 +382,10 @@
 			children = (
 				23C435DD2C97F33C00E21137 /* BigButtonTip.swift */,
 				23C435D32C97EB3200E21137 /* LogRewardTip.swift */,
-				23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */,
-				23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */,
-			);
+                               23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */,
+                               23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */,
+                               23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */,
+                       );
 			path = Tips;
 			sourceTree = "<group>";
 		};
@@ -635,8 +639,9 @@
 				2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 				23077F7F2C881802000D131F /* SettingsView.swift in Sources */,
 				23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */,
-				23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
-				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
+                               23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
+                               23C435E12D9D4F0100E21137 /* SwitchUserTip.swift in Sources */,
+                               23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
 				23AB23DE2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
 				23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */,
@@ -670,8 +675,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
-				23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
+                               23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
+                               23C435E22D9D4F0100E21137 /* SwitchUserTip.swift in Sources */,
+                               23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
