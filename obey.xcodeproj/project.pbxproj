@@ -26,7 +26,8 @@
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
 		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
-		232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
+232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
+752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF107B4D376B75D2828065B /* SwitchUserView.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
 		23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
@@ -88,7 +89,6 @@
 		23C7ECEE2C35131000001637 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF12C3CC8E900001637 /* RewardListView.swift */; };
 		23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* Alert.swift */; };
-		23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */; };
 		23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */; };
 		23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */; };
@@ -167,9 +167,10 @@
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
-		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
-		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
-		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+6DF107B4D376B75D2828065B /* SwitchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUserView.swift; sourceTree = "<group>"; };
+23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
 		23729D0C2DF2B273007317AA /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
@@ -399,10 +400,11 @@
 				23077F672C7D7BB4000D131F /* obeyWatch-Watch-App-Info.plist */,
 				23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */,
 				23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */,
-				23C7ECDE2C35098D00001637 /* ContentView.swift */,
-				23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
-				231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
-				23C7ECE02C35098F00001637 /* Assets.xcassets */,
+23C7ECDE2C35098D00001637 /* ContentView.swift */,
+23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
+231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
+6DF107B4D376B75D2828065B /* SwitchUserView.swift */,
+23C7ECE02C35098F00001637 /* Assets.xcassets */,
 				23C7ECE22C35098F00001637 /* Preview Content */,
 			);
 			path = "obeyWatch Watch App";
@@ -690,10 +692,11 @@
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
 				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
-				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
-				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
-				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
-				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
+231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
+23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
+232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
+752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */,
+23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
 				23729D0E2DF2B273007317AA /* StandardColor.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,

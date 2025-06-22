@@ -18,31 +18,20 @@ struct ContentView: View {
 	
 	@State private var isShowingRewards = false
 	@State private var isAlerting = false
-	@State private var isDebug = false
-	
-	@State private var rotation = 0.0
-	
-	var body: some View {
-		NavigationStack {
-			VStack {
-				Spacer()
-				
-				Button("Smart Choice", action: roll)
-					.bold()
-					.fontDesign(.rounded)
-					.focusable()
-					.digitalCrownRotation($rotation) { value in
-						withAnimation {
-							isDebug = value.offset > 50.0
-						}
-					}
-				
-				Spacer()
-				
-				if isDebug {
-					DebugView()
-				}
-			}
+
+        var body: some View {
+                NavigationStack {
+                        TabView {
+                                rollView
+                                        .tabItem { Label("Roll", systemImage: "die.face.5") }
+
+                                SwitchUserView()
+                                        .tabItem { Label("Users", systemImage: "person.crop.circle") }
+
+                                StatsView()
+                                        .tabItem { Label("Stats", systemImage: "chart.bar") }
+                        }
+                        .tabViewStyle(.verticalPage)
 			
 			.alert(
 				Alert.unlucky.title,
@@ -67,11 +56,25 @@ struct ContentView: View {
 			
 				.scenePadding()
 			
-				.task {
-					await populateRewards()
-				}
-		}
-	}
+                                .task {
+                                        await populateRewards()
+                                }
+                }
+        }
+
+        private var rollView: some View {
+                VStack {
+                        Spacer()
+
+                        Button("Smart Choice", action: roll)
+                                .bold()
+                                .fontDesign(.rounded)
+                                .focusable()
+
+                        Spacer()
+                }
+                .containerBackground(themeColor.gradient, for: .tabView)
+        }
 	
 	private func roll() {
 		let result = Int.random(in: 1...odds)
