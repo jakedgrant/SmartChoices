@@ -93,8 +93,10 @@
 		23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */; };
 		23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */; };
 		23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFC2C4045A200001637 /* RewardEntity.swift */; };
-		23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFE2C40463C00001637 /* RewardQuery.swift */; };
-		23C7ED012C40495F00001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
+                23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFE2C40463C00001637 /* RewardQuery.swift */; };
+                23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A12EA1B5C100001638 /* UserEntity.swift */; };
+                23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A32EA1B5C100001638 /* UserQuery.swift */; };
+                23C7ED012C40495F00001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
 		23C7ED032C40525000001637 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED002C40495F00001637 /* Roll.swift */; };
 		23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
 		23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */; };
@@ -214,9 +216,11 @@
 		23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppIntent.swift; sourceTree = "<group>"; };
 		23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObeyShortcuts.swift; sourceTree = "<group>"; };
 		23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollForRewardIntent.swift; sourceTree = "<group>"; };
-		23C7ECFC2C4045A200001637 /* RewardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardEntity.swift; sourceTree = "<group>"; };
-		23C7ECFE2C40463C00001637 /* RewardQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardQuery.swift; sourceTree = "<group>"; };
-		23C7ED002C40495F00001637 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
+                23C7ECFC2C4045A200001637 /* RewardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardEntity.swift; sourceTree = "<group>"; };
+                23C7ECFE2C40463C00001637 /* RewardQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardQuery.swift; sourceTree = "<group>"; };
+                23E0A8A12EA1B5C100001638 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+                23E0A8A32EA1B5C100001638 /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
+                23C7ED002C40495F00001637 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
 		23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "obeyWatch Watch App.entitlements"; sourceTree = "<group>"; };
 		23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRewardList.swift; sourceTree = "<group>"; };
 		23CC5F272C509F580018A724 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -414,13 +418,15 @@
 		};
 		23C7ECF52C403CD400001637 /* Intents */ = {
 			isa = PBXGroup;
-			children = (
-				23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */,
-				23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */,
-				23C7ECFC2C4045A200001637 /* RewardEntity.swift */,
-				23C7ECFE2C40463C00001637 /* RewardQuery.swift */,
-				23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */,
-			);
+                        children = (
+                                23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */,
+                                23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */,
+                                23C7ECFC2C4045A200001637 /* RewardEntity.swift */,
+                                23C7ECFE2C40463C00001637 /* RewardQuery.swift */,
+                                23E0A8A12EA1B5C100001638 /* UserEntity.swift */,
+                                23E0A8A32EA1B5C100001638 /* UserQuery.swift */,
+                                23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */,
+                        );
 			path = Intents;
 			sourceTree = "<group>";
 		};
@@ -627,9 +633,11 @@
 				23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */,
 				23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */,
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
-				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
-				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
-				23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */,
+                                23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
+                                23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
+                                23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */,
+                                23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */,
+                                23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */,
 				232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
