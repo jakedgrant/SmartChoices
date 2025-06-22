@@ -68,20 +68,20 @@ extension RewardDatabase {
 //		}
 //	}
 //	
-//	func rewards(with identifiers: [T.ID]) -> [T] {
-//		let predicate = #Predicate<T> { t in
-//			identifiers.contains(t.id)
-//		}
-//		
-//		let sort = SortDescriptor<T>(\.name)
-//		
-//		do {
-//			return try self.read(predicate: predicate, sortDescriptors: sort)
-//		} catch {
-//			print(error.localizedDescription)
-//			return []
-//		}
-//	}
+	func rewards(with identifiers: [T.ID]) -> [T] {
+		let predicate = #Predicate<T> { t in
+			identifiers.contains(t.id)
+		}
+		
+		let sort = SortDescriptor<T>(\.name)
+		
+		do {
+			return try self.read(predicate: predicate, sortDescriptors: sort)
+		} catch {
+			print(error.localizedDescription)
+			return []
+		}
+	}
 }
 
 extension RewardDatabase {
