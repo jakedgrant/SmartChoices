@@ -17,6 +17,8 @@ struct UserEntity: AppEntity, Displayable {
     var image: String { "person.crop.circle" }
     var description: String { name }
     
+    var color: Color
+    
     var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(
             title: "\(name)",
@@ -26,6 +28,7 @@ struct UserEntity: AppEntity, Displayable {
     
     init(from user: SDUser) {
         self.id = user.id
+        self.color = user.swiftUIColor
         self.name = user.name
     }
 }
