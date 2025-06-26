@@ -7,7 +7,7 @@ struct SwitchUserView: View {
     
     var body: some View {
         NavigationStack {
-            if true { //userViewModel.unlockActive {
+            if userViewModel.unlockActive {
                 SelectUserListView()
             } else {
                 UnlockView()
