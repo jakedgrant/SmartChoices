@@ -63,7 +63,11 @@ struct StatsView: View {
 			StatLine(text: "Times rewarded:", value: logCountDescription)
 			
 			Button {
-				Roll.resetOdds()
+				if let user = selectedUserManager.selectedUser {
+					Roll.resetOdds(for: user)
+				} else {
+					Roll.resetOdds()
+				}
 			} label: {
 				StatLine(text: "Current odds:", value: oddsDescription, subtitle: "tap to reset")
 			}
