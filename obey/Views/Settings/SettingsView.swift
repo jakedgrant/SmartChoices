@@ -63,9 +63,9 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("Users") {
+                Section("Children") {
                     NavigationLink(value: Route.userManage) {
-                        Label("Manage users", systemImage: "person.2")
+                        Label("Manage children", systemImage: "person.2")
                     }
                 }
 

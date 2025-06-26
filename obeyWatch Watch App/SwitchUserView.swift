@@ -57,7 +57,7 @@ struct UnlockView: View {
             Image(systemName: "lock.fill")
                 .font(.largeTitle)
                 .foregroundStyle(themeColor)
-            Text("Subscribe to unlock multiple users")
+            Text("Subscribe to unlock multiple children")
                 .multilineTextAlignment(.center)
                 .padding()
             Spacer()

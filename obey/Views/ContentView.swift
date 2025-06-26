@@ -68,7 +68,7 @@ struct ContentView: View {
                 
                 VStack {
                     
-                    Picker("User", selection: $selectedUserManager.selectedUser) {
+                    Picker("Child", selection: $selectedUserManager.selectedUser) {
                         ForEach(users) { user in
                             Text(user.name).tag(Optional(user))
                                 .fontDesign(.rounded)
