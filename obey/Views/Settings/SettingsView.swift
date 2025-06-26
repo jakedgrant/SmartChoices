@@ -39,17 +39,27 @@ struct SettingsView: View {
         NavigationStack(path: $nav.path) {
             Form {
                 Section {
-                    Button {
-                        if userViewModel.isSubscriber {
+                    switch (userViewModel.unlockActive, userViewModel.isSubscriber) {
+                    case (true, true):
+                        Button {
                             isShowingManageSubscription = true
-                        } else if !userViewModel.unlockActive {
-                            isShowingPaywall = true
+                        } label: {
+                            Label(
+                                "Manage subscription",
+                                systemImage: "dollarsign.arrow.circlepath"
+                            )
                         }
-                    } label: {
-                        Label(
-                            userViewModel.unlockActive ? "Manage subscription" : "Subscribe now!",
-                            systemImage: userViewModel.unlockActive ? "dollarsign.arrow.circlepath" : "hands.and.sparkles.fill"
-                        )
+                    case (true, false):
+                        Text("All features unlocked - thanks for supporting Smart Choices!")
+                    case (false, _):
+                        Button {
+                            isShowingPaywall = true
+                        } label: {
+                            Label(
+                                "Subscribe now!",
+                                systemImage: "hands.and.sparkles.fill"
+                            )
+                        }
                     }
                 }
 
