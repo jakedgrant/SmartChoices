@@ -110,6 +110,8 @@
 		23CC5F302C50A3F90018A724 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F272C509F580018A724 /* Database.swift */; };
 		23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */; };
 		23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
+		23D7C6762E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */; };
+		23D7C6772E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */; };
 		23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A12EA1B5C100001638 /* UserEntity.swift */; };
 		23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A32EA1B5C100001638 /* UserQuery.swift */; };
 		752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF107B4D376B75D2828065B /* SwitchUserView.swift */; };
@@ -229,6 +231,7 @@
 		23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
 		23CC5F2B2C509FDE0018A724 /* SDReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDReward.swift; sourceTree = "<group>"; };
 		23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDatabase.swift; sourceTree = "<group>"; };
+		23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDisplayable.swift; sourceTree = "<group>"; };
 		23E0A8A12EA1B5C100001638 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		23E0A8A32EA1B5C100001638 /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		6DF107B4D376B75D2828065B /* SwitchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUserView.swift; sourceTree = "<group>"; };
@@ -360,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
+				23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */,
 				23729D0C2DF2B273007317AA /* StandardColor.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23CC5F262C509F4D0018A724 /* DB */,
@@ -644,6 +648,7 @@
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
 				23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */,
+				23D7C6762E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */,
 				23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */,
 				23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */,
 				231DA05E2E08A16900B47354 /* StatsView.swift in Sources */,
@@ -699,6 +704,7 @@
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
 				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
+				23D7C6772E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */,
 				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
 				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
 				232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
