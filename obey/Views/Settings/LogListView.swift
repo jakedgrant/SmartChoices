@@ -37,7 +37,7 @@ struct LogListView: View {
                 }
             }
         }
-        .navigationTitle(Text("Reward History"))
+        .navigationTitle(Text(SDLog.sectionName))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

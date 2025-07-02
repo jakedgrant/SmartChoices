@@ -53,7 +53,7 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("Rewards") {
+                Section(SDReward.sectionName) {
                     NavigationLink(value: Route.rewardManage) {
                         Label("Manage rewards", systemImage: "list.star")
                     }
@@ -63,7 +63,7 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("Children") {
+                Section(SDUser.sectionName) {
                     NavigationLink(value: Route.userManage) {
                         Label("Manage children", systemImage: "person.2")
                     }
