@@ -112,6 +112,8 @@
 		23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
 		23D7C6762E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */; };
 		23D7C6772E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */; };
+		23D7C67C2E14DF8F009C7ED3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F6F2C7ED891000D131F /* Secrets.swift */; };
+		23D7C67D2E14DFA7009C7ED3 /* PurchasesDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */; };
 		23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A12EA1B5C100001638 /* UserEntity.swift */; };
 		23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A32EA1B5C100001638 /* UserQuery.swift */; };
 		752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF107B4D376B75D2828065B /* SwitchUserView.swift */; };
@@ -700,6 +702,7 @@
 				231DA0632E08A19B00B47354 /* UserViewModel.swift in Sources */,
 				23C435E22D9D4F0100E21137 /* SwitchUserTip.swift in Sources */,
 				23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
+				23D7C67D2E14DFA7009C7ED3 /* PurchasesDelegateHandler.swift in Sources */,
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
@@ -712,6 +715,7 @@
 				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
 				23729D0E2DF2B273007317AA /* StandardColor.swift in Sources */,
+				23D7C67C2E14DF8F009C7ED3 /* Secrets.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
