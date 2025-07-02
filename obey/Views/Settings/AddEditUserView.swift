@@ -12,7 +12,7 @@ struct AddEditUserView: View {
     var body: some View {
         Form {
             Section("Name") {
-                TextField("User name", text: $user.name)
+                TextField("Child name", text: $user.name)
             }
 
             Section("Color") {
@@ -26,7 +26,7 @@ struct AddEditUserView: View {
                     Label("Delete", systemImage: "trash")
                 }
                 .foregroundStyle(.white)
-                .alert("Delete user", isPresented: $isConfirmingDelete) {
+                .alert("Delete child", isPresented: $isConfirmingDelete) {
                     Button(role: .destructive) {
                         deleteUser(user)
                         dismiss()
@@ -39,7 +39,7 @@ struct AddEditUserView: View {
             }
             .listRowBackground(Color.red)
         }
-        .navigationTitle(Text(user.name.isEmpty ? "New User" : user.name))
+        .navigationTitle(Text(user.name.isEmpty ? "New Child" : user.name))
         .navigationBarTitleDisplayMode(.inline)
         .interactiveDismissDisabled()
         .fontDesign(.rounded)

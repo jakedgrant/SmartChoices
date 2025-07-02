@@ -14,7 +14,7 @@ struct RollForRewardIntent: AppIntent {
     static var title: LocalizedStringResource = "Roll for making a Smart Choice reward."
     static var description = IntentDescription("Makes a roll for making a Smart Choice. If the roll is successfull, presents a list of rewards to choose from.")
     
-    @Parameter(title: "User")
+    @Parameter(title: "Child")
     var user: UserEntity?
     
     func perform() async throws -> some IntentResult & ReturnsValue<[RewardEntity]> & ProvidesDialog & ShowsSnippetView {

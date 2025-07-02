@@ -5,7 +5,7 @@ import SwiftUI
 struct UserEntity: AppEntity, Displayable {
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation {
-        "User"
+        "Child"
     }
     
     static var defaultQuery = UserQuery()

@@ -99,7 +99,7 @@ struct ManageRewardsView: View {
 		.toolbar {
 			ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
-                    Picker("Filter for user", selection: $selectedUser) {
+                    Picker("Filter for child", selection: $selectedUser) {
                         Text("All").tag(nil as SDUser?)
                         ForEach(users) { user in
                             Text(user.name).tag(user as SDUser?)

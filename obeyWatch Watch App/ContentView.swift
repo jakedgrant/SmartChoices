@@ -38,7 +38,7 @@ struct ContentView: View {
                     Button {
                         isSwitchingUser = true
                     } label: {
-                        Label("Switch User", systemImage: "person.crop.circle")
+                        Label("Switch Child", systemImage: "person.crop.circle")
                             .foregroundStyle(.primary)
                     }
                 }

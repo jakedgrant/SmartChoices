@@ -12,11 +12,11 @@ struct SwitchUserTip: Tip {
     static let didAddUserEvent = Event(id: "didAddUserEvent")
     
     var title: Text {
-        Text("Switch users")
+        Text("Switch children")
     }
-    
+
     var message: Text? {
-        Text("Tap here to change users")
+        Text("Tap here to change children")
     }
     
     var image: Image? {

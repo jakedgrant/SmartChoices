@@ -45,7 +45,7 @@ struct AddEditRewardView: View {
                 }
             }
             
-            Section("Users") {
+            Section(SDUser.sectionName) {
                 ForEach(users) { user in
                     Toggle(isOn: binding(for: user)) {
                         HStack {

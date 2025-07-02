@@ -86,7 +86,7 @@ struct RewardListView: View {
 					}
 				}
 			}
-			.navigationTitle(Text("Rewards"))
+            .navigationTitle(Text(SDReward.sectionName))
 			
 			.safeAreaInset(edge: .bottom) {
 				if !otherRewards.isEmpty {

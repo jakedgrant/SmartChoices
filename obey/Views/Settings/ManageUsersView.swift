@@ -33,9 +33,9 @@ struct ManageUsersView: View {
 				}
 			}
 		}
-		.navigationTitle(Text("Manage Users"))
+                .navigationTitle(Text("Manage Children"))
         .navigationBarTitleDisplayMode(.inline)
-		.alert("Delete user", isPresented: Binding(
+                .alert("Delete child", isPresented: Binding(
 			get: { userToDelete != nil },
 			set: { if !$0 { userToDelete = nil } }
 		)) {
@@ -54,7 +54,7 @@ struct ManageUsersView: View {
         .safeAreaInset(edge: .bottom) {
             Button(action: addUser) {
                 Label(
-                    allowsAddUser() ? "Add new user" : "Unlock to add multiple users",
+                    allowsAddUser() ? "Add new child" : "Unlock to add multiple children",
                     systemImage: allowsAddUser() ? "plus" : "lock"
                 )
             }
