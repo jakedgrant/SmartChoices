@@ -23,16 +23,12 @@ final class SDLog: Identifiable {
     init(
         id: UUID = UUID(),
         timestamp: Date = Date.now,
-        reward: SDReward,
-        user: SDUser? = nil,
         odds: Int,
         losses: Int,
         increasedOdds: Bool
     ) {
         self.id = id
         self.timestamp = timestamp
-        self.reward = reward
-        self.user = user
         self.odds = odds
         self.losses = losses
         self.increasedOdds = increasedOdds

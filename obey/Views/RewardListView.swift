@@ -149,12 +149,12 @@ struct RewardListView: View {
 		
 		let selectedUser = SelectedUserManager.shared.selectedUser
 		let log = SDLog(
-			reward: reward,
-			user: selectedUser,
 			odds: selectedUser?.odds ?? LastStat.shared.odds,
 			losses: selectedUser?.losses ?? LastStat.shared.losses,
 			increasedOdds: LastStat.shared.increasedOdds
 		)
+        log.reward = reward
+        log.user = selectedUser
 		
 		modelContext.insert(log)
 		
