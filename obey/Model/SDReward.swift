@@ -18,20 +18,17 @@ final class SDReward: Identifiable {
 
     @Relationship(deleteRule: .nullify, inverse: \SDLog.reward)
     var logs: [SDLog]? = []
+    
     var users: [SDUser]? = []
 
     init(
         name: String = "",
         systemImage: String = Constants.defaultImageName,
         isActive: Bool = true,
-        logs: [SDLog]? = [],
-        users: [SDUser]? = []
     ) {
         self.name = name
         self.systemImage = systemImage
         self.isActive = isActive
-        self.logs = logs
-        self.users = users
     }
 }
 
