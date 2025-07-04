@@ -20,16 +20,12 @@ final class SDUser: Identifiable {
         name: String = "",
         color: StandardColor = .mint,
         odds: Int = Constants.startingOdds,
-        losses: Int = 0,
-        rewards: [SDReward]? = [],
-        logs: [SDLog]? = []
+        losses: Int = 0
     ) {
         self.name = name
         self.color = color
         self.odds = odds
         self.losses = losses
-        self.rewards = rewards
-        self.logs = logs
     }
 }
 
