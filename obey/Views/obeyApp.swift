@@ -15,7 +15,10 @@ import CoreData
 struct obeyApp: App {
     
     @StateObject private var selectedUserManager = SelectedUserManager.shared
-    let modelContainer: ModelContainer
+    
+    
+// Uncomment and run app on a physical device after making model changes
+//    let modelContainer: ModelContainer
     
     init() {
         
@@ -48,43 +51,44 @@ struct obeyApp: App {
         catch {
             print("Error initializing tips: \(error)")
         }
-        
-        let config = ModelConfiguration()
-        
-        
-        do {
-#if DEBUG
-            // Use an autorelease pool to make sure Swift deallocates the persistent
-            // container before setting up the SwiftData stack.
-            try autoreleasepool {
-                let desc = NSPersistentStoreDescription(url: config.url)
-                let opts = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.jacobgrant.obey")
-                desc.cloudKitContainerOptions = opts
-                // Load the store synchronously so it completes before initializing the
-                // CloudKit schema.
-                desc.shouldAddStoreAsynchronously = false
-                if let mom = NSManagedObjectModel.makeManagedObjectModel(for: [SDReward.self, SDLog.self, SDUser.self]) {
-                    let container = NSPersistentCloudKitContainer(name: "Trips", managedObjectModel: mom)
-                    container.persistentStoreDescriptions = [desc]
-                    container.loadPersistentStores {_, err in
-                        if let err {
-                            fatalError(err.localizedDescription)
-                        }
-                    }
-                    // Initialize the CloudKit schema after the store finishes loading.
-                    try container.initializeCloudKitSchema()
-                    // Remove and unload the store from the persistent container.
-                    if let store = container.persistentStoreCoordinator.persistentStores.first {
-                        try container.persistentStoreCoordinator.remove(store)
-                    }
-                }
-            }
-#endif
-            modelContainer = try ModelContainer(for: SDReward.self, SDLog.self, SDUser.self,
-                                                configurations: config)
-        } catch {
-            fatalError(error.localizedDescription)
-        }
+
+// Uncomment and run app on a physical device after making model changes
+//        let config = ModelConfiguration()
+//        
+//        
+//        do {
+//#if DEBUG
+//            // Use an autorelease pool to make sure Swift deallocates the persistent
+//            // container before setting up the SwiftData stack.
+//            try autoreleasepool {
+//                let desc = NSPersistentStoreDescription(url: config.url)
+//                let opts = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.jacobgrant.obey")
+//                desc.cloudKitContainerOptions = opts
+//                // Load the store synchronously so it completes before initializing the
+//                // CloudKit schema.
+//                desc.shouldAddStoreAsynchronously = false
+//                if let mom = NSManagedObjectModel.makeManagedObjectModel(for: [SDReward.self, SDLog.self, SDUser.self]) {
+//                    let container = NSPersistentCloudKitContainer(name: "Trips", managedObjectModel: mom)
+//                    container.persistentStoreDescriptions = [desc]
+//                    container.loadPersistentStores {_, err in
+//                        if let err {
+//                            fatalError(err.localizedDescription)
+//                        }
+//                    }
+//                    // Initialize the CloudKit schema after the store finishes loading.
+//                    try container.initializeCloudKitSchema()
+//                    // Remove and unload the store from the persistent container.
+//                    if let store = container.persistentStoreCoordinator.persistentStores.first {
+//                        try container.persistentStoreCoordinator.remove(store)
+//                    }
+//                }
+//            }
+//#endif
+//            modelContainer = try ModelContainer(for: SDReward.self, SDLog.self, SDUser.self,
+//                                                configurations: config)
+//        } catch {
+//            fatalError(error.localizedDescription)
+//        }
     }
     
     
@@ -101,6 +105,9 @@ struct obeyApp: App {
                     }
                 }
         }
-        .modelContainer(modelContainer)
+        .modelContainer(for: [SDReward.self, SDLog.self, SDUser.self])
+
+// Uncomment and run app on a physical device after making model changes
+//        .modelContainer(modelContainer)
     }
 }
