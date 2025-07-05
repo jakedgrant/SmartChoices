@@ -31,11 +31,16 @@ struct ContentView: View {
     @State private var isShowingRecap = false
     @State private var isShowingMigration = false
     @State private var releasePackage: ReleasePackage? = nil
+    @State private var meshPhase = 0.0
+
     
     var body: some View {
         NavigationStack {
             ZStack {
                 
+                ShiftingMeshGradientView(color: themeColor)
+                    .ignoresSafeArea()
+
                 VStack {
                     
                     Button("Smart Choice", action: roll)

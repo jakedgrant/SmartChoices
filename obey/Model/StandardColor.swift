@@ -21,3 +21,48 @@ enum StandardColor: String, CaseIterable, Codable {
     }
 }
 
+extension Color {
+    
+    var complement: Color {
+        switch self {
+        case .red: .orange
+        case .orange: .yellow
+        case .yellow: .orange
+        case .green: .teal
+        case .teal:  .mint
+        case .cyan: .mint
+        case .blue: .mint
+        case .indigo: .purple
+        case .purple: .indigo
+        case .pink: .red
+        case .mint: .green
+        case .primary: .primary
+        default: .clear
+        }
+    }
+}
+
+#Preview {
+    
+    let colors = StandardColor.allCases
+    VStack {
+        ForEach(colors, id: \.self) { color in
+            ZStack {
+                MeshGradient(
+                    width: 2,
+                    height: 2,
+                    points: [
+                        .init(x: 0, y: 0), .init(x: 1, y: 0),
+                        .init(x: 0, y: 1), .init(x: 1, y: 1)
+                    ],
+                    colors: [
+                        color.color.complement, color.color, color.color, color.color.complement
+                    ]
+                )
+                
+                Text(color.rawValue)
+            }
+        }
+    }
+}
+

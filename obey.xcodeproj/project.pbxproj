@@ -31,6 +31,7 @@
 		231DA0652E08A24A00B47354 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 231DA0642E08A24A00B47354 /* RevenueCat */; };
 		231DA0672E08A24A00B47354 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 231DA0662E08A24A00B47354 /* RevenueCatUI */; };
 		232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
+		2334912F2E18E66E00674739 /* ShiftingMeshGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
 		23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
@@ -180,6 +181,7 @@
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
 		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingMeshGradientView.swift; sourceTree = "<group>"; };
 		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
 				28B1169142499CE6030DC56B /* Shared */,
 				232AF07C2C9507CE0077353B /* Settings */,
+				2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */,
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
+				2334912F2E18E66E00674739 /* ShiftingMeshGradientView.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
 				23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */,
 				23D7C6762E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */,
