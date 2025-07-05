@@ -24,7 +24,6 @@ struct ContentView: View {
     @ObservedObject private var userViewModel = UserViewModel.shared
     @ObservedObject private var selectedUserManager = SelectedUserManager.shared
     @Environment(\.themeColor) private var themeColor
-    @Environment(\.colorScheme) private var colorScheme
     
     @State private var isPresenting = false
     @State private var isShowingRewards = false
@@ -34,21 +33,13 @@ struct ContentView: View {
     @State private var releasePackage: ReleasePackage? = nil
     @State private var meshPhase = 0.0
 
-    private var meshBackground: some View {
-        let base = selectedUserManager.selectedUser?.swiftUIColor ?? themeColor
-        let complement = base.complementary
-        let accent = colorScheme == .dark ? Color.black : Color.white
-        return MeshGradient(colors: [base, complement, accent])
-            .phase(meshPhase)
-            .animation(.easeInOut(duration: 20).repeatForever(autoreverses: true), value: meshPhase)
-            .onAppear { meshPhase = 1 }
-            .ignoresSafeArea()
-    }
     
     var body: some View {
         NavigationStack {
             ZStack {
-                meshBackground
+                
+                ShiftingMeshGradientView(color: themeColor)
+                    .ignoresSafeArea()
 
                 VStack {
                     
