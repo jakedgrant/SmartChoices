@@ -11,8 +11,9 @@ import SwiftUI
 struct LogListView: View {
     @Environment(\.modelContext) var modelContext
     @EnvironmentObject var nav: NavigationStateManager
-    
+
     @Query(sort: \SDLog.timestamp, order: .reverse) private var logs: [SDLog]
+    @State private var logToDelete: SDLog?
     
     var body: some View {
         List {
@@ -34,12 +35,41 @@ struct LogListView: View {
                         userName: log.user?.name,
                         userColor: log.user?.swiftUIColor
                     )
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            logToDelete = log
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
                 }
             }
         }
         .navigationTitle(Text(SDLog.sectionName))
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Delete log", isPresented: Binding(
+            get: { logToDelete != nil },
+            set: { if !$0 { logToDelete = nil } }
+        )) {
+            Button(role: .destructive) {
+                if let log = logToDelete {
+                    deleteLog(log)
+                }
+            } label: {
+                Text("Delete")
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Are you sure?")
+        }
     }
+}
+
+extension LogListView {
+
+        private func deleteLog(_ log: SDLog) {
+                modelContext.delete(log)
+        }
 }
 
 #Preview {
