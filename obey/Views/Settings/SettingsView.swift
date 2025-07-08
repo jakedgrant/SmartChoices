@@ -23,7 +23,6 @@ class NavigationStateManager: ObservableObject {
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-
     @Environment(\.themeColor) private var themeColor
 
     @ObservedObject private var userViewModel = UserViewModel.shared
@@ -38,32 +37,29 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack(path: $nav.path) {
             Form {
-                Section {
-                    switch (userViewModel.unlockActive, userViewModel.isSubscriber) {
-                    case (true, true):
-                        Button {
-                            isShowingManageSubscription = true
-                        } label: {
-                            Label(
-                                "Manage subscription",
-                                systemImage: "dollarsign.arrow.circlepath"
-                            )
-                        }
-                    case (true, false):
-                        Text("All features unlocked - thanks for supporting Smart Choices!")
-                    case (false, _):
-                        Button {
-                            isShowingPaywall = true
-                        } label: {
-                            Label(
-                                "Subscribe now!",
-                                systemImage: "hands.and.sparkles.fill"
-                            )
-                        }
+                
+                if !userViewModel.unlockActive {
+                    Button {
+                        isShowingPaywall = true
+                    } label: {
+                        Label(
+                            "Subscribe now to unlock all features and new ways to reward good behavior!",
+                            systemImage: "hands.and.sparkles.fill"
+                        )
                     }
+                    .foregroundStyle(.white)
+                    .bold()
+                    .listRowBackground(
+                        AttentionMeshGradient(.mint, .black.opacity(0.25))
+                            .background(.mint)
+                    )
                 }
 
-                Section(SDReward.sectionName) {
+                Section {
+                    NavigationLink(value: Route.userManage) {
+                        Label("Manage children", systemImage: "person.2")
+                    }
+                    
                     NavigationLink(value: Route.rewardManage) {
                         Label("Manage rewards", systemImage: "list.star")
                     }
@@ -72,31 +68,52 @@ struct SettingsView: View {
                         Label("Reward history", systemImage: userViewModel.unlockActive ? "scroll" : "lock")
                     }
                 }
-
-                Section(SDUser.sectionName) {
-                    NavigationLink(value: Route.userManage) {
-                        Label("Manage children", systemImage: "person.2")
-                    }
+                
+                Section("Stats for \(selectedUserManager.selectedUser?.name ?? "All")") {
+                    StatsView()
                 }
 
                 Section {
+                    
                     NavigationLink(value: Route.about) {
                         Label("About", systemImage: "i.circle")
                     }
-
+                    
                     Button {
                         isShowingRecap = true
                     } label: {
                         Label("What's new?", systemImage: "party.popper")
                     }
+                    
+                    if userViewModel.unlockActive, userViewModel.isSubscriber {
+                        Button {
+                            isShowingManageSubscription = true
+                        } label: {
+                            Label(
+                                "Manage subscription",
+                                systemImage: "dollarsign.arrow.circlepath"
+                            )
+                        }
+                    }
+                }
+                
+                Section {
+                    if userViewModel.unlockActive {
+                        Text("All features unlocked - thanks for supporting Smart Choices!")
+                            .bold()
+                            .foregroundStyle(.white)
+                            .listRowBackground(
+                                AttentionMeshGradient(themeColor, .black.opacity(0.25))
+                                    .background(themeColor)
+                            )
+                    }
                 }
 
-				Section("Stats for \(selectedUserManager.selectedUser?.name ?? "All")") {
-                    StatsView()
-                }
             }
             .navigationTitle("Settings")
+            
             .navigationBarTitleDisplayMode(.large)
+            
             .navigationDestination(for: Route.self) { routeValue in
                 switch routeValue {
                 case .about:
