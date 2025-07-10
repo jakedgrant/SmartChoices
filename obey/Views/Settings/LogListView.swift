@@ -36,7 +36,7 @@ struct LogListView: View {
                         userColor: log.user?.swiftUIColor
                     )
                     .swipeActions(edge: .trailing) {
-                        Button(role: .destructive) {
+                        Button {
                             logToDelete = log
                         } label: {
                             Label("Delete", systemImage: "trash")
@@ -45,6 +45,7 @@ struct LogListView: View {
                 }
             }
         }
+        .animation(.easeOut, value: logs)
         .navigationTitle(Text(SDLog.sectionName))
         .navigationBarTitleDisplayMode(.inline)
         .alert("Delete log", isPresented: Binding(
@@ -53,7 +54,9 @@ struct LogListView: View {
         )) {
             Button(role: .destructive) {
                 if let log = logToDelete {
-                    deleteLog(log)
+                    withAnimation {
+                        deleteLog(log)
+                    }
                 }
             } label: {
                 Text("Delete")
