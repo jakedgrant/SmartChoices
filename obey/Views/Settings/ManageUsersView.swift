@@ -25,7 +25,7 @@ struct ManageUsersView: View {
 					.padding(10)
 				}
 				.swipeActions(edge: .trailing) {
-					Button(role: .destructive) {
+					Button {
 						userToDelete = user
 					} label: {
 						Label("Delete", systemImage: "trash")
@@ -33,15 +33,18 @@ struct ManageUsersView: View {
 				}
 			}
 		}
-                .navigationTitle(Text("Manage Children"))
+        .animation(.easeOut, value: users)
+        .navigationTitle(Text("Manage Children"))
         .navigationBarTitleDisplayMode(.inline)
-                .alert("Delete child", isPresented: Binding(
+        .alert("Delete child", isPresented: Binding(
 			get: { userToDelete != nil },
 			set: { if !$0 { userToDelete = nil } }
 		)) {
 			Button(role: .destructive) {
 				if let user = userToDelete {
-					deleteUser(user)
+                    withAnimation {
+                        deleteUser(user)
+                    }
 				}
 			} label: {
 				Text("Delete")
