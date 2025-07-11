@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RevenueCat
 
 struct MenuImageView: View {
 	
