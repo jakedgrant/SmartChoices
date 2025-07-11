@@ -7,6 +7,8 @@ struct AddEditUserView: View {
 
     @Bindable var user: SDUser
 
+    @Query(sort: \SDReward.name) private var rewards: [SDReward]
+
     @State private var isConfirmingDelete = false
 
     var body: some View {
@@ -17,6 +19,14 @@ struct AddEditUserView: View {
 
             Section("Color") {
                 StandardColorPicker(selection: $user.color)
+            }
+
+            Section("Rewards") {
+                ForEach(rewards) { reward in
+                    Toggle(isOn: binding(for: reward)) {
+                        Label(reward.name, systemImage: reward.systemImage)
+                    }
+                }
             }
 
             Section {
@@ -48,12 +58,34 @@ struct AddEditUserView: View {
     private func deleteUser(_ user: SDUser) {
         modelContext.delete(user)
     }
+
+    private func binding(for reward: SDReward) -> Binding<Bool> {
+        Binding(
+            get: { user.rewards?.contains(where: { $0.id == reward.id }) ?? false },
+            set: { newValue in
+                if newValue {
+                    if user.rewards == nil { user.rewards = [] }
+                    if !(user.rewards?.contains(where: { $0.id == reward.id }) ?? false) {
+                        user.rewards?.append(reward)
+                    }
+                } else {
+                    guard let idx = user.rewards?.firstIndex(where: { $0.id == reward.id }) else { return }
+                    user.rewards?.remove(at: idx)
+                }
+            }
+        )
+    }
 }
 
 #Preview {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: SDUser.self, configurations: config)
+    let container = try! ModelContainer(for: SDReward.self, SDUser.self, configurations: config)
+    for r in Reward.allCases {
+        let new = SDReward(name: r.description, systemImage: r.image)
+        container.mainContext.insert(new)
+    }
     let u = SDUser(name: "Preview")
+    container.mainContext.insert(u)
     return AddEditUserView(user: u)
         .modelContainer(container)
 }
