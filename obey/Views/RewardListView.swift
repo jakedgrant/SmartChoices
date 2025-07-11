@@ -17,8 +17,10 @@ struct RewardListView: View {
 	
 	@State private var topRewards: [SDReward]
 	@State private var otherRewards: [SDReward]
-	@State private var showAllRewards = false
-	@State private var counter = 1
+        @State private var showAllRewards = false
+        @State private var counter = 1
+        @State private var hasLoggedReward = false
+        @State private var isConfirmingDismiss = false
 	
 	let logRewardTip = LogRewardTip()
 	
@@ -109,16 +111,34 @@ struct RewardListView: View {
 			
 			.navigationBarTitleDisplayMode(.inline)
 			
-			.interactiveDismissDisabled()
-			
-			.toolbar {
-				ToolbarItem {
-                    CloseButton { dismiss() }
-				}
-			}
-		}
-		.fontDesign(.rounded)
-	}
+                        .interactiveDismissDisabled()
+
+                        .toolbar {
+                                ToolbarItem {
+                    CloseButton {
+                        if hasLoggedReward {
+                            dismiss()
+                        } else {
+                            isConfirmingDismiss = true
+                        }
+                    }
+                                }
+                        }
+
+                        .alert(
+                            "No reward selected",
+                            isPresented: $isConfirmingDismiss
+                        ) {
+                            Button("Stay Here", role: .cancel) { }
+                            Button("Dismiss Anyway", role: .destructive) {
+                                dismiss()
+                            }
+                        } message: {
+                            Text("Select a reward before closing or dismiss anyway.")
+                        }
+                }
+                .fontDesign(.rounded)
+        }
 	
 	private struct ShowHideButton: View {
 		
@@ -142,12 +162,12 @@ struct RewardListView: View {
 	
 	private func log(_ reward: SDReward) {
 		
-		let selectedUser = SelectedUserManager.shared.selectedUser
-		let log = SDLog(
-			odds: selectedUser?.odds ?? LastStat.shared.odds,
-			losses: selectedUser?.losses ?? LastStat.shared.losses,
-			increasedOdds: LastStat.shared.increasedOdds
-		)
+                let selectedUser = SelectedUserManager.shared.selectedUser
+                let log = SDLog(
+                        odds: selectedUser?.odds ?? LastStat.shared.odds,
+                        losses: selectedUser?.losses ?? LastStat.shared.losses,
+                        increasedOdds: LastStat.shared.increasedOdds
+                )
         log.reward = reward
         log.user = selectedUser
 		
@@ -155,10 +175,12 @@ struct RewardListView: View {
 		
 		do {
 			try modelContext.save()
-		} catch {
-			print("error saving log - \(error.localizedDescription)")
-		}
-		
-		dismiss()
-	}
+                } catch {
+                        print("error saving log - \(error.localizedDescription)")
+                }
+
+                hasLoggedReward = true
+
+                dismiss()
+        }
 }
