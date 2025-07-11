@@ -51,7 +51,7 @@ struct RewardListView: View {
 		
 		NavigationStack {
 			List {
-				Section {
+				Section("Top Rewards") {
 					ForEach(topRewards) { reward in
 						
 						Button {
@@ -71,17 +71,19 @@ struct RewardListView: View {
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
 				
 				if showAllRewards {
-					Section {
+					Section("More Rewards") {
 						
 						ForEach(otherRewards) { reward in
 							
-							Button {
-								log(reward)
-							} label: {
-								Label(reward.name, systemImage: reward.systemImage)
-									.symbolRenderingMode(.hierarchical)
-									.padding(10)
-							}
+                            Button {
+                                log(reward)
+                            } label: {
+                                Label(reward.name, systemImage: reward.systemImage)
+                            }
+                            .buttonStyle(SCButtonStyle())
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                            .listRowInsets(.init(top: -8, leading: 0, bottom: -8, trailing: 0))
 						}
 					}
 				}
@@ -111,14 +113,7 @@ struct RewardListView: View {
 			
 			.toolbar {
 				ToolbarItem {
-					Button {
-						dismiss()
-					} label: {
-						Image(systemName: "xmark")
-							.imageScale(.small)
-					}
-					.buttonStyle(SCCircleButtonStyle(padding: 12))
-					.padding(.trailing, -12)
+                    CloseButton { dismiss() }
 				}
 			}
 		}
@@ -167,36 +162,3 @@ struct RewardListView: View {
 		dismiss()
 	}
 }
-
-struct TopRewards<T>: View where T: Displayable{
-	
-	var items: ArraySlice<T>
-	
-	var body: some View {
-		ForEach(items) { item in
-			
-			Label(item.description, systemImage: item.image)
-				.symbolRenderingMode(.hierarchical)
-				.padding(20)
-				.background(Color(uiColor: UIColor.tertiarySystemBackground))
-				.clipShape(
-					RoundedRectangle(cornerRadius: 25)
-				)
-				.listRowSeparator(.hidden)
-				.listRowBackground(Color.clear)
-		}
-	}
-}
-
-//#Preview {
-//	let config = ModelConfiguration(isStoredInMemoryOnly: true)
-//	let container = try! ModelContainer(for: SDReward.self, configurations: config)
-//	
-//	for r in Reward.allCases {
-//		let n = SDReward(name: r.description, systemImage: r.image)
-//		container.mainContext.insert(n)
-//	}
-//	
-//	return RewardListView(stats: RollStat(odds: 1, losses: 0, increasedOdds: true))
-//		.modelContainer(container)
-//}

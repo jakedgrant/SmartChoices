@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		23077F622C72A4E1000D131F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F612C72A4E1000D131F /* Icon.swift */; };
 		23077F642C72A501000D131F /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F632C72A501000D131F /* IconView.swift */; };
-		23077F662C7D7309000D131F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F652C7D7309000D131F /* MenuView.swift */; };
+		23077F662C7D7309000D131F /* MenuImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F652C7D7309000D131F /* MenuImageView.swift */; };
 		23077F6A2C7ED6B8000D131F /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 23077F692C7ED6B8000D131F /* RevenueCat */; };
 		23077F6C2C7ED6B8000D131F /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23077F6B2C7ED6B8000D131F /* RevenueCatUI */; };
 		23077F6E2C7ED6DC000D131F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23077F6D2C7ED6DC000D131F /* StoreKit.framework */; };
@@ -32,6 +32,8 @@
 		231DA0672E08A24A00B47354 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 231DA0662E08A24A00B47354 /* RevenueCatUI */; };
 		232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
 		2334912F2E18E66E00674739 /* ShiftingMeshGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */; };
+		233491692E208D2E00674739 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233491682E208D2E00674739 /* CloseButton.swift */; };
+		2334916A2E208D2E00674739 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233491682E208D2E00674739 /* CloseButton.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
 		23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
@@ -67,7 +69,6 @@
 		23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */; };
 		23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */; };
 		23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* Alert.swift */; };
-		23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
 		23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D32C97EB3200E21137 /* LogRewardTip.swift */; };
 		23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D32C97EB3200E21137 /* LogRewardTip.swift */; };
@@ -166,7 +167,7 @@
 		1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColorPicker.swift; sourceTree = "<group>"; };
 		23077F612C72A4E1000D131F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = obey/Model/Icon.swift; sourceTree = SOURCE_ROOT; };
 		23077F632C72A501000D131F /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
-		23077F652C7D7309000D131F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		23077F652C7D7309000D131F /* MenuImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImageView.swift; sourceTree = "<group>"; };
 		23077F672C7D7BB4000D131F /* obeyWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "obeyWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		23077F6D2C7ED6DC000D131F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		23077F6F2C7ED891000D131F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
 		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingMeshGradientView.swift; sourceTree = "<group>"; };
+		233491682E208D2E00674739 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
@@ -208,7 +210,6 @@
 		23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCButtonStyle.swift; sourceTree = "<group>"; };
 		23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceShakeViewModifier.swift; sourceTree = "<group>"; };
 		23BF8CB12C2D16B800C40157 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		23BF8CB32C2D173400C40157 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		23BF8CB52C2D17D800C40157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		23C435D32C97EB3200E21137 /* LogRewardTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRewardTip.swift; sourceTree = "<group>"; };
 		23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsSwipeActionsTip.swift; sourceTree = "<group>"; };
@@ -352,13 +353,12 @@
 			children = (
 				2392DD162C8EB10700DE3034 /* BadgeLabel.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
-				23BF8CB32C2D173400C40157 /* DebugView.swift */,
+				233491682E208D2E00674739 /* CloseButton.swift */,
 				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
-				23077F612C72A4E1000D131F /* Icon.swift */,
 				23077F632C72A501000D131F /* IconView.swift */,
 				2392DD132C8EB09500DE3034 /* KeyView.swift */,
 				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
-				23077F652C7D7309000D131F /* MenuView.swift */,
+				23077F652C7D7309000D131F /* MenuImageView.swift */,
 				23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 				23C436122CC0BFBC00E21137 /* ObeyRecap.swift */,
@@ -378,6 +378,7 @@
 				23729D0C2DF2B273007317AA /* StandardColor.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23CC5F262C509F4D0018A724 /* DB */,
+				23077F612C72A4E1000D131F /* Icon.swift */,
 				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
 				23077F802C883059000D131F /* SDLog.swift */,
@@ -644,7 +645,7 @@
 				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
 				23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
 				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
-				23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */,
+				2334916A2E208D2E00674739 /* CloseButton.swift in Sources */,
 				23AB23E52DFE5C3600BB4589 /* MultiUserMigrationView.swift in Sources */,
 				2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */,
 				23C435D82C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
@@ -654,7 +655,7 @@
 				23AB23E12DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
 				23077F622C72A4E1000D131F /* Icon.swift in Sources */,
-				23077F662C7D7309000D131F /* MenuView.swift in Sources */,
+				23077F662C7D7309000D131F /* MenuImageView.swift in Sources */,
 				2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */,
 				23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */,
 				23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */,
@@ -716,6 +717,7 @@
 				23C435E22D9D4F0100E21137 /* SwitchUserTip.swift in Sources */,
 				23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
 				23D7C6832E1640E6009C7ED3 /* NoticeView.swift in Sources */,
+				233491692E208D2E00674739 /* CloseButton.swift in Sources */,
 				23D7C6862E175200009C7ED3 /* RollView.swift in Sources */,
 				23D7C67D2E14DFA7009C7ED3 /* PurchasesDelegateHandler.swift in Sources */,
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
