@@ -27,6 +27,7 @@ struct StandardColorPicker: View {
                             .animation(.easeInOut, value: selection)
                     }
                 }
+                .sensoryFeedback(.selection, trigger: selection)
             }
         }
     }
