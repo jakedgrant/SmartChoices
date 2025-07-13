@@ -59,6 +59,7 @@
 		23AB23E02DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */; };
 		23AB23E12DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */; };
 		23AB23E52DFE5C3600BB4589 /* MultiUserMigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */; };
+                C5845F4C614F48029BA1E4BC /* AddRewardFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A88E826F8415C9A943564 /* AddRewardFlowView.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -198,6 +199,7 @@
 		23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUserManager.swift; sourceTree = "<group>"; };
 		23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorKey.swift; sourceTree = "<group>"; };
 		23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiUserMigrationView.swift; sourceTree = "<group>"; };
+                D54A88E826F8415C9A943564 /* AddRewardFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRewardFlowView.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
 				23077F652C7D7309000D131F /* MenuImageView.swift */,
 				23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */,
+                                D54A88E826F8415C9A943564 /* AddRewardFlowView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 				23C436122CC0BFBC00E21137 /* ObeyRecap.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
@@ -647,6 +650,7 @@
 				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
 				2334916A2E208D2E00674739 /* CloseButton.swift in Sources */,
 				23AB23E52DFE5C3600BB4589 /* MultiUserMigrationView.swift in Sources */,
+                                  C5845F4C614F48029BA1E4BC /* AddRewardFlowView.swift in Sources */,
 				2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */,
 				23C435D82C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
