@@ -40,7 +40,7 @@ struct AddEditRewardView: View {
                     IconView(icon: reward.systemImage)
                 }
                 .sheet(isPresented: $isShowingIconPicker) {
-                    IconPickerView(selectedImageName: $reward.systemImage, tintColor: themeColor)
+                    NavigationWrappedIconPickerView(selectedImageName: $reward.systemImage, tintColor: themeColor)
                         .presentationDetents([.medium])
                 }
             }
