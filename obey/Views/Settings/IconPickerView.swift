@@ -19,7 +19,6 @@ struct IconPickerView: View {
 	]
 	
     var body: some View {
-        NavigationView {
             ScrollView {
                 
                 ForEach(Icon.default.sets) { set in
@@ -66,13 +65,26 @@ struct IconPickerView: View {
                 }
             }
             .padding(.horizontal, 12)
-            .navigationTitle("Icons")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem {
-                    CloseButton { dismiss() }
+    }
+}
+
+struct NavigationWrappedIconPickerView: View {
+    @Binding var selectedImageName: String
+    
+    @Environment(\.dismiss) var dismiss
+    
+    var tintColor: Color
+    
+    var body: some View {
+        NavigationView {
+            IconPickerView(selectedImageName: $selectedImageName, tintColor: tintColor)
+                .navigationTitle("Icons")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem {
+                        CloseButton { dismiss() }
+                    }
                 }
-            }
         }
     }
 }
