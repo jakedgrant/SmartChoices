@@ -25,7 +25,9 @@
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
-		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C53C84F7AD48FB9C793FE6 /* AddRewardView.swift */; };
+23C728E202094BDDA5EF3356 /* AddRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E1CC9107549FB93DC7768 /* AddRewardView.swift */; };
 		231DA05E2E08A16900B47354 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
 		231DA0632E08A19B00B47354 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F732C851268000D131F /* UserViewModel.swift */; };
 		231DA0652E08A24A00B47354 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 231DA0642E08A24A00B47354 /* RevenueCat */; };
@@ -180,7 +182,8 @@
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
-		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+19C53C84F7AD48FB9C793FE6 /* AddRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRewardView.swift; sourceTree = "<group>"; };
 		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingMeshGradientView.swift; sourceTree = "<group>"; };
 		233491682E208D2E00674739 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -287,9 +290,10 @@
 		232AF07C2C9507CE0077353B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				23357F1C2C915B710000DB7B /* AboutView.swift */,
-				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
-				23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */,
+23357F1C2C915B710000DB7B /* AboutView.swift */,
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+19C53C84F7AD48FB9C793FE6 /* AddRewardView.swift */,
+23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */,
 				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
 				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
 				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
@@ -425,8 +429,9 @@
 				23C7ECDE2C35098D00001637 /* ContentView.swift */,
 				23D7C6872E1752FE009C7ED3 /* ContentTabView.swift */,
 				23D7C6852E175200009C7ED3 /* RollView.swift */,
-				23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
-				231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
+23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
+231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
+F18E1CC9107549FB93DC7768 /* AddRewardView.swift */,
 				6DF107B4D376B75D2828065B /* SwitchUserView.swift */,
 				23D7C6822E1640E6009C7ED3 /* NoticeView.swift */,
 				23C7ECE02C35098F00001637 /* Assets.xcassets */,
@@ -642,7 +647,8 @@
 			files = (
 				23729D0D2DF2B273007317AA /* StandardColor.swift in Sources */,
 				23C436132CC0BFBC00E21137 /* ObeyRecap.swift in Sources */,
-				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
+231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
+A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
 				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
 				2334916A2E208D2E00674739 /* CloseButton.swift in Sources */,
@@ -726,7 +732,8 @@
 				23D7C6882E1752FE009C7ED3 /* ContentTabView.swift in Sources */,
 				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
 				23D7C6772E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */,
-				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
+231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
+23C728E202094BDDA5EF3356 /* AddRewardView.swift in Sources */,
 				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
 				232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
 				752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */,

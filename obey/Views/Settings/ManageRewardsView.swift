@@ -20,8 +20,9 @@ struct ManageRewardsView: View {
 	
 	@Query(sort: \SDReward.name) private var rewards: [SDReward]
 	@Query(sort: \SDUser.name) private var users: [SDUser]
-	@State private var selectedUser: SDUser? = nil
-	@State private var newRewardName = ""
+        @State private var selectedUser: SDUser? = nil
+        @State private var newRewardName = ""
+        @State private var isShowingAddFlow = false
 	
 	let swipeActionsTip = ManageRewardsSwipeActionsTip()
 	
@@ -96,8 +97,8 @@ struct ManageRewardsView: View {
 			.frame(maxWidth: .infinity)
 			.animation(.default, value: rewards.count)
 		}
-		.toolbar {
-			ToolbarItem(placement: .navigationBarTrailing) {
+                .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Picker("Filter for child", selection: $selectedUser) {
                         Text("All").tag(nil as SDUser?)
@@ -108,10 +109,11 @@ struct ManageRewardsView: View {
                 } label: {
                     Image(systemName: selectedUser == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
                 }
-			}
-		}
-		.fontDesign(.rounded)
-	}
+                        }
+                }
+                .sheet(isPresented: $isShowingAddFlow) { AddRewardView() }
+                .fontDesign(.rounded)
+        }
 	
 	private func imageName(for userId: SDUser.ID?) -> String {
 		return userId == selectedUser?.id ? "checkmark" : ""
@@ -124,18 +126,15 @@ extension ManageRewardsView {
 		modelContext.delete(reward)
 	}
 	
-	private func addReward() {
-		
-		guard allowsAddReward() else {
-			nav.path.append(Route.paywall)
-			return
-		}
-		
-		let newReward = SDReward(name: newRewardName)
-		modelContext.insert(newReward)
-		
-		nav.path.append(newReward)
-	}
+        private func addReward() {
+
+                guard allowsAddReward() else {
+                        nav.path.append(Route.paywall)
+                        return
+                }
+
+                isShowingAddFlow = true
+        }
 	
 	private func allowsAddReward() -> Bool {
 		
