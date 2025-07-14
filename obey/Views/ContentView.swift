@@ -66,9 +66,8 @@ struct ContentView: View {
                             RewardListView(modelContext: self.modelContext)
                         }
                     
-                        .sensoryFeedback(.success, trigger: isShowingRewards) { _, new in
-                            new == true
-                        }
+                        .sensoryFeedback(.error, trigger: isPresenting) { _, new in new == true }
+                        .sensoryFeedback(.success, trigger: isShowingRewards) { _, new in new == true }
                 }
                 
                 VStack {
@@ -80,6 +79,8 @@ struct ContentView: View {
                         }
                     }
                     .pickerStyle(.menu)
+                    .sensoryFeedback(.selection, trigger: selectedUserManager.selectedUser)
+                    
                     TipView(SwitchUserTip(), arrowEdge: .top)
                         .padding(.horizontal)
                     
