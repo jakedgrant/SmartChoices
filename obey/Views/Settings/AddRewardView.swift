@@ -75,12 +75,15 @@ struct AddRewardView: View {
     private var iconEntry: some View {
         VStack(spacing: 20) {
             Spacer()
-            Image(systemName: reward.systemImage)
-                .resizable()
+            Color.clear
+                .overlay {
+                    
+                    Image(systemName: reward.systemImage)
+                        .font(.system(size: 100))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundStyle(themeColor)
+                }
                 .frame(width: 100, height: 100)
-//                .font(.system(size: 100))
-                .symbolRenderingMode(.hierarchical)
-                .foregroundStyle(themeColor)
             Text("Pick an icon")
                 .font(.title)
                 .bold()
