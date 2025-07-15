@@ -68,6 +68,7 @@ struct ManageUsersView: View {
         
         .sheet(isPresented: $isShowingAddFlow) {
             MultiUserMigrationView(flow: .addUser)
+                .interactiveDismissDisabled(true)
         }
         
         .fontDesign(.rounded)
