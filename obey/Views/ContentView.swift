@@ -18,12 +18,13 @@ struct ContentView: View {
     @AppStorage("userMigrationCompleted", store: UserDefaults(suiteName: Constants.suiteName)) var userMigrationCompleted: Bool = false
     
     @Environment(\.modelContext) var modelContext
-    @Query var rewards: [SDReward]
-    @Query(sort: \SDUser.name) var users: [SDUser]
+    @Environment(\.themeColor) private var themeColor
     
     @ObservedObject private var userViewModel = UserViewModel.shared
     @ObservedObject private var selectedUserManager = SelectedUserManager.shared
-    @Environment(\.themeColor) private var themeColor
+    
+    @Query var rewards: [SDReward]
+    @Query(sort: \SDUser.name) var users: [SDUser]
     
     @State private var isPresenting = false
     @State private var isShowingRewards = false
@@ -31,8 +32,6 @@ struct ContentView: View {
     @State private var isShowingRecap = false
     @State private var isShowingMigration = false
     @State private var releasePackage: ReleasePackage? = nil
-    @State private var meshPhase = 0.0
-
     
     var body: some View {
         NavigationStack {
@@ -66,9 +65,8 @@ struct ContentView: View {
                             RewardListView(modelContext: self.modelContext)
                         }
                     
-                        .sensoryFeedback(.success, trigger: isShowingRewards) { _, new in
-                            new == true
-                        }
+                        .sensoryFeedback(.error, trigger: isPresenting) { _, new in new == true }
+                        .sensoryFeedback(.success, trigger: isShowingRewards) { _, new in new == true }
                 }
                 
                 VStack {
@@ -80,6 +78,8 @@ struct ContentView: View {
                         }
                     }
                     .pickerStyle(.menu)
+                    .sensoryFeedback(.selection, trigger: selectedUserManager.selectedUser)
+                    
                     TipView(SwitchUserTip(), arrowEdge: .top)
                         .padding(.horizontal)
                     
@@ -94,6 +94,7 @@ struct ContentView: View {
                     } label: {
                         MenuImageView()
                     }
+                    .sensoryFeedback(.selection, trigger: isShowingSettings) { _, new in new == true }
                 }
             }
             
@@ -110,10 +111,6 @@ struct ContentView: View {
                 .interactiveDismissDisabled(true)
             }
             
-            //            .sheet(item: $releasePackage) { package in
-            //                ObeyRecap(showing: package.releases)
-            //            }
-            
             .task {
                 await populateRewards()
                 if userMigrationCompleted {
@@ -122,12 +119,6 @@ struct ContentView: View {
                     isShowingMigration = true
                 }
             }
-            
-            //			.onAppear {
-            //                if userMigrationCompleted {
-            //                    releasePackage = showReleasePackage
-            //                }
-            //			}
         }
         .tint(themeColor)
     }
@@ -157,16 +148,6 @@ struct ContentView: View {
                 print("error saving log - \(error.localizedDescription)")
             }
         }
-    }
-    
-    var showReleasePackage: ReleasePackage? {
-        let currentVersionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-        guard let currentVersionString else { return nil }
-        
-        let packageToShow = ReleasePackage.display(for: currentVersionString, with: previousVersionString)
-        previousVersionString = currentVersionString
-        
-        return packageToShow
     }
 }
 

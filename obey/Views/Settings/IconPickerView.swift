@@ -47,7 +47,6 @@ struct IconPickerView: View {
                                         }
                                 }
                                 .tint(selectedImageName == name ? tintColor : .primary)
-                                .sensoryFeedback(.selection, trigger: selectedImageName)
                             }
                         } header: {
                             
@@ -64,6 +63,7 @@ struct IconPickerView: View {
                     }
                 }
             }
+            .sensoryFeedback(.selection, trigger: selectedImageName)
             .padding(.horizontal, 12)
     }
 }

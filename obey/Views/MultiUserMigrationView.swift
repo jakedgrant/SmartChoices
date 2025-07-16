@@ -3,15 +3,18 @@ import SwiftUI
 import RevenueCatUI
 
 struct MultiUserMigrationView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.themeColor) private var themeColor
-
-    @ObservedObject private var selectedUserManager = SelectedUserManager.shared
-    @ObservedObject private var userViewModel = UserViewModel.shared
     
     @AppStorage("userMigrationCompleted", store: UserDefaults(suiteName: Constants.suiteName))
     private var migrationCompleted: Bool = false
+    
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.themeColor) private var themeColor
+    
+    @FocusState private var isNameFocused: Bool
+
+    @ObservedObject private var selectedUserManager = SelectedUserManager.shared
+    @ObservedObject private var userViewModel = UserViewModel.shared
     
     @Query(sort: \SDReward.name) private var rewards: [SDReward]
     
@@ -20,9 +23,8 @@ struct MultiUserMigrationView: View {
     @State private var isUserInserted = false
     @State private var isCanceled = false
     @State private var showPaywall = false
-    @FocusState private var isNameFocused: Bool
-
     @State private var previousUser: SDUser?
+    @State private var userWasAdded = false
 
     enum Step { case intro, welcome, name, color, rewards }
 
@@ -76,6 +78,8 @@ struct MultiUserMigrationView: View {
         }) {
             PaywallView()
         }
+        .sensoryFeedback(.increase, trigger: stepIndex)
+        .sensoryFeedback(.success, trigger: userWasAdded) { _, new in new == true }
     }
     
     @ViewBuilder
@@ -200,7 +204,7 @@ struct MultiUserMigrationView: View {
             .listStyle(.plain)
             Spacer()
             Button(action: finalize) {
-                Label("Continue", systemImage: "arrow.right")
+                Label("Done", systemImage: "checkmark")
             }
             .buttonStyle(SCButtonStyle())
         }
@@ -210,6 +214,7 @@ struct MultiUserMigrationView: View {
         do {
             insertUserIfNeeded()
             try modelContext.save()
+            userWasAdded = true
             migrationCompleted = true
             if (flow == .onboarding || flow == .migration) && !userViewModel.unlockActive {
                 showPaywall = true

@@ -16,6 +16,8 @@ struct StatsView: View {
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
 	
 	@ObservedObject var selectedUserManager: SelectedUserManager = .shared
+    
+    @State private var buttonPressCount = 0
 	
 	private var rewardCountDescription: String {
 		if let user = selectedUserManager.selectedUser,
@@ -68,10 +70,12 @@ struct StatsView: View {
 				} else {
 					Roll.resetOdds()
 				}
+                buttonPressCount += 1
 			} label: {
 				StatLine(text: "Current odds:", value: oddsDescription, subtitle: "tap to reset")
 			}
 			.buttonStyle(.plain)
+            .sensoryFeedback(.decrease, trigger: buttonPressCount)
 			
 			StatLine(text: "Current losses:", value: lossesDescription)
 		}
