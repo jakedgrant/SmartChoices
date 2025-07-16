@@ -96,6 +96,7 @@ struct ManageRewardsView: View {
             .buttonStyle(SCButtonStyle())
             .frame(maxWidth: .infinity)
             .animation(.default, value: rewards.count)
+            .sensoryFeedback(.selection, trigger: isShowingAddFlow)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

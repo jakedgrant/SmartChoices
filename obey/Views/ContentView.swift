@@ -94,6 +94,7 @@ struct ContentView: View {
                     } label: {
                         MenuImageView()
                     }
+                    .sensoryFeedback(.selection, trigger: isShowingSettings) { _, new in new == true }
                 }
             }
             

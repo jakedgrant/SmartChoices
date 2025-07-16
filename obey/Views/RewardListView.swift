@@ -96,6 +96,8 @@ struct RewardListView: View {
             .safeAreaInset(edge: .bottom) {
                 if !otherRewards.isEmpty {
                     ShowHideButton(isShowing: $showAllRewards)
+                        .sensoryFeedback(.increase, trigger: showAllRewards) { _, new in new == true }
+                        .sensoryFeedback(.decrease, trigger: showAllRewards) { _, new in new == false }
                 }
             }
             

@@ -5,15 +5,17 @@ struct AddRewardView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.themeColor) private var themeColor
+    
+    @FocusState private var isNameFocused: Bool
+    @FocusState private var isIconFocused: Bool
 
     @Query(sort: \SDUser.name) private var users: [SDUser]
 
     @State private var reward = SDReward()
     @State private var stepIndex: Int = 0
     @State private var isRewardInserted = false
-    @FocusState private var isNameFocused: Bool
-    @FocusState private var isIconFocused: Bool
-
+    @State private var rewardWasAdded = false
+    
     enum Step { case name, icon, users }
 
     private let steps: [Step] = [.name, .icon, .users]
@@ -34,6 +36,8 @@ struct AddRewardView: View {
         .padding(.horizontal, 20)
         .padding(.bottom, 8)
         .animation(.easeIn, value: step)
+        .sensoryFeedback(.increase, trigger: stepIndex)
+        .sensoryFeedback(.success, trigger: rewardWasAdded) { _, new in new == true }
     }
 
     @ViewBuilder
@@ -125,6 +129,7 @@ struct AddRewardView: View {
         insertRewardIfNeeded()
         do {
             try modelContext.save()
+            rewardWasAdded = true
             dismiss()
         } catch {
             print("Error saving reward - \(error.localizedDescription)")
