@@ -97,7 +97,7 @@ struct ManageUsersView: View {
 			return true
 		}
 		
-		return true //users.count < 1
+		return users.count < 1
 	}
 }
 
