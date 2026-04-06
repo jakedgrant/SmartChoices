@@ -9,18 +9,36 @@ import AppIntents
 import Foundation
 
 struct RewardQuery: EntityQuery {
-	
-	func entities(for identifiers: [RewardEntity.ID]) async throws -> [Entity] {
-		let db = try RewardDatabase()
-		let rewards = db.activeRewards().shuffled()
-		
-		return rewards.map { RewardEntity(from: $0) }
-	}
-	
-	func suggestedEntities() async throws -> [RewardEntity] {
-		let db = try RewardDatabase()
-		let rewards = db.allRewards().shuffled()
-		
-		return rewards.map { RewardEntity(from: $0) }
-	}
+
+        var user: UserEntity?
+
+        init(user: UserEntity? = nil) {
+                self.user = user
+        }
+
+        func entities(for identifiers: [RewardEntity.ID]) async throws -> [Entity] {
+                let db = try RewardDatabase()
+                var rewards = identifiers.isEmpty ? db.activeRewards() : db.rewards(with: identifiers)
+
+                if let userId = user?.id {
+                        rewards = rewards.filter { reward in
+                                reward.users?.contains(where: { $0.id == userId }) ?? false
+                        }
+                }
+
+                return rewards.shuffled().map { RewardEntity(from: $0) }
+        }
+
+        func suggestedEntities() async throws -> [RewardEntity] {
+                let db = try RewardDatabase()
+                var rewards = db.allRewards()
+
+                if let userId = user?.id {
+                        rewards = rewards.filter { reward in
+                                reward.users?.contains(where: { $0.id == userId }) ?? false
+                        }
+                }
+
+                return rewards.shuffled().map { RewardEntity(from: $0) }
+        }
 }
