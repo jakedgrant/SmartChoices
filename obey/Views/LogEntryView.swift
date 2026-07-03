@@ -16,7 +16,9 @@ struct LogEntryView: View {
 	let odds: Int?
 	let losses: Int?
 	let increasedOdds: Bool?
-	
+
+	var starsSpent: Int? = nil
+
 	var body: some View {
 		
 		HStack(alignment: .top, spacing: 12) {
@@ -35,7 +37,12 @@ struct LogEntryView: View {
 						.foregroundStyle(.gray)
 				}
 				
-				if let odds, let losses {
+				if let starsSpent {
+					HStack(spacing: 4) {
+						BadgeLabel("\(starsSpent)", systemImage: "star.fill")
+					}
+					.font(.footnote)
+				} else if let odds, let losses {
 					OddsView(odds: odds, losses: losses, increasedOdds: increasedOdds)
 				}
 			}

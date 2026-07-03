@@ -60,4 +60,15 @@ enum Reward: CaseIterable, Identifiable, Displayable {
 //		case .iPad: "iPad time"
 		}
 	}
+
+	/* Cost when redeeming in star mode */
+	var starCost: Int {
+		switch self {
+		case .book:  3
+		case .tv:    5
+		case .game:  4
+		case .parentPlay: 6
+		case .blanketFort: 10
+		}
+	}
 }

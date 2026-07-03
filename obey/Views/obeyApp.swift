@@ -13,7 +13,10 @@ import TipKit
 @main
 struct obeyApp: App {
 	init() {
-		
+
+		// Bring pre-reward-mode installs forward before any view reads the shared defaults
+		RewardModelMigrator.migrateIfNeeded()
+
         #if DEBUG
 		Purchases.logLevel = .debug
         #endif

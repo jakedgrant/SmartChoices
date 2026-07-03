@@ -19,6 +19,13 @@ struct ManageRewardsView: View {
 	
 	@Query(sort: \SDReward.name) private var rewards: [SDReward]
 	@State private var newRewardName = ""
+
+	@AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName))
+	private var rewardModeRawValue: String = RewardMode.surprise.rawValue
+
+	private var rewardMode: RewardMode {
+		RewardMode(rawValue: rewardModeRawValue) ?? .surprise
+	}
 	
 	let swipeActionsTip = ManageRewardsSwipeActionsTip()
 	
@@ -33,11 +40,19 @@ struct ManageRewardsView: View {
 			ForEach(rewards) { reward in
 				
 				NavigationLink(value: reward, label: {
-					
-					Label(reward.name, systemImage: reward.systemImage)
-						.symbolRenderingMode(.hierarchical)
-						.padding(10)
-						.opacity(reward.isActive ? 1 : 0.4)
+
+					HStack {
+						Label(reward.name, systemImage: reward.systemImage)
+							.symbolRenderingMode(.hierarchical)
+							.padding(10)
+
+						Spacer()
+
+						if rewardMode == .stars {
+							BadgeLabel("\(reward.starCost)", systemImage: "star.fill")
+						}
+					}
+					.opacity(reward.isActive ? 1 : 0.4)
 				})
 				.swipeActions(edge: .leading, allowsFullSwipe: true) {
 					

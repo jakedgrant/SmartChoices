@@ -8,7 +8,7 @@
 - color: #00a49a
 
 - title: Rewarding features
-- description: Fully customizable rewards!\nTrack reward history effortlessly!\nEmpower your child's decision-making!\nSync rewards and history between devices.\nApple Watch support!\nSiri & Shortcuts support!
+- description: Two reward modes: surprise wins or collecting stars!\nFully customizable rewards!\nTrack reward history effortlessly!\nEmpower your child's decision-making!\nSync rewards and history between devices.\nApple Watch support!\nSiri & Shortcuts support!
 - symbol: medal.fill
 - color: #00a49a
 

@@ -30,7 +30,8 @@ struct LogListView: View {
 						systemImage: log.reward?.systemImage,
 						odds: log.odds,
 						losses: log.losses,
-						increasedOdds: log.increasedOdds
+						increasedOdds: log.increasedOdds,
+						starsSpent: log.starsSpent
 					)
 				}
 			}
