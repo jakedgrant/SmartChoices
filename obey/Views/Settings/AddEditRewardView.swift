@@ -43,6 +43,16 @@ struct AddEditRewardView: View {
 			}
 			
 			Section {
+				Stepper(value: $reward.starCost, in: Constants.starCostRange) {
+					Label("\(reward.starCost) stars", systemImage: "star.fill")
+				}
+			} header: {
+				Text("Star cost")
+			} footer: {
+				Text("How many stars this reward costs to redeem in Stars mode.")
+			}
+
+			Section {
 				Toggle("Active", isOn: $reward.isActive)
 					.tint(.accentColor)
 					.disabled(!userViewModel.unlockActive)
@@ -93,7 +103,7 @@ struct AddEditRewardView: View {
 					
 					ForEach(logs) { log in
 						
-						LogEntryView(timestamp: log.timestamp, name: log.reward?.name, systemImage: log.reward?.systemImage, odds: log.odds, losses: log.losses, increasedOdds: log.increasedOdds)
+						LogEntryView(timestamp: log.timestamp, name: log.reward?.name, systemImage: log.reward?.systemImage, odds: log.odds, losses: log.losses, increasedOdds: log.increasedOdds, starsSpent: log.starsSpent)
 							.transition(.opacity.animation(.easeInOut))
 					}
 				}

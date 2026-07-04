@@ -92,6 +92,16 @@
 		23CC5F302C50A3F90018A724 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F272C509F580018A724 /* Database.swift */; };
 		23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */; };
 		23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
+		23D100022E10000000000002 /* RewardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100012E10000000000001 /* RewardMode.swift */; };
+		23D100032E10000000000003 /* RewardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100012E10000000000001 /* RewardMode.swift */; };
+		23D100052E10000000000005 /* StarBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100042E10000000000004 /* StarBank.swift */; };
+		23D100062E10000000000006 /* StarBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100042E10000000000004 /* StarBank.swift */; };
+		23D100082E10000000000008 /* RewardModelMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100072E10000000000007 /* RewardModelMigrator.swift */; };
+		23D100092E10000000000009 /* RewardModelMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100072E10000000000007 /* RewardModelMigrator.swift */; };
+		23D1000B2E1000000000000B /* StarBalanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000A2E1000000000000A /* StarBalanceLabel.swift */; };
+		23D1000C2E1000000000000C /* StarBalanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000A2E1000000000000A /* StarBalanceLabel.swift */; };
+		23D1000E2E1000000000000E /* RedeemRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000D2E1000000000000D /* RedeemRewardsView.swift */; };
+		23D100102E10000000000010 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000F2E1000000000000F /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +207,12 @@
 		23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
 		23CC5F2B2C509FDE0018A724 /* SDReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDReward.swift; sourceTree = "<group>"; };
 		23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDatabase.swift; sourceTree = "<group>"; };
+		23D100012E10000000000001 /* RewardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardMode.swift; sourceTree = "<group>"; };
+		23D100042E10000000000004 /* StarBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBank.swift; sourceTree = "<group>"; };
+		23D100072E10000000000007 /* RewardModelMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModelMigrator.swift; sourceTree = "<group>"; };
+		23D1000A2E1000000000000A /* StarBalanceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBalanceLabel.swift; sourceTree = "<group>"; };
+		23D1000D2E1000000000000D /* RedeemRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemRewardsView.swift; sourceTree = "<group>"; };
+		23D1000F2E1000000000000F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -310,7 +326,10 @@
 				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
 				23077F652C7D7309000D131F /* MenuView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
+				23D1000F2E1000000000000F /* OnboardingView.swift */,
+				23D1000D2E1000000000000D /* RedeemRewardsView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
+				23D1000A2E1000000000000A /* StarBalanceLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +341,7 @@
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23CC5F262C509F4D0018A724 /* DB */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
+				23D100012E10000000000001 /* RewardMode.swift */,
 				23077F802C883059000D131F /* SDLog.swift */,
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
@@ -337,8 +357,10 @@
 			children = (
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
 				23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */,
+				23D100072E10000000000007 /* RewardModelMigrator.swift */,
 				23C7ED002C40495F00001637 /* Roll.swift */,
 				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
+				23D100042E10000000000004 /* StarBank.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -607,6 +629,12 @@
 				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
 				23C7ED012C40495F00001637 /* Roll.swift in Sources */,
+				23D100022E10000000000002 /* RewardMode.swift in Sources */,
+				23D100052E10000000000005 /* StarBank.swift in Sources */,
+				23D100082E10000000000008 /* RewardModelMigrator.swift in Sources */,
+				23D1000B2E1000000000000B /* StarBalanceLabel.swift in Sources */,
+				23D1000E2E1000000000000E /* RedeemRewardsView.swift in Sources */,
+				23D100102E10000000000010 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +674,10 @@
 				23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
 				23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
+				23D100032E10000000000003 /* RewardMode.swift in Sources */,
+				23D100062E10000000000006 /* StarBank.swift in Sources */,
+				23D100092E10000000000009 /* RewardModelMigrator.swift in Sources */,
+				23D1000C2E1000000000000C /* StarBalanceLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +846,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -856,7 +888,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -930,7 +962,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
 				PRODUCT_NAME = "Smart Choices";
 				SDKROOT = watchos;
@@ -963,7 +995,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
 				PRODUCT_NAME = "Smart Choices";
 				SDKROOT = watchos;

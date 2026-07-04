@@ -10,8 +10,10 @@ import SwiftUI
 
 @main
 struct obeyWatch_Watch_AppApp: App {
+	init() {
+		RewardModelMigrator.migrateIfNeeded()
+	}
 
-	
 	var body: some Scene {
 		WindowGroup {
 			ContentView()

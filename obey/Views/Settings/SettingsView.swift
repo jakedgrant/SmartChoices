@@ -23,8 +23,15 @@ class NavigationStateManager: ObservableObject {
 
 struct SettingsView: View {
 	@Environment(\.dismiss) var dismiss
-	
+
 	@ObservedObject private var userViewModel = UserViewModel.shared
+
+	@AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName))
+	private var rewardModeRawValue: String = RewardMode.surprise.rawValue
+
+	private var rewardMode: RewardMode {
+		RewardMode(rawValue: rewardModeRawValue) ?? .surprise
+	}
 	
 	@State private var isShowingPaywall = false
 	@State private var isShowingManageSubscription = false
@@ -49,14 +56,27 @@ struct SettingsView: View {
 					}
 				}
 				
-				Section("Rewards") {
+				Section {
+					Picker(selection: $rewardModeRawValue) {
+						ForEach(RewardMode.allCases) { mode in
+							Label(mode.title, systemImage: mode.systemImage)
+								.tag(mode.rawValue)
+						}
+					} label: {
+						Label("Reward mode", systemImage: "wand.and.stars")
+					}
+
 					NavigationLink(value: Route.rewardManage) {
 						Label("Manage rewards", systemImage: "list.star")
 					}
-					
+
 					NavigationLink(value: Route.rewardHistory) {
 						Label("Reward history", systemImage: userViewModel.unlockActive ? "scroll" : "lock" )
 					}
+				} header: {
+					Text("Rewards")
+				} footer: {
+					Text(rewardMode.explanation)
 				}
 				
 				Section {

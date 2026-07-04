@@ -89,7 +89,7 @@ extension RewardDatabase {
 	func createDefault() {
 		
 		let rewards = Reward.allCases.map {
-			SDReward(name: $0.description, systemImage: $0.image)
+			SDReward(name: $0.description, systemImage: $0.image, starCost: $0.starCost)
 		}
 		
 		do {

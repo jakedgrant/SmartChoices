@@ -14,11 +14,15 @@ final class SDLog: Identifiable {
 	var timestamp = Date.now
 	var reward: SDReward?
 	
-	// Stats
+	// Surprise mode stats
 	var odds: Int?
 	var losses: Int?
 	var increasedOdds: Bool?
-	
+
+	// Star mode stats
+	var starsSpent: Int?
+	var starBalance: Int?
+
 	init(
 		id: UUID = UUID(),
 		timestamp: Date = Date.now,
@@ -33,5 +37,19 @@ final class SDLog: Identifiable {
 		self.odds = odds
 		self.losses = losses
 		self.increasedOdds = increasedOdds
+	}
+
+	init(
+		id: UUID = UUID(),
+		timestamp: Date = Date.now,
+		reward: SDReward,
+		starsSpent: Int,
+		starBalance: Int
+	) {
+		self.id = id
+		self.timestamp = timestamp
+		self.reward = reward
+		self.starsSpent = starsSpent
+		self.starBalance = starBalance
 	}
 }
