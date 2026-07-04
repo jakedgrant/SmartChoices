@@ -72,7 +72,7 @@ struct ContentView: View {
 
 					Button(state.cta) { }
 				} message: { state in
-					Text("You now have \(starBalance) \(starBalance == 1 ? "star" : "stars").")
+					Text("You now have ^[\(starBalance) star](inflect: true).")
 				}
 			
 			.sheet(isPresented: $isShowingRewards) {
