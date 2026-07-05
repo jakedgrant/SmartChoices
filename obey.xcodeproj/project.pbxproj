@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		23077F622C72A4E1000D131F /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F612C72A4E1000D131F /* Icon.swift */; };
 		23077F642C72A501000D131F /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F632C72A501000D131F /* IconView.swift */; };
-		23077F662C7D7309000D131F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F652C7D7309000D131F /* MenuView.swift */; };
+		23077F662C7D7309000D131F /* MenuImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F652C7D7309000D131F /* MenuImageView.swift */; };
 		23077F6A2C7ED6B8000D131F /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 23077F692C7ED6B8000D131F /* RevenueCat */; };
 		23077F6C2C7ED6B8000D131F /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23077F6B2C7ED6B8000D131F /* RevenueCatUI */; };
 		23077F6E2C7ED6DC000D131F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23077F6D2C7ED6DC000D131F /* StoreKit.framework */; };
@@ -25,10 +25,25 @@
 		231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */; };
 		231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */; };
 		231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B72C50BC52000A20D5 /* IconPickerView.swift */; };
-		231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231C72B92C54513B000A20D5 /* AddEditRewardView.swift */; };
+A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C53C84F7AD48FB9C793FE6 /* AddRewardView.swift */; };
+23C728E202094BDDA5EF3356 /* AddRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18E1CC9107549FB93DC7768 /* AddRewardView.swift */; };
+		231DA05E2E08A16900B47354 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
+		231DA0632E08A19B00B47354 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F732C851268000D131F /* UserViewModel.swift */; };
+		231DA0652E08A24A00B47354 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 231DA0642E08A24A00B47354 /* RevenueCat */; };
+		231DA0672E08A24A00B47354 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 231DA0662E08A24A00B47354 /* RevenueCatUI */; };
 		232AF07E2C9658E40077353B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232AF07D2C9658E40077353B /* StatsView.swift */; };
+		2334912F2E18E66E00674739 /* ShiftingMeshGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */; };
+		233491692E208D2E00674739 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233491682E208D2E00674739 /* CloseButton.swift */; };
+		2334916A2E208D2E00674739 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233491682E208D2E00674739 /* CloseButton.swift */; };
 		23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		23357F1D2C915B710000DB7B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23357F1C2C915B710000DB7B /* AboutView.swift */; };
+		23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
+		23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D062DF2B24E007317AA /* UserDatabase.swift */; };
+		23729D0A2DF2B25D007317AA /* SDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D092DF2B25D007317AA /* SDUser.swift */; };
+		23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D092DF2B25D007317AA /* SDUser.swift */; };
+		23729D0D2DF2B273007317AA /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* StandardColor.swift */; };
+		23729D0E2DF2B273007317AA /* StandardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23729D0C2DF2B273007317AA /* StandardColor.swift */; };
 		2392DD0A2C8BF25B00DE3034 /* SDLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F802C883059000D131F /* SDLog.swift */; };
 		2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */; };
 		2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */; };
@@ -39,6 +54,13 @@
 		2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD132C8EB09500DE3034 /* KeyView.swift */; };
 		2392DD172C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
 		2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2392DD162C8EB10700DE3034 /* BadgeLabel.swift */; };
+		23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */; };
+		23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */; };
+		23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */; };
+		23AB23DE2DFD100800BB4589 /* SelectedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */; };
+		23AB23E02DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */; };
+		23AB23E12DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */; };
+		23AB23E52DFE5C3600BB4589 /* MultiUserMigrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */; };
 		23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C202C2FA9CE0031B115 /* RewardListView.swift */; };
 		23B80C232C2FAA360031B115 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23B80C262C2FB7810031B115 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 23B80C252C2FB7810031B115 /* ConfettiSwiftUI */; };
@@ -49,7 +71,6 @@
 		23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */; };
 		23BF8CB02C2D130400C40157 /* DeviceShakeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */; };
 		23BF8CB22C2D16B800C40157 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* Alert.swift */; };
-		23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB52C2D17D800C40157 /* Constants.swift */; };
 		23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D32C97EB3200E21137 /* LogRewardTip.swift */; };
 		23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435D32C97EB3200E21137 /* LogRewardTip.swift */; };
@@ -59,6 +80,8 @@
 		23C435DC2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */; };
 		23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
 		23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435DD2C97F33C00E21137 /* BigButtonTip.swift */; };
+		23C435E12D9D4F0100E21137 /* SwitchUserTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */; };
+		23C435E22D9D4F0100E21137 /* SwitchUserTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */; };
 		23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
 		23C4360E2CC0B2A600E21137 /* LastStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4360C2CC0B2A600E21137 /* LastStat.swift */; };
 		23C436112CC0BF3700E21137 /* Recap in Frameworks */ = {isa = PBXBuildFile; productRef = 23C436102CC0BF3700E21137 /* Recap */; };
@@ -73,7 +96,6 @@
 		23C7ECEE2C35131000001637 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B80C222C2FAA360031B115 /* Reward.swift */; };
 		23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF12C3CC8E900001637 /* RewardListView.swift */; };
 		23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB12C2D16B800C40157 /* Alert.swift */; };
-		23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF8CB32C2D173400C40157 /* DebugView.swift */; };
 		23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */; };
 		23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECF82C403D5B00001637 /* ObeyShortcuts.swift */; };
 		23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */; };
@@ -92,6 +114,17 @@
 		23CC5F302C50A3F90018A724 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F272C509F580018A724 /* Database.swift */; };
 		23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */; };
 		23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */; };
+		23D7C6762E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */; };
+		23D7C6772E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */; };
+		23D7C67C2E14DF8F009C7ED3 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F6F2C7ED891000D131F /* Secrets.swift */; };
+		23D7C67D2E14DFA7009C7ED3 /* PurchasesDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */; };
+		23D7C6832E1640E6009C7ED3 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6822E1640E6009C7ED3 /* NoticeView.swift */; };
+		23D7C6862E175200009C7ED3 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6852E175200009C7ED3 /* RollView.swift */; };
+		23D7C6882E1752FE009C7ED3 /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7C6872E1752FE009C7ED3 /* ContentTabView.swift */; };
+		23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A12EA1B5C100001638 /* UserEntity.swift */; };
+		23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A32EA1B5C100001638 /* UserQuery.swift */; };
+		752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF107B4D376B75D2828065B /* SwitchUserView.swift */; };
+		C2EF4D26CD839479EB8907F5 /* StandardColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */; };
 		23D100022E10000000000002 /* RewardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100012E10000000000001 /* RewardMode.swift */; };
 		23D100032E10000000000003 /* RewardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100012E10000000000001 /* RewardMode.swift */; };
 		23D100052E10000000000005 /* StarBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100042E10000000000004 /* StarBank.swift */; };
@@ -101,7 +134,6 @@
 		23D1000B2E1000000000000B /* StarBalanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000A2E1000000000000A /* StarBalanceLabel.swift */; };
 		23D1000C2E1000000000000C /* StarBalanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000A2E1000000000000A /* StarBalanceLabel.swift */; };
 		23D1000E2E1000000000000E /* RedeemRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000D2E1000000000000D /* RedeemRewardsView.swift */; };
-		23D100102E10000000000010 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000F2E1000000000000F /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,9 +175,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColorPicker.swift; sourceTree = "<group>"; };
 		23077F612C72A4E1000D131F /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Icon.swift; path = obey/Model/Icon.swift; sourceTree = SOURCE_ROOT; };
 		23077F632C72A501000D131F /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
-		23077F652C7D7309000D131F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		23077F652C7D7309000D131F /* MenuImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuImageView.swift; sourceTree = "<group>"; };
 		23077F672C7D7BB4000D131F /* obeyWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "obeyWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		23077F6D2C7ED6DC000D131F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		23077F6F2C7ED891000D131F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -158,14 +191,25 @@
 		231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsView.swift; sourceTree = "<group>"; };
 		231C72B72C50BC52000A20D5 /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
-		231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditRewardView.swift; sourceTree = "<group>"; };
+19C53C84F7AD48FB9C793FE6 /* AddRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRewardView.swift; sourceTree = "<group>"; };
 		232AF07D2C9658E40077353B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftingMeshGradientView.swift; sourceTree = "<group>"; };
+		233491682E208D2E00674739 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		23357F1C2C915B710000DB7B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		23729D062DF2B24E007317AA /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
+		23729D092DF2B25D007317AA /* SDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUser.swift; sourceTree = "<group>"; };
+		23729D0C2DF2B273007317AA /* StandardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardColor.swift; sourceTree = "<group>"; };
 		2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDatabase.swift; sourceTree = "<group>"; };
 		2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryView.swift; sourceTree = "<group>"; };
 		2392DD132C8EB09500DE3034 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		2392DD162C8EB10700DE3034 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditUserView.swift; sourceTree = "<group>"; };
+		23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUsersView.swift; sourceTree = "<group>"; };
+		23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUserManager.swift; sourceTree = "<group>"; };
+		23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorKey.swift; sourceTree = "<group>"; };
+		23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiUserMigrationView.swift; sourceTree = "<group>"; };
 		23B80C202C2FA9CE0031B115 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		23B80C222C2FAA360031B115 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		23B80C272C2FBE490031B115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -178,12 +222,12 @@
 		23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCButtonStyle.swift; sourceTree = "<group>"; };
 		23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceShakeViewModifier.swift; sourceTree = "<group>"; };
 		23BF8CB12C2D16B800C40157 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		23BF8CB32C2D173400C40157 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		23BF8CB52C2D17D800C40157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		23C435D32C97EB3200E21137 /* LogRewardTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRewardTip.swift; sourceTree = "<group>"; };
 		23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRewardsSwipeActionsTip.swift; sourceTree = "<group>"; };
 		23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSettingsTip.swift; sourceTree = "<group>"; };
 		23C435DD2C97F33C00E21137 /* BigButtonTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonTip.swift; sourceTree = "<group>"; };
+		23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUserTip.swift; sourceTree = "<group>"; };
 		23C4360C2CC0B2A600E21137 /* LastStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastStat.swift; sourceTree = "<group>"; };
 		23C436122CC0BFBC00E21137 /* ObeyRecap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObeyRecap.swift; sourceTree = "<group>"; };
 		23C436142CC0C00C00E21137 /* Releases.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Releases.md; sourceTree = "<group>"; };
@@ -207,12 +251,18 @@
 		23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDatabase.swift; sourceTree = "<group>"; };
 		23CC5F2B2C509FDE0018A724 /* SDReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDReward.swift; sourceTree = "<group>"; };
 		23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDatabase.swift; sourceTree = "<group>"; };
+		23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDisplayable.swift; sourceTree = "<group>"; };
+		23D7C6822E1640E6009C7ED3 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
+		23D7C6852E175200009C7ED3 /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
+		23D7C6872E1752FE009C7ED3 /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
+		23E0A8A12EA1B5C100001638 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		23E0A8A32EA1B5C100001638 /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
+		6DF107B4D376B75D2828065B /* SwitchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUserView.swift; sourceTree = "<group>"; };
 		23D100012E10000000000001 /* RewardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardMode.swift; sourceTree = "<group>"; };
 		23D100042E10000000000004 /* StarBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBank.swift; sourceTree = "<group>"; };
 		23D100072E10000000000007 /* RewardModelMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModelMigrator.swift; sourceTree = "<group>"; };
 		23D1000A2E1000000000000A /* StarBalanceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBalanceLabel.swift; sourceTree = "<group>"; };
 		23D1000D2E1000000000000D /* RedeemRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemRewardsView.swift; sourceTree = "<group>"; };
-		23D1000F2E1000000000000F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -243,6 +293,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231DA0672E08A24A00B47354 /* RevenueCatUI in Frameworks */,
+				231DA0652E08A24A00B47354 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,11 +304,14 @@
 		232AF07C2C9507CE0077353B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				23357F1C2C915B710000DB7B /* AboutView.swift */,
-				231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+23357F1C2C915B710000DB7B /* AboutView.swift */,
+231C72B92C54513B000A20D5 /* AddEditRewardView.swift */,
+19C53C84F7AD48FB9C793FE6 /* AddRewardView.swift */,
+23AB23CD2DF67CBA00BB4589 /* AddEditUserView.swift */,
 				231C72B72C50BC52000A20D5 /* IconPickerView.swift */,
 				2392DD0D2C8BFF7A00DE3034 /* LogListView.swift */,
 				231C72B22C50AFF0000A20D5 /* ManageRewardsView.swift */,
+				23AB23CE2DF67CBA00BB4589 /* ManageUsersView.swift */,
 				23077F7E2C881802000D131F /* SettingsView.swift */,
 				232AF07D2C9658E40077353B /* StatsView.swift */,
 			);
@@ -314,21 +369,22 @@
 		23BF8CB72C2D186C00C40157 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				232AF07C2C9507CE0077353B /* Settings */,
 				2392DD162C8EB10700DE3034 /* BadgeLabel.swift */,
 				23BF8C9E2C2D05BB00C40157 /* ContentView.swift */,
-				23C436122CC0BFBC00E21137 /* ObeyRecap.swift */,
-				23BF8CB32C2D173400C40157 /* DebugView.swift */,
+				233491682E208D2E00674739 /* CloseButton.swift */,
 				23C7ED042C41BDAE00001637 /* HorizontalRewardList.swift */,
-				23077F612C72A4E1000D131F /* Icon.swift */,
 				23077F632C72A501000D131F /* IconView.swift */,
 				2392DD132C8EB09500DE3034 /* KeyView.swift */,
 				2392DD0F2C8E956E00DE3034 /* LogEntryView.swift */,
-				23077F652C7D7309000D131F /* MenuView.swift */,
+				23077F652C7D7309000D131F /* MenuImageView.swift */,
+				23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
-				23D1000F2E1000000000000F /* OnboardingView.swift */,
+				23C436122CC0BFBC00E21137 /* ObeyRecap.swift */,
 				23D1000D2E1000000000000D /* RedeemRewardsView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
+				28B1169142499CE6030DC56B /* Shared */,
+				232AF07C2C9507CE0077353B /* Settings */,
+				2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */,
 				23D1000A2E1000000000000A /* StarBalanceLabel.swift */,
 			);
 			path = Views;
@@ -338,16 +394,21 @@
 			isa = PBXGroup;
 			children = (
 				23BF8CB12C2D16B800C40157 /* Alert.swift */,
+				23D7C6752E11C2EE009C7ED3 /* CategoryDisplayable.swift */,
+				23729D0C2DF2B273007317AA /* StandardColor.swift */,
 				23BF8CB52C2D17D800C40157 /* Constants.swift */,
 				23CC5F262C509F4D0018A724 /* DB */,
+				23077F612C72A4E1000D131F /* Icon.swift */,
+				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
 				23D100012E10000000000001 /* RewardMode.swift */,
 				23077F802C883059000D131F /* SDLog.swift */,
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
+				23729D092DF2B25D007317AA /* SDUser.swift */,
 				23077F6F2C7ED891000D131F /* Secrets.swift */,
-				23077F732C851268000D131F /* UserViewModel.swift */,
+				23AB23DC2DFD100800BB4589 /* SelectedUserManager.swift */,
 				23C435D62C97EB3A00E21137 /* Tips */,
-				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
+				23077F732C851268000D131F /* UserViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,6 +421,7 @@
 				23D100072E10000000000007 /* RewardModelMigrator.swift */,
 				23C7ED002C40495F00001637 /* Roll.swift */,
 				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
+				23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */,
 				23D100042E10000000000004 /* StarBank.swift */,
 			);
 			path = Helpers;
@@ -368,10 +430,11 @@
 		23C435D62C97EB3A00E21137 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
-				23C435D32C97EB3200E21137 /* LogRewardTip.swift */,
 				23C435DD2C97F33C00E21137 /* BigButtonTip.swift */,
+				23C435D32C97EB3200E21137 /* LogRewardTip.swift */,
 				23C435D72C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift */,
 				23C435DA2C97F1E900E21137 /* OpenSettingsTip.swift */,
+				23C435E02D9D4F0100E21137 /* SwitchUserTip.swift */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -383,8 +446,13 @@
 				23C7ED022C40501F00001637 /* obeyWatch Watch App.entitlements */,
 				23C7ECDC2C35098D00001637 /* obeyWatchApp.swift */,
 				23C7ECDE2C35098D00001637 /* ContentView.swift */,
-				23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
-				231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
+				23D7C6872E1752FE009C7ED3 /* ContentTabView.swift */,
+				23D7C6852E175200009C7ED3 /* RollView.swift */,
+23C7ECF12C3CC8E900001637 /* RewardListView.swift */,
+231C72B52C50BA6D000A20D5 /* ManageRewardsView.swift */,
+F18E1CC9107549FB93DC7768 /* AddRewardView.swift */,
+				6DF107B4D376B75D2828065B /* SwitchUserView.swift */,
+				23D7C6822E1640E6009C7ED3 /* NoticeView.swift */,
 				23C7ECE02C35098F00001637 /* Assets.xcassets */,
 				23C7ECE22C35098F00001637 /* Preview Content */,
 			);
@@ -406,6 +474,8 @@
 				23C7ECF62C403CFB00001637 /* OpenAppIntent.swift */,
 				23C7ECFC2C4045A200001637 /* RewardEntity.swift */,
 				23C7ECFE2C40463C00001637 /* RewardQuery.swift */,
+				23E0A8A12EA1B5C100001638 /* UserEntity.swift */,
+				23E0A8A32EA1B5C100001638 /* UserQuery.swift */,
 				23C7ECFA2C4044C900001637 /* RollForRewardIntent.swift */,
 			);
 			path = Intents;
@@ -426,8 +496,17 @@
 				2392DD0B2C8BF77300DE3034 /* LogDatabase.swift */,
 				23CC5F2D2C50A10B0018A724 /* RewardDatabase.swift */,
 				23CC5F292C509F8B0018A724 /* SwiftDatabase.swift */,
+				23729D062DF2B24E007317AA /* UserDatabase.swift */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		28B1169142499CE6030DC56B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -585,24 +664,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23729D0D2DF2B273007317AA /* StandardColor.swift in Sources */,
 				23C436132CC0BFBC00E21137 /* ObeyRecap.swift in Sources */,
-				231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
+231C72BA2C54513B000A20D5 /* AddEditRewardView.swift in Sources */,
+A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				23C435DB2C97F1E900E21137 /* OpenSettingsTip.swift in Sources */,
 				23077F742C851268000D131F /* UserViewModel.swift in Sources */,
-				23BF8CB42C2D173400C40157 /* DebugView.swift in Sources */,
+				2334916A2E208D2E00674739 /* CloseButton.swift in Sources */,
+				23AB23E52DFE5C3600BB4589 /* MultiUserMigrationView.swift in Sources */,
 				2392DD0C2C8BF77300DE3034 /* LogDatabase.swift in Sources */,
 				23C435D82C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
 				23B80C232C2FAA360031B115 /* Reward.swift in Sources */,
 				23CC5F2A2C509F8B0018A724 /* SwiftDatabase.swift in Sources */,
 				23BF8C9F2C2D05BB00C40157 /* ContentView.swift in Sources */,
+				23AB23E12DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */,
 				23BF8C9D2C2D05BB00C40157 /* obeyApp.swift in Sources */,
 				23077F622C72A4E1000D131F /* Icon.swift in Sources */,
-				23077F662C7D7309000D131F /* MenuView.swift in Sources */,
+				23077F662C7D7309000D131F /* MenuImageView.swift in Sources */,
 				2392DD0E2C8BFF7A00DE3034 /* LogListView.swift in Sources */,
+				23AB23CF2DF67CBB00BB4589 /* ManageUsersView.swift in Sources */,
+				23AB23D02DF67CBB00BB4589 /* AddEditUserView.swift in Sources */,
 				23C7ED052C41BDAE00001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECFD2C4045A200001637 /* RewardEntity.swift in Sources */,
+				2334912F2E18E66E00674739 /* ShiftingMeshGradientView.swift in Sources */,
 				23C7ECFF2C40463C00001637 /* RewardQuery.swift in Sources */,
-				232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
+				23E0A8A22EA1B5C100001638 /* UserEntity.swift in Sources */,
+				23D7C6762E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */,
+				23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */,
+				23729D0B2DF2B25D007317AA /* SDUser.swift in Sources */,
+				231DA05E2E08A16900B47354 /* StatsView.swift in Sources */,
 				23B80C212C2FA9CE0031B115 /* RewardListView.swift in Sources */,
 				23CC5F2E2C50A10B0018A724 /* RewardDatabase.swift in Sources */,
 				23C7ECF92C403D5B00001637 /* ObeyShortcuts.swift in Sources */,
@@ -612,8 +702,11 @@
 				23077F7F2C881802000D131F /* SettingsView.swift in Sources */,
 				23C435D42C97EB3200E21137 /* LogRewardTip.swift in Sources */,
 				23C435DE2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
+				23C435E12D9D4F0100E21137 /* SwitchUserTip.swift in Sources */,
 				23CC5F2C2C509FDE0018A724 /* SDReward.swift in Sources */,
 				23C7ECF72C403CFB00001637 /* OpenAppIntent.swift in Sources */,
+				23AB23DE2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
+				23729D082DF2B24E007317AA /* UserDatabase.swift in Sources */,
 				23077F642C72A501000D131F /* IconView.swift in Sources */,
 				231C72B82C50BC52000A20D5 /* IconPickerView.swift in Sources */,
 				23C7ECFB2C4044C900001637 /* RollForRewardIntent.swift in Sources */,
@@ -624,6 +717,7 @@
 				2392DD102C8E956E00DE3034 /* LogEntryView.swift in Sources */,
 				23CC5F282C509F580018A724 /* Database.swift in Sources */,
 				23BF8CAE2C2D12D500C40157 /* SCButtonStyle.swift in Sources */,
+				C2EF4D26CD839479EB8907F5 /* StandardColorPicker.swift in Sources */,
 				23077F812C883059000D131F /* SDLog.swift in Sources */,
 				23077F722C7EDD36000D131F /* PurchasesDelegateHandler.swift in Sources */,
 				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
@@ -634,7 +728,6 @@
 				23D100082E10000000000008 /* RewardModelMigrator.swift in Sources */,
 				23D1000B2E1000000000000B /* StarBalanceLabel.swift in Sources */,
 				23D1000E2E1000000000000E /* RedeemRewardsView.swift in Sources */,
-				23D100102E10000000000010 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,15 +743,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C435DF2C97F33C00E21137 /* BigButtonTip.swift in Sources */,
+				231DA0632E08A19B00B47354 /* UserViewModel.swift in Sources */,
+				23C435E22D9D4F0100E21137 /* SwitchUserTip.swift in Sources */,
+				23AB23DD2DFD100800BB4589 /* SelectedUserManager.swift in Sources */,
+				23D7C6832E1640E6009C7ED3 /* NoticeView.swift in Sources */,
+				233491692E208D2E00674739 /* CloseButton.swift in Sources */,
+				23D7C6862E175200009C7ED3 /* RollView.swift in Sources */,
+				23D7C67D2E14DFA7009C7ED3 /* PurchasesDelegateHandler.swift in Sources */,
 				23C7ECEE2C35131000001637 /* Reward.swift in Sources */,
 				23CC5F302C50A3F90018A724 /* Database.swift in Sources */,
 				23C7ECF22C3CC8E900001637 /* RewardListView.swift in Sources */,
+				23D7C6882E1752FE009C7ED3 /* ContentTabView.swift in Sources */,
 				23CC5F322C50A3FC0018A724 /* RewardDatabase.swift in Sources */,
-				231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
+				23D7C6772E11C2EE009C7ED3 /* CategoryDisplayable.swift in Sources */,
+231C72B62C50BA6D000A20D5 /* ManageRewardsView.swift in Sources */,
+23C728E202094BDDA5EF3356 /* AddRewardView.swift in Sources */,
 				23C7ECDF2C35098D00001637 /* ContentView.swift in Sources */,
+				232AF07E2C9658E40077353B /* StatsView.swift in Sources */,
+				752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */,
 				23C435D52C97EB3200E21137 /* LogRewardTip.swift in Sources */,
-				23C7ECF42C3CD5F800001637 /* DebugView.swift in Sources */,
 				23C7ECDD2C35098D00001637 /* obeyWatchApp.swift in Sources */,
+				23729D0E2DF2B273007317AA /* StandardColor.swift in Sources */,
+				23D7C67C2E14DF8F009C7ED3 /* Secrets.swift in Sources */,
 				23C7ED062C41BF7400001637 /* HorizontalRewardList.swift in Sources */,
 				23C7ECF32C3CD2DC00001637 /* Alert.swift in Sources */,
 				23CC5F312C50A3FB0018A724 /* SwiftDatabase.swift in Sources */,
@@ -669,11 +775,14 @@
 				2392DD152C8EB09500DE3034 /* KeyView.swift in Sources */,
 				23357F1B2C901F190000DB7B /* LogDatabase.swift in Sources */,
 				23C7ED032C40525000001637 /* Roll.swift in Sources */,
+				23729D0A2DF2B25D007317AA /* SDUser.swift in Sources */,
 				23C7ECED2C35130D00001637 /* Constants.swift in Sources */,
 				2392DD122C8E991900DE3034 /* SCButtonStyle.swift in Sources */,
 				23C435D92C97EE7400E21137 /* ManageRewardsSwipeActionsTip.swift in Sources */,
+				23729D072DF2B24E007317AA /* UserDatabase.swift in Sources */,
 				23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
+				23AB23E02DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */,
 				23D100032E10000000000003 /* RewardMode.swift in Sources */,
 				23D100062E10000000000006 /* StarBank.swift in Sources */,
 				23D100092E10000000000009 /* RewardModelMigrator.swift in Sources */,
@@ -824,7 +933,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_ASSET_PATHS = "\"obey/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -842,7 +951,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -866,7 +975,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_ASSET_PATHS = "\"obey/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -884,7 +993,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -948,7 +1057,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
@@ -970,7 +1079,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -981,7 +1090,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
@@ -1004,7 +1113,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -1083,6 +1192,16 @@
 			productName = RevenueCat;
 		};
 		23077F6B2C7ED6B8000D131F /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCatUI;
+		};
+		231DA0642E08A24A00B47354 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		231DA0662E08A24A00B47354 /* RevenueCatUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 23077F682C7ED6B8000D131F /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
 			productName = RevenueCatUI;

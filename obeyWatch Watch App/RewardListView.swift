@@ -16,6 +16,7 @@ struct RewardListView: View {
 
 	@State private var topRewards: [SDReward]
 	@State private var otherRewards: [SDReward]
+	@Environment(\.themeColor) private var themeColor
 
 	var rewardMode: RewardMode {
 		RewardMode(rawValue: rewardModeRawValue) ?? .surprise
@@ -27,8 +28,14 @@ struct RewardListView: View {
 		
 		let fetchDescriptor = FetchDescriptor<SDReward>(predicate: #Predicate<SDReward> { $0.isActive }, sortBy: [])
 		do {
-			let rewards = try modelContext.fetch(fetchDescriptor).shuffled()
+			var rewards = try modelContext.fetch(fetchDescriptor).shuffled()
 			
+            if let selectedUser = SelectedUserManager.shared.selectedUser {
+                rewards = rewards.filter { reward in
+                    reward.users?.contains(where: { $0.id == selectedUser.id }) ?? false
+                }
+            }
+            
 			topRewards = Array(rewards.prefix(3))
 			otherRewards = Array(rewards.dropFirst(3))
 			
@@ -49,6 +56,7 @@ struct RewardListView: View {
 					}
 				}
 
+
 				if !otherRewards.isEmpty {
 					Section("All other rewards") {
 
@@ -67,7 +75,7 @@ struct RewardListView: View {
 	private func rewardRow(for reward: SDReward) -> some View {
 		HStack {
 			Label(reward.name, systemImage: reward.systemImage)
-				.foregroundStyle(Color.accentColor)
+				.foregroundStyle(themeColor)
 				.symbolRenderingMode(.hierarchical)
 
 			Spacer()

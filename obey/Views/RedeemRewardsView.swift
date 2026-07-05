@@ -7,13 +7,12 @@ import ConfettiSwiftUI
 import SwiftData
 import SwiftUI
 
-/* Star mode: trade earned stars in for a reward */
+/* Star mode: trade the selected child's earned stars in for one of their rewards */
 struct RedeemRewardsView: View {
 	@Environment(\.dismiss) var dismiss
 	@Environment(\.modelContext) var modelContext
 
-	@AppStorage(Constants.starBalanceKey, store: UserDefaults(suiteName: Constants.suiteName))
-	private var starBalance: Int = 0
+	@ObservedObject private var selectedUserManager = SelectedUserManager.shared
 
 	@Query(filter: #Predicate<SDReward> { $0.isActive }, sort: \SDReward.starCost)
 	private var rewards: [SDReward]
@@ -21,12 +20,26 @@ struct RedeemRewardsView: View {
 	@State private var counter = 0
 	@State private var rewardToRedeem: SDReward? = nil
 
+	private var starBalance: Int {
+		selectedUserManager.selectedUser?.starBalance ?? 0
+	}
+
+	private var userRewards: [SDReward] {
+		guard let selectedUser = selectedUserManager.selectedUser else {
+			return rewards
+		}
+
+		return rewards.filter { reward in
+			reward.users?.contains(where: { $0.id == selectedUser.id }) ?? false
+		}
+	}
+
 	private var affordableRewards: [SDReward] {
-		rewards.filter { $0.starCost <= starBalance }
+		userRewards.filter { $0.starCost <= starBalance }
 	}
 
 	private var savingUpRewards: [SDReward] {
-		rewards.filter { $0.starCost > starBalance }
+		userRewards.filter { $0.starCost > starBalance }
 	}
 
 	var body: some View {
@@ -129,15 +142,17 @@ struct RedeemRewardsView: View {
 
 	private func redeem(_ reward: SDReward) {
 
-		guard StarBank.spend(reward.starCost) else {
+		guard let user = selectedUserManager.selectedUser,
+			  user.spendStars(reward.starCost) else {
 			return
 		}
 
 		let log = SDLog(
-			reward: reward,
 			starsSpent: reward.starCost,
-			starBalance: StarBank.balance
+			starBalance: user.starBalance
 		)
+		log.reward = reward
+		log.user = user
 
 		modelContext.insert(log)
 

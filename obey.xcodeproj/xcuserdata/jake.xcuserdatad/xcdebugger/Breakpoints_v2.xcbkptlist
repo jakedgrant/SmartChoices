@@ -240,8 +240,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "addReward()"
-            landmarkType = "7">
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,8 +256,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "allowsAddReward()"
-            landmarkType = "7">
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,56 +270,10 @@
             filePath = "obey/Views/RewardListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "log(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "971889EE-9A46-4F3C-964E-02EE9DCFB8F4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "obey/Views/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "971889EE-9A46-4F3C-964E-02EE9DCFB8F4 - 5592c6dce810f60a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (obey.Alert) -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.VStack&lt;&lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in obey.ContentView.body.getter : some"
-                  moduleName = "obey.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jake/Developer/obey/obey/Views/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57">
-               </Location>
-               <Location
-                  uuid = "971889EE-9A46-4F3C-964E-02EE9DCFB8F4 - 963cac6fe95cab1d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (obey.Alert) -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.VStack&lt;&lt;&lt;opaque return type of SwiftUI.View.sensoryFeedback&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(_: SwiftUI.SensoryFeedback, trigger: &#x3c4;_1_0, condition: (&#x3c4;_1_0, &#x3c4;_1_0) -&gt; Swift.Bool) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in obey.ContentView.body.getter : some"
-                  moduleName = "obey.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jake/Developer/obey/obey/Views/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -332,10 +286,58 @@
             filePath = "obey/Views/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "showReleasePackage"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "populateRewards()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BBE4E33-18C3-4A5D-8773-6B49E916D267"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "obey/Views/Settings/StatsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "lossesDescription"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7010A061-9831-4CB4-9754-519ED3D6973B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "obey/Helpers/Roll.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "perform(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A522AC3-27AD-464F-8D34-14A8CF53DB56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "obey/Helpers/Roll.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "updateLosses(for:to:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

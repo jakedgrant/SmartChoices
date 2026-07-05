@@ -7,6 +7,7 @@
 
 import Foundation
 import RevenueCat
+import SwiftData
 import SwiftUI
 
 /* Static shared model for UserView */
@@ -55,13 +56,6 @@ class UserViewModel: ObservableObject {
 	}
 	
 	func logout() async {
-		/**
-		 The current user ID is no longer valid for your instance of *Purchases* since the user is logging out, and is no longer authorized to access customerInfo for that user ID.
-		 
-		 `logOut` clears the cache and regenerates a new anonymous user ID.
-		 
-		 - Note: Each time you call `logOut`, a new installation will be logged in the RevenueCat dashboard as that metric tracks unique user ID's that are in-use. Since this method generates a new anonymous ID, it counts as a new user ID in-use.
-		 */
 		_ = try? await Purchases.shared.logOut()
 	}
 }

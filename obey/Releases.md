@@ -1,4 +1,4 @@
-# 1.2
+# 1.3
 ## Smart Choices Cherry
 ### Minor
 
@@ -16,6 +16,15 @@
 - description: New families can start with the default rewards or create their own during setup.
 - symbol: list.star
 - color: #D2042D
+
+# 1.2
+## Smart Choices Cranberry
+### Major
+
+- title: Multi user support
+- description: Now you can have separate rewards and odds for multiple users. Perfect for households with multiple children. Available to all subscribers now!
+- symbol: person.3.fill
+- color: #DB5079
 
 # 1.1
 ## Smart Choices Blueberry
