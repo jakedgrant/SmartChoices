@@ -34,8 +34,8 @@ struct RollForRewardIntent: AppIntent {
         switch RewardMode.current {
         case .stars:
 
-            // every smart choice earns a star
-            let balance = StarBank.earn()
+            // every smart choice earns the chosen child a star
+            let balance = chosenUser?.earnStars() ?? StarBank.earn()
 
             let db = try RewardDatabase()
             let list = chosenUser?.rewards?.filter { $0.isActive } ?? db.activeRewards()

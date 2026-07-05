@@ -17,7 +17,6 @@ struct ContentView: View {
     @AppStorage("previousVersionString", store: UserDefaults(suiteName: Constants.suiteName)) var previousVersionString: String = Constants.startingVersion
     @AppStorage("userMigrationCompleted", store: UserDefaults(suiteName: Constants.suiteName)) var userMigrationCompleted: Bool = false
     @AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName)) var rewardModeRawValue: String = RewardMode.surprise.rawValue
-    @AppStorage(Constants.starBalanceKey, store: UserDefaults(suiteName: Constants.suiteName)) var starBalance: Int = 0
     @AppStorage(Constants.hasCompletedRewardSetupKey, store: UserDefaults(suiteName: Constants.suiteName)) var hasCompletedRewardSetup: Bool = false
 
     @Environment(\.modelContext) var modelContext
@@ -42,8 +41,13 @@ struct ContentView: View {
         RewardMode(rawValue: rewardModeRawValue) ?? .surprise
     }
 
+    private var starBalance: Int {
+        selectedUserManager.selectedUser?.starBalance ?? 0
+    }
+
     private var canRedeemReward: Bool {
-        rewards.contains { $0.isActive && $0.starCost <= starBalance }
+        let list = selectedUserManager.selectedUser?.rewards ?? rewards
+        return list.contains { $0.isActive && $0.starCost <= starBalance }
     }
 
     var body: some View {
@@ -187,8 +191,13 @@ struct ContentView: View {
     }
 
     private func earnStar() {
+        // ensureSelectedUser guarantees a user after setup, so a miss here is a no-op
+        guard let user = selectedUserManager.selectedUser else {
+            return
+        }
+
         withAnimation {
-            starBalance += Constants.starsPerChoice
+            user.earnStars()
         }
         isPresentingStarEarned = true
     }

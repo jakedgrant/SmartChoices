@@ -57,6 +57,14 @@ struct StatsView: View {
 		}
 	}
 
+	private var starBalanceDescription: String {
+		if let user = selectedUserManager.selectedUser {
+			return user.starBalance.description
+		} else {
+			return starBalance.description
+		}
+	}
+
 	@AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName)) var rewardModeRawValue: String = RewardMode.surprise.rawValue
 	@AppStorage(Constants.starBalanceKey, store: UserDefaults(suiteName: Constants.suiteName)) var starBalance: Int = 0
 
@@ -73,7 +81,7 @@ struct StatsView: View {
 
 			switch rewardMode {
 			case .stars:
-				StatLine(text: "Star balance:", value: starBalance.description)
+				StatLine(text: "Star balance:", value: starBalanceDescription)
 
 			case .surprise:
 				Button {

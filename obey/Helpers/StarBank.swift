@@ -5,7 +5,34 @@
 
 import Foundation
 
-/* Manages the star balance for the star-based reward mode */
+/* Per-child star balance for the star-based reward mode.
+ Mutations follow the Roll.perform(for:) pattern: write straight to the
+ model and let SwiftData autosave/CloudKit carry it to other devices. */
+extension SDUser {
+
+	@discardableResult
+	func earnStars(_ amount: Int = Constants.starsPerChoice) -> Int {
+		starBalance += amount
+		return starBalance
+	}
+
+	func canAfford(_ cost: Int) -> Bool {
+		starBalance >= cost
+	}
+
+	@discardableResult
+	func spendStars(_ cost: Int) -> Bool {
+		guard canAfford(cost) else {
+			return false
+		}
+
+		starBalance -= cost
+		return true
+	}
+}
+
+/* Legacy shared-defaults balance, kept only as the fallback for the
+ edge case where no user exists yet (e.g. an intent before setup) */
 struct StarBank {
 
 	public static var balance: Int {

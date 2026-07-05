@@ -398,6 +398,11 @@ struct MultiUserMigrationView: View {
             if flow == .onboarding {
                 hasCompletedRewardSetup = true
             }
+            if flow == .migration {
+                // carry the pre-multi-user balance (seeded from losses by
+                // RewardModelMigrator) over to the migrated child
+                user.starBalance = StarBank.balance
+            }
             try modelContext.save()
             userWasAdded = true
             migrationCompleted = true

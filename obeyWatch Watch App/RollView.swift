@@ -13,7 +13,6 @@ struct RollView: View {
     @Query var rewards: [SDReward]
 
     @AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName)) var rewardModeRawValue: String = RewardMode.surprise.rawValue
-    @AppStorage(Constants.starBalanceKey, store: UserDefaults(suiteName: Constants.suiteName)) var starBalance: Int = 0
 
     var selectedUser: SDUser?
 
@@ -23,6 +22,10 @@ struct RollView: View {
 
     var rewardMode: RewardMode {
         RewardMode(rawValue: rewardModeRawValue) ?? .surprise
+    }
+
+    var starBalance: Int {
+        selectedUser?.starBalance ?? 0
     }
 
     var body: some View {
@@ -68,7 +71,7 @@ struct RollView: View {
         case .surprise:
             roll(for: user)
         case .stars:
-            earnStar()
+            earnStar(for: user)
         }
     }
 
@@ -87,9 +90,13 @@ struct RollView: View {
         }
     }
 
-    private func earnStar() {
+    private func earnStar(for user: SDUser?) {
+        guard let user else {
+            return
+        }
+
         withAnimation {
-            starBalance += Constants.starsPerChoice
+            user.earnStars()
         }
         isShowingStarEarned = true
     }
