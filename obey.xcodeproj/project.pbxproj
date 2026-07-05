@@ -935,7 +935,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "\"obey/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -957,7 +957,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -977,7 +977,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = obey/obey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "\"obey/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -999,7 +999,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -1059,7 +1059,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
@@ -1073,7 +1073,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
 				PRODUCT_NAME = "Smart Choices";
 				SDKROOT = watchos;
@@ -1092,7 +1092,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "obeyWatch Watch App/obeyWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 43;
+				CURRENT_PROJECT_VERSION = 44;
 				DEVELOPMENT_ASSET_PATHS = "\"obeyWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = PWBLH7P4Y4;
 				ENABLE_PREVIEWS = YES;
@@ -1106,7 +1106,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacobgrant.obey.watchkitapp;
 				PRODUCT_NAME = "Smart Choices";
 				SDKROOT = watchos;
