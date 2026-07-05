@@ -16,9 +16,13 @@ struct AddRewardView: View {
     @State private var isRewardInserted = false
     @State private var rewardWasAdded = false
     
-    enum Step { case name, icon, users }
+    enum Step { case name, icon, starCost, users }
 
-    private let steps: [Step] = [.name, .icon, .users]
+    /* Star cost only matters in Stars mode; Surprise-mode rewards keep the
+     default and stay editable in AddEditRewardView */
+    private let steps: [Step] = RewardMode.current == .stars
+        ? [.name, .icon, .starCost, .users]
+        : [.name, .icon, .users]
     private var step: Step { steps[stepIndex] }
 
     var body: some View {
@@ -47,6 +51,8 @@ struct AddRewardView: View {
             nameEntry.transition(stepTransition)
         case .icon:
             iconEntry.transition(stepTransition)
+        case .starCost:
+            starCostEntry.transition(stepTransition)
         case .users:
             userSelection.transition(stepTransition)
         }
@@ -92,6 +98,30 @@ struct AddRewardView: View {
                 .font(.title)
                 .bold()
             IconPickerView(selectedImageName: $reward.systemImage, tintColor: themeColor)
+            Spacer()
+            Button(action: advance) {
+                Label("Continue", systemImage: "arrow.right")
+            }
+            .buttonStyle(SCButtonStyle())
+        }
+    }
+
+    private var starCostEntry: some View {
+        VStack(spacing: 20) {
+            Spacer()
+            Image(systemName: "star.fill")
+                .font(.system(size: 100))
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(themeColor)
+            Text("How many stars does it cost?")
+                .font(.title)
+                .bold()
+            Stepper(value: $reward.starCost, in: Constants.starCostRange) {
+                Label("\(reward.starCost) stars", systemImage: "star.fill")
+                    .font(.title2)
+                    .bold()
+            }
+            .frame(maxWidth: 300)
             Spacer()
             Button(action: advance) {
                 Label("Continue", systemImage: "arrow.right")
