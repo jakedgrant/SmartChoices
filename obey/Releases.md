@@ -1,3 +1,22 @@
+# 1.3
+## Smart Choices Cherry
+### Minor
+
+- title: Star rewards
+- description: A whole new way to reward! Earn a star for every smart choice, then trade stars in for rewards. Every reward has its own star cost.
+- symbol: star.fill
+- color: #D2042D
+
+- title: Reward modes
+- description: Choose how rewards work in Settings: Surprise mode keeps the classic lucky roll, Stars mode lets you save up. Switch anytime!
+- symbol: wand.and.stars
+- color: #D2042D
+
+- title: Easier setup
+- description: New families can start with the default rewards or create their own during setup.
+- symbol: list.star
+- color: #D2042D
+
 # 1.2
 ## Smart Choices Cranberry
 ### Major

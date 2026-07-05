@@ -13,15 +13,18 @@ import CoreData
 
 @main
 struct obeyApp: App {
-    
+
     @StateObject private var selectedUserManager = SelectedUserManager.shared
-    
-    
+
+
 // Uncomment and run app on a physical device after making model changes
 //    let modelContainer: ModelContainer
-    
+
     init() {
-        
+
+        // Bring pre-reward-mode installs forward before any view reads the shared defaults
+        RewardModelMigrator.migrateIfNeeded()
+
 #if DEBUG
         Purchases.logLevel = .debug
         do {

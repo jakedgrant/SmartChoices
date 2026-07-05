@@ -125,6 +125,15 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildF
 		23E0A8A42EA1B5C100001638 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E0A8A32EA1B5C100001638 /* UserQuery.swift */; };
 		752B83A7F7B037978A65D0BA /* SwitchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF107B4D376B75D2828065B /* SwitchUserView.swift */; };
 		C2EF4D26CD839479EB8907F5 /* StandardColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081C5D37E5E60F4363B7176 /* StandardColorPicker.swift */; };
+		23D100022E10000000000002 /* RewardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100012E10000000000001 /* RewardMode.swift */; };
+		23D100032E10000000000003 /* RewardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100012E10000000000001 /* RewardMode.swift */; };
+		23D100052E10000000000005 /* StarBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100042E10000000000004 /* StarBank.swift */; };
+		23D100062E10000000000006 /* StarBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100042E10000000000004 /* StarBank.swift */; };
+		23D100082E10000000000008 /* RewardModelMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100072E10000000000007 /* RewardModelMigrator.swift */; };
+		23D100092E10000000000009 /* RewardModelMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D100072E10000000000007 /* RewardModelMigrator.swift */; };
+		23D1000B2E1000000000000B /* StarBalanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000A2E1000000000000A /* StarBalanceLabel.swift */; };
+		23D1000C2E1000000000000C /* StarBalanceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000A2E1000000000000A /* StarBalanceLabel.swift */; };
+		23D1000E2E1000000000000E /* RedeemRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1000D2E1000000000000D /* RedeemRewardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +258,11 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildF
 		23E0A8A12EA1B5C100001638 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		23E0A8A32EA1B5C100001638 /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 		6DF107B4D376B75D2828065B /* SwitchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchUserView.swift; sourceTree = "<group>"; };
+		23D100012E10000000000001 /* RewardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardMode.swift; sourceTree = "<group>"; };
+		23D100042E10000000000004 /* StarBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBank.swift; sourceTree = "<group>"; };
+		23D100072E10000000000007 /* RewardModelMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModelMigrator.swift; sourceTree = "<group>"; };
+		23D1000A2E1000000000000A /* StarBalanceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBalanceLabel.swift; sourceTree = "<group>"; };
+		23D1000D2E1000000000000D /* RedeemRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemRewardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -366,10 +380,12 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildF
 				23AB23E42DFE5C3600BB4589 /* MultiUserMigrationView.swift */,
 				23BF8C9C2C2D05BB00C40157 /* obeyApp.swift */,
 				23C436122CC0BFBC00E21137 /* ObeyRecap.swift */,
+				23D1000D2E1000000000000D /* RedeemRewardsView.swift */,
 				23B80C202C2FA9CE0031B115 /* RewardListView.swift */,
 				28B1169142499CE6030DC56B /* Shared */,
 				232AF07C2C9507CE0077353B /* Settings */,
 				2334912E2E18E66E00674739 /* ShiftingMeshGradientView.swift */,
+				23D1000A2E1000000000000A /* StarBalanceLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +401,7 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildF
 				23077F612C72A4E1000D131F /* Icon.swift */,
 				23C4360C2CC0B2A600E21137 /* LastStat.swift */,
 				23B80C222C2FAA360031B115 /* Reward.swift */,
+				23D100012E10000000000001 /* RewardMode.swift */,
 				23077F802C883059000D131F /* SDLog.swift */,
 				23CC5F2B2C509FDE0018A724 /* SDReward.swift */,
 				23729D092DF2B25D007317AA /* SDUser.swift */,
@@ -401,9 +418,11 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */ = {isa = PBXBuildF
 			children = (
 				23BF8CAF2C2D130400C40157 /* DeviceShakeViewModifier.swift */,
 				23077F712C7EDD36000D131F /* PurchasesDelegateHandler.swift */,
+				23D100072E10000000000007 /* RewardModelMigrator.swift */,
 				23C7ED002C40495F00001637 /* Roll.swift */,
 				23BF8CAD2C2D12D500C40157 /* SCButtonStyle.swift */,
 				23AB23DF2DFE1E9400BB4589 /* ThemeColorKey.swift */,
+				23D100042E10000000000004 /* StarBank.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -704,6 +723,11 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				231C72B32C50AFF0000A20D5 /* ManageRewardsView.swift in Sources */,
 				23BF8CB62C2D17D800C40157 /* Constants.swift in Sources */,
 				23C7ED012C40495F00001637 /* Roll.swift in Sources */,
+				23D100022E10000000000002 /* RewardMode.swift in Sources */,
+				23D100052E10000000000005 /* StarBank.swift in Sources */,
+				23D100082E10000000000008 /* RewardModelMigrator.swift in Sources */,
+				23D1000B2E1000000000000B /* StarBalanceLabel.swift in Sources */,
+				23D1000E2E1000000000000E /* RedeemRewardsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +783,10 @@ A873891CAF494526888307DB /* AddRewardView.swift in Sources */,
 				23C4360D2CC0B2A600E21137 /* LastStat.swift in Sources */,
 				2392DD182C8EB10700DE3034 /* BadgeLabel.swift in Sources */,
 				23AB23E02DFE1E9400BB4589 /* ThemeColorKey.swift in Sources */,
+				23D100032E10000000000003 /* RewardMode.swift in Sources */,
+				23D100062E10000000000006 /* StarBank.swift in Sources */,
+				23D100092E10000000000009 /* RewardModelMigrator.swift in Sources */,
+				23D1000C2E1000000000000C /* StarBalanceLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

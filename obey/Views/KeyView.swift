@@ -14,6 +14,7 @@ struct KeyView: View {
 			BadgeLabel("Odds of being rewarded", systemImage: "dice")
 			BadgeLabel("# of losses prior", systemImage: "star.slash")
 			BadgeLabel("Odds were increased", systemImage: "arrow.up")
+			BadgeLabel("Stars spent on reward", systemImage: "star.fill")
 		}
 		.font(.footnote)
     }

@@ -11,19 +11,26 @@ import SwiftUI
 import TipKit
 
 struct ManageRewardsView: View {
-    
+
     @Environment(\.modelContext) var modelContext
     @EnvironmentObject var nav: NavigationStateManager
     @Environment(\.themeColor) private var themeColor
-    
+
     @ObservedObject private var userViewModel = UserViewModel.shared
-    
+
     @Query(sort: \SDReward.name) private var rewards: [SDReward]
     @Query(sort: \SDUser.name) private var users: [SDUser]
     @State private var selectedUser: SDUser? = nil
     @State private var newRewardName = ""
     @State private var isShowingAddFlow = false
-    
+
+    @AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName))
+    private var rewardModeRawValue: String = RewardMode.surprise.rawValue
+
+    private var rewardMode: RewardMode {
+        RewardMode(rawValue: rewardModeRawValue) ?? .surprise
+    }
+
     let swipeActionsTip = ManageRewardsSwipeActionsTip()
     
     private var filteredRewards: [SDReward] {
@@ -53,11 +60,19 @@ struct ManageRewardsView: View {
             ForEach(filteredRewards) { reward in
                 
                 NavigationLink(value: reward, label: {
-                    
-                    Label(reward.name, systemImage: reward.systemImage)
-                        .symbolRenderingMode(.hierarchical)
-                        .padding(10)
-                        .opacity(reward.isActive ? 1 : 0.4)
+
+                    HStack {
+                        Label(reward.name, systemImage: reward.systemImage)
+                            .symbolRenderingMode(.hierarchical)
+                            .padding(10)
+
+                        Spacer()
+
+                        if rewardMode == .stars {
+                            BadgeLabel("\(reward.starCost)", systemImage: "star.fill")
+                        }
+                    }
+                    .opacity(reward.isActive ? 1 : 0.4)
                 })
                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
                     

@@ -14,7 +14,7 @@ struct StatsView: View {
 	
 	@AppStorage("odds", store: UserDefaults(suiteName: Constants.suiteName)) var odds: Int = Constants.startingOdds
 	@AppStorage("losses", store: UserDefaults(suiteName: Constants.suiteName)) var losses: Int = 0
-	
+
 	@ObservedObject var selectedUserManager: SelectedUserManager = .shared
     
     @State private var buttonPressCount = 0
@@ -56,28 +56,41 @@ struct StatsView: View {
 			return losses.description
 		}
 	}
-	
+
+	@AppStorage(Constants.rewardModeKey, store: UserDefaults(suiteName: Constants.suiteName)) var rewardModeRawValue: String = RewardMode.surprise.rawValue
+	@AppStorage(Constants.starBalanceKey, store: UserDefaults(suiteName: Constants.suiteName)) var starBalance: Int = 0
+
+	private var rewardMode: RewardMode {
+		RewardMode(rawValue: rewardModeRawValue) ?? .surprise
+	}
+
     var body: some View {
-        
+
 		Group {
 			StatLine(text: "Available rewards:", value: rewardCountDescription)
-			
+
 			StatLine(text: "Times rewarded:", value: logCountDescription)
-			
-			Button {
-				if let user = selectedUserManager.selectedUser {
-					Roll.resetOdds(for: user)
-				} else {
-					Roll.resetOdds()
+
+			switch rewardMode {
+			case .stars:
+				StatLine(text: "Star balance:", value: starBalance.description)
+
+			case .surprise:
+				Button {
+					if let user = selectedUserManager.selectedUser {
+						Roll.resetOdds(for: user)
+					} else {
+						Roll.resetOdds()
+					}
+					buttonPressCount += 1
+				} label: {
+					StatLine(text: "Current odds:", value: oddsDescription, subtitle: "tap to reset")
 				}
-                buttonPressCount += 1
-			} label: {
-				StatLine(text: "Current odds:", value: oddsDescription, subtitle: "tap to reset")
+				.buttonStyle(.plain)
+				.sensoryFeedback(.decrease, trigger: buttonPressCount)
+
+				StatLine(text: "Current losses:", value: lossesDescription)
 			}
-			.buttonStyle(.plain)
-            .sensoryFeedback(.decrease, trigger: buttonPressCount)
-			
-			StatLine(text: "Current losses:", value: lossesDescription)
 		}
     }
 	

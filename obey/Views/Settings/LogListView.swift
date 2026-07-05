@@ -33,7 +33,8 @@ struct LogListView: View {
                         losses: log.losses,
                         increasedOdds: log.increasedOdds,
                         userName: log.user?.name,
-                        userColor: log.user?.swiftUIColor
+                        userColor: log.user?.swiftUIColor,
+                        starsSpent: log.starsSpent
                     )
                     .swipeActions(edge: .trailing) {
                         Button {

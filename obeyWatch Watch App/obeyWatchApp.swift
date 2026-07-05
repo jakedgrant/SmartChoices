@@ -13,12 +13,16 @@ import SwiftUI
 struct obeyWatch_Watch_AppApp: App {
 
     @StateObject private var selectedUserManager = SelectedUserManager.shared
-    
+
     init() {
+
+        // Bring pre-reward-mode installs forward before any view reads the shared defaults
+        RewardModelMigrator.migrateIfNeeded()
+
 #if DEBUG
         Purchases.logLevel = .debug
 #endif
-        
+
         // Use this initializer if your app does not have an account system.
         let defaults = UserDefaults(suiteName: Constants.suiteName) ?? UserDefaults.standard
         Purchases.configure(
@@ -27,7 +31,7 @@ struct obeyWatch_Watch_AppApp: App {
                 .build()
         )
         Purchases.configure(withAPIKey: Secrets.apiKey)
-        
+
         /* Set the delegate to our shared instance of PurchasesDelegateHandler */
         Purchases.shared.delegate = PurchasesDelegateHandler.shared
     }
