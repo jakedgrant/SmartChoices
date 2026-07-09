@@ -11,13 +11,11 @@ final class UserDatabase: SwiftDatabase {
             for: T.self,
             isStoredInMemoryOnly: useInMemoryStore
         )
-        
         container = try ModelContainer(
             for: T.self,
             configurations: configuration
         )
     }
-    
     private let allPredicate = #Predicate<T> { _ in true }
 }
 

@@ -15,6 +15,7 @@ final class SDReward: Identifiable {
     var name: String = ""
     var systemImage: String = Constants.defaultImageName
     var isActive: Bool = true
+    
     /* How many stars the reward costs in star mode.
      The default value lets SwiftData lightweight-migrate stores that predate star rewards. */
     var starCost: Int = Constants.defaultStarCost
